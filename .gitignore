@@ -83,6 +83,7 @@ expresso.opt
 .recordref
 *.p3t
 *.ccl
+*_synplify.lpf
 
 */synlog/*
 */syntmp/*
