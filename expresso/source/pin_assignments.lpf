@@ -2,6 +2,8 @@ BLOCK RESETPATHS ;
 BLOCK ASYNCPATHS ;
 BLOCK JTAGPATHS ;
 IOBUF ALLPORTS IO_TYPE=LVCMOS33 ;
+
+# Typical 8-segment display
 LOCATE COMP "seg_1" SITE "V6" ;
 LOCATE COMP "seg_2" SITE "U7" ;
 LOCATE COMP "seg_3" SITE "Y6" ;
@@ -10,6 +12,21 @@ LOCATE COMP "seg_5" SITE "U8" ;
 LOCATE COMP "seg_6" SITE "T8" ;
 LOCATE COMP "seg_7" SITE "AA5" ;
 LOCATE COMP "seg_8" SITE "AB4" ;
+
+
+# 8 more segments (for a total of 14)
+# named weirdly to avoid conflict from below
+LOCATE COMP "seg_g" SITE "R9" ;
+LOCATE COMP "seg_h" SITE "T9" ;
+LOCATE COMP "seg_j" SITE "AB3" ;
+LOCATE COMP "seg_l" SITE "W4" ;
+LOCATE COMP "seg_m" SITE "Y5" ;
+LOCATE COMP "seg_n" SITE "AA4" ;
+LOCATE COMP "seg_dp" SITE "W5" ;
+
+
+
+
 LOCATE COMP "clk" SITE "L5" ;
 IOBUF PORT "seg_1" IO_TYPE=LVCMOS33 TERMINATEVTT=OFF ;
 LOCATE COMP "reset" SITE "J7" ;

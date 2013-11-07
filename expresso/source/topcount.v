@@ -1,6 +1,7 @@
 module topcount 
 (input  clk, reset,direction, output reg seg_1,seg_2,seg_3,seg_4,seg_5,seg_6,seg_7,seg_8,
-			seg_9, seg_10,seg_11,seg_12,seg_13,seg_14,seg_15,seg_16, output LOCK, output [7:0]count3t, output [3:0]count2t
+			seg_9, seg_10,seg_11,seg_12,seg_13,seg_14,seg_15,seg_16, seg_g, seg_h, seg_j, seg_l, seg_m, seg_n, seg_dp, 
+			output LOCK, output [7:0]count3t, output [3:0]count2t
 	);
 
 
@@ -12,7 +13,8 @@ module topcount
 	wire CLKOP, clk_1Hz,CLKOK;
 	
 	wire seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
-	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16;
+	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16,
+	segg, segh, segj, segl, segm, segn, segdp;
 	
 
 	my_pll my_pll_inst (.CLK(clk), .CLKOK(CLKOK), .CLKOP(CLKOP),.LOCK(LOCK));
@@ -25,7 +27,7 @@ module topcount
 	
 	
 	LEDtest my_LEDtest( direction, seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
-	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, countt);
+	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, segg, segh, segj, segl, segm, segn, segdp, countt);
 	 
 	
 	always @(posedge clk_1Hz )begin
@@ -46,6 +48,13 @@ module topcount
 	 seg_14 = seg14;
 	 seg_15 = seg15;
 	 seg_16 = seg16;
+	 seg_g = segg;
+	 seg_h = segh;
+	 seg_j = segj;
+	 seg_l = segl;
+	 seg_m = segm;
+	 seg_n = segn;
+	 seg_dp = segdp;
 end
 
 	

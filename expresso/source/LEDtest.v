@@ -1,9 +1,9 @@
-module LEDtest ( input direction, output seg_1,seg_2,seg_3,seg_4,seg_5,seg_6,seg_7,seg_8,seg_9, seg_10,seg_11,seg_12,seg_13,seg_14,seg_15,seg_16,
+module LEDtest ( input direction, output seg_1,seg_2,seg_3,seg_4,seg_5,seg_6,seg_7,seg_8,seg_9, seg_10,seg_11,seg_12,seg_13,seg_14,seg_15,seg_16, seg_g, seg_h, seg_j, seg_l, seg_m, seg_n, seg_dp,
 		
 		input [3:0] count );
 	
 	
-	reg seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16;
+	reg seg1, seg2, seg3, seg4, seg5, seg6, seg7, seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16,segg, segh, segj, segl, segm, segn, segdp;
 	
 		
 
@@ -34,10 +34,10 @@ module LEDtest ( input direction, output seg_1,seg_2,seg_3,seg_4,seg_5,seg_6,seg
 			end
 
 			
-		case(count)  			4'b0000:begin seg1 = 1'b0;seg2 = 1'b0; seg3 =1'b0; seg4 =1'b0 ;seg5 = 1'b0;seg6 = 1'b0; seg7 = 1'b1 ;seg8 =1'b1 ; end
-			4'b0001:begin seg1 =1'b1 ;seg2 =1'b0 ; seg3 =1'b0; seg4 =1'b1;seg5 =1'b1;seg6 =1'b1; seg7 =1'b1;seg8 =1'b1; end
-			4'b0010:begin seg1 =1'b0;seg2 =1'b0; seg3 =1'b1; seg4 =1'b0;seg5 =1'b0;seg6 =1'b1; seg7 =1'b0;seg8 =1'b0; end
-			4'b0011:begin seg1 =1'b0;seg2 =1'b0; seg3 =1'b0; seg4 =1'b0;seg5 =1'b1 ;seg6 =1'b1; seg7 =1'b0;seg8 =1'b0; end
+		case(count)  			4'b0000:begin seg1 = 1'b0;seg2 = 1'b0; seg3 =1'b0; seg4 =1'b0 ;seg5 = 1'b0;seg6 = 1'b0; seg7 = 1'b1 ;seg8 =1'b1 ;segdp =1'b1 ; end
+			4'b0001:begin seg1 =1'b1 ;seg2 =1'b0 ; seg3 =1'b0; seg4 =1'b1;seg5 =1'b1;seg6 =1'b1; seg7 =1'b1;seg8 =1'b1; segdp =1'b0 ; end
+			4'b0010:begin seg1 =1'b0;seg2 =1'b0; seg3 =1'b1; seg4 =1'b0;seg5 =1'b0;seg6 =1'b1; seg7 =1'b0;seg8 =1'b0; segdp =1'b1 ; end
+			4'b0011:begin seg1 =1'b0;seg2 =1'b0; seg3 =1'b0; seg4 =1'b0;seg5 =1'b1 ;seg6 =1'b1; seg7 =1'b0;seg8 =1'b0; segdp =1'b0 ; end
 			4'b0100:begin seg1 =1'b1;seg2 =1'b0; seg3 =1'b0; seg4 =1'b1;seg5 =1'b1;seg6 =1'b0; seg7 =1'b0;seg8 =1'b0; end
 			4'b0101:begin seg1 =1'b0;seg2 =1'b1; seg3 =1'b0; seg4 =1'b0;seg5 =1'b1;seg6 =1'b0; seg7 =1'b0;seg8 =1'b0; end
 			4'b0110:begin seg1 =1'b1;seg2 =1'b1; seg3 =1'b0; seg4 =1'b0;seg5 =1'b0;seg6 =1'b0; seg7 =1'b0;seg8 =1'b0; end
@@ -72,6 +72,13 @@ assign seg_13 = seg13;
 assign seg_14 = seg14;
 assign seg_15 = seg15;
 assign seg_16 = seg16;
+assign seg_g = segg;
+assign seg_h = segh;
+assign seg_j = segj;
+assign seg_l = segl;
+assign seg_m = segm;
+assign seg_n = segn;
+assign seg_dp = segdp;
 
 
 
