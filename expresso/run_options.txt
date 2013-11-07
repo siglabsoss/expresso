@@ -1,0 +1,70 @@
+#--  Synopsys, Inc.
+#--  Version G-2012.09L-SP1 
+#--  Project file C:\Users\joel\Documents\popwi_expresso\expresso\run_options.txt
+
+#project files
+add_file -verilog "C:/lscc/diamond/2.2_x64/cae_library/synthesis/verilog/ecp3.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/source/clockDivider.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/source/count4.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/source/LEDtest.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/source/topcount.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/my_pll.v"
+add_file -vhdl -lib work "C:/Users/joel/Documents/popwi_expresso/expresso/source/typepackage.vhd"
+add_file -vhdl -lib work "C:/Users/joel/Documents/popwi_expresso/expresso/source/count8.vhd"
+
+
+#implementation: "expresso"
+impl -add expresso -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -num_critical_paths 10
+set_option -project_relative_includes 1
+set_option -include_path {C:/Users/joel/Documents/popwi_expresso}
+
+#device options
+set_option -technology LATTICE-ECP3
+set_option -part LFE3_35EA
+set_option -package FN484C
+set_option -speed_grade -8
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module "topcount"
+
+# mapper_options
+set_option -frequency auto
+set_option -write_verilog 0
+set_option -write_vhdl 0
+set_option -srs_instrumentation 1
+
+# Lattice XP
+set_option -maxfan 1000
+set_option -disable_io_insertion 0
+set_option -retiming 0
+set_option -pipe 1
+set_option -forcegsr false
+set_option -fix_gated_and_generated_clocks 1
+set_option -RWCheckOnRam 1
+set_option -update_models_cp 0
+set_option -syn_edif_array_rename 1
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+set_option -multi_file_compilation_unit 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./expresso_expresso.edi"
+
+#set log file 
+set_option log_file "C:/Users/joel/Documents/popwi_expresso/expresso/expresso_expresso.srf" 
+impl -active "expresso"
