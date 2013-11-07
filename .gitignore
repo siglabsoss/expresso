@@ -30,7 +30,6 @@ _verilog_hintfile
 Edfmap.ini
 *.ior
 *.log
-*.lpf
 *.lst
 *.mrp
 *.ncd
