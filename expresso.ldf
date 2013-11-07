@@ -27,9 +27,6 @@
         <Source name="my_pll.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
-        <Source name="expresso.lpf" type="Logic Preference" type_short="LPF" excluded="TRUE">
-            <Options/>
-        </Source>
         <Source name="expresso.tpf" type="Timing Analysis" type_short="TPF" excluded="TRUE">
             <Options/>
         </Source>
