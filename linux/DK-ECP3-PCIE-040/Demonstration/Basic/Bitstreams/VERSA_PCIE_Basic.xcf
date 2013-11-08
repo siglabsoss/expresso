@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE		ispXCF	SYSTEM	"IspXCF.dtd" >
+<ispXCF version="17.9.1">
+	<Comment></Comment>
+	<Chain>
+		<Comm>JTAG</Comm>
+		<Device>
+			<SelectedProg value="TRUE"/>
+			<Pos>1</Pos>
+			<Vendor>STMicro</Vendor>
+			<Family>LatticeECP3</Family>
+			<Name>LFE3-35EA</Name>
+			<Package>All</Package>
+			<Bypass>
+				<InstrLen>8</InstrLen>
+				<InstrVal>11111111</InstrVal>
+				<BScanLen>1</BScanLen>
+				<BScanVal>0</BScanVal>
+			</Bypass>
+			<File>C:/Lattice_DevKits/DK-ECP3-PCIE-040/Demonstration/PCIeBasic/Bitstreams/VERSA_PCIE_Basic.bit</File>
+			<FileTime>10/4/2011 8:8:14</FileTime>
+			<Operation>SPI Flash Erase,Program,Verify</Operation>
+			<Option>
+				<SVFVendor>JTAG STANDARD</SVFVendor>
+				<AccessMode>SPI Flash Background Programming</AccessMode>
+			</Option>
+			<FPGALoader>
+			<CPLDDevice>
+				<Device>
+					<Pos>1</Pos>
+					<Vendor>Lattice</Vendor>
+					<Family>LatticeECP3</Family>
+					<Name>LFE3-35EA</Name>
+					<IDCode>0x01012043</IDCode>
+					<Package>All</Package>
+					<PON>LFE3-35EA</PON>
+					<Bypass>
+						<InstrLen>8</InstrLen>
+						<InstrVal>11111111</InstrVal>
+						<BScanLen>1</BScanLen>
+						<BScanVal>0</BScanVal>
+					</Bypass>
+					<MaskFile>C:/lscc/diamond/1.3/data/vmdata/database\xpga\ecp3\ecp3-35.msk</MaskFile>
+					<Operation>Verify ID</Operation>
+					<Option>
+						<SVFVendor>JTAG STANDARD</SVFVendor>
+						<IOState>HighZ</IOState>
+						<PreloadLength>675</PreloadLength>
+						<IOVectorData>0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</IOVectorData>
+						<AccessMode>JTAG</AccessMode>
+					</Option>
+				</Device>
+			</CPLDDevice>
+			<FlashDevice>
+				<Device>
+					<Pos>1</Pos>
+					<Vendor>STMicro</Vendor>
+					<Family>SPI Serial Flash</Family>
+					<Name>SPI-M25P64</Name>
+					<IDCode>0x16</IDCode>
+					<Package>16-lead SOIC</Package>
+					<Operation>SPI Flash Erase,Program,Verify</Operation>
+					<File>C:/Lattice_DevKits/DK-ECP3-PCIE-040/Demonstration/PCIeThruput/Bitstreams/VERSA_PCIE_thruput.bit</File>
+					<AddressBase>0x000000</AddressBase>
+					<EndAddress>0x0D0000</EndAddress>
+					<DeviceSize>64</DeviceSize>
+					<DataSize>897754</DataSize>
+					<NumberOfDevices>1</NumberOfDevices>
+					<ReInitialize value="FALSE"/>
+				</Device>
+			</FlashDevice>
+			<FPGADevice>
+				<Device>
+					<Pos>1</Pos>
+					<Name></Name>
+					<File>C:/Lattice_DevKits/DK-ECP3-PCIE-040/Demonstration/PCIeThruput/Bitstreams/VERSA_PCIE_thruput.bit</File>
+					<LocalChainList>
+						<LocalDevice index="-99"
+							name="Unknown"
+							file="C:/Lattice_DevKits/DK-ECP3-PCIE-040/Demonstration/PCIeThruput/Bitstreams/VERSA_PCIE_thruput.bit"/>
+					</LocalChainList>
+					<Option>
+						<SVFVendor>JTAG STANDARD</SVFVendor>
+					</Option>
+				</Device>
+			</FPGADevice>
+			</FPGALoader>
+		</Device>
+	</Chain>
+	<ProjectOptions>
+		<Program>SEQUENTIAL</Program>
+		<Process>ENTIRED CHAIN</Process>
+		<OperationOverride>No Override</OperationOverride>
+		<StartTAP>TLR</StartTAP>
+		<EndTAP>TLR</EndTAP>
+		<DeGlitch value="TRUE"/>
+		<VerifyUsercode value="TRUE"/>
+	</ProjectOptions>
+	<CableOptions>
+		<CableName>USB2</CableName>
+		<PortAdd>FTUSB-0</PortAdd>
+		<JTAGPinSetting>
+			TMS	LOW;
+			TCK	LOW;
+			TDI	LOW;
+			TDO	LOW;
+		</JTAGPinSetting>
+	</CableOptions>
+</ispXCF>

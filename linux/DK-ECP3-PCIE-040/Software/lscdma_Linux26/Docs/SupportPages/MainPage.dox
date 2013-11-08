@@ -1,0 +1,30 @@
+
+/** \mainpage Lattice PCIeDMA Linux Device Driver Manual
+ 
+This manual provides documentation on the theory and operation of the
+Lattice PCIeDMA Device Driver.
+
+
+Refer to the following sections for details on the following specific subjects:
+
+<ul>
+<li>\ref Intro_page "Introduction to the PCIe DMA Driver"
+
+<li>\ref LSCDMA_page "Driver Implementation Details"
+
+<li>\ref Bld_page "Building the Driver"
+</ul>
+
+*/
+
+/** \page Intro_page Introduction
+ *  \htmlinclude Intro.html
+ */
+
+/** \page LSCDMA_page Driver Implementation Details
+ *  \htmlinclude LSCDMA.html
+ */
+
+/** \page Bld_page Building the Driver
+ *  \htmlinclude bld.html
+ */

@@ -1,0 +1,12 @@
+# Logical Preferences for sgdma
+
+# Frequency Constraints
+FREQUENCY PORT "clk" 100 MHz ;
+
+# Multicycle Paths
+MULTICYCLE FROM CELL "sgdma_inst/sgdmac_inst/bdif/config0*" 2 X ;
+
+BLOCK ASYNCPATHS;
+
+# End of Logical Preferences
+

@@ -1,0 +1,34 @@
+
+/** \mainpage Lattice lscpcie2 Linux Device Driver Manual
+ 
+This manual provides documentation on the theory and operation of the
+second generation of the lscpcie2 Device Driver.  This driver has
+improved functionality over the original lscpcie.ko driver 
+(very early PCIe demo releases) which 
+simply allowed read/write access and reading back some driver and
+device configuration information. 
+
+
+Refer to the following sections for details on the following specific subjects:
+
+<ul>
+<li>\ref Intro_page "Introduction to the lscpcie2 Driver"
+
+<li>\ref lscpcie2_page "Driver Implementation Details"
+
+<li>\ref Bld_page "Building the Driver"
+</ul>
+
+*/
+
+/** \page Intro_page Introduction
+ *  \htmlinclude Intro.html
+ */
+
+/** \page lscpcie2_page Driver Implementation Details
+ *  \htmlinclude lscpcie2.html
+ */
+
+/** \page Bld_page Building the Driver
+ *  \htmlinclude bld.html
+ */

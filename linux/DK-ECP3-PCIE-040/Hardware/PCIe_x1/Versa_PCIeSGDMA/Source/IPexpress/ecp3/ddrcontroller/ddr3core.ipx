@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="ddr3core" module="DDR3 SDRAM Controller" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2011 04 27 15:17:16.921" version="1.2" type="IP" synthesis="synplify" source_format="Verilog">
+  <Package>
+		<File name="ddr3core.lpc" type="lpc" modified="2011 04 27 15:16:18.578"/>
+		<File name="ddr3core.ngo" type="database" modified="2011 04 27 15:17:02.625"/>
+		<File name="ddr3core_bb.v" type="black_box_verilog" modified="2011 04 27 15:16:20.234"/>
+		<File name="ddr3core_beh.v" type="behavioral_verilog" modified="2011 04 27 15:16:20.703"/>
+		<File name="ddr3core_inst.v" type="instantiation_verilog" modified="2011 04 27 15:16:20.718"/>
+		<File name="pmi_distributed_dpramEbnonen13664.ngo" type="database" modified="2011 04 27 15:17:02.859"/>
+  </Package>
+</DiamondModule>

@@ -1,0 +1,33 @@
+PCIe_IF.o: PCIe_IF.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h PCIe_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h
+LSCPCIe2_IF.o: LSCPCIe2_IF.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  LSCPCIe2_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie2/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h PCIe_IF.h \
+  RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h
+LSCDMA_IF.o: LSCDMA_IF.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  LSCDMA_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscdma/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h PCIe_IF.h \
+  RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h

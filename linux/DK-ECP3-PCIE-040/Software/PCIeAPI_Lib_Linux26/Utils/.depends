@@ -1,0 +1,15 @@
+DebugPrint.o: DebugPrint.cpp DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h
+MemFormat.o: MemFormat.cpp MemFormat.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DevObjs/Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h
+MiscUtils.o: MiscUtils.cpp MiscUtils.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h

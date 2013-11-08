@@ -1,0 +1,110 @@
+COMMERCIAL;
+BLOCK RESETPATHS ;
+BLOCK ASYNCPATHS ;
+##########################################################################
+# Frequency Declerations
+##########################################################################
+FREQUENCY NET "clk_in_c" 100.0 MHz ;
+FREQUENCY NET "sclk" 200.0 MHz PAR_ADJ 40.0 ;
+FREQUENCY NET "clocking/clkos" 400.0 MHz PAR_ADJ 80.0 ;
+FREQUENCY NET "sclk2x" 400.0 MHz PAR_ADJ 80.0 ;
+
+##########################################################################
+# Block, Maxdelay, Multicycle preferences
+##########################################################################
+
+BLOCK PATH FROM PORT "rst_*" ;
+BLOCK NET "*read_pulse_tap*" ;
+
+MAXDELAY NET "*/U1_ddr3_sdram_mem_io_top/ddr3_read_data_out*" 4.50 ns;
+MAXDELAY NET "*/U1_ddr3_sdram_mem_io_top/datavalid_o_*" 4.40 nS ;
+MAXDELAY NET "*/U1_ddr3_sdram_mem_io_top/ddrin_*" 2.50 nS ;
+
+MULTICYCLE FROM CELL "*/uddcntln"  2.000000 X ;
+
+#Half SCLK clock path
+MAXDELAY TO CELL "*/dq_read_o_n0*" 5.0 ns ;
+
+#sclk(-)  or sclk(+) to sclk2x(+)
+MAXDELAY TO CELL "*/dq_read_o_t2_sclk*" 2.5 ns ;
+
+#Half sclk2x clock path
+MAXDELAY TO CELL "*/dq_read_o_n00*" 2.5 ns ;
+
+#Mux input and output paths
+MAXDELAY NET "*/dq_read_o_p01*" 0.55 ns ;
+MAXDELAY NET "*/dq_read_o_n00*" 0.55 ns ;
+MAXDELAY NET "*/dqs_read*" 0.615 ns ;
+
+##########################################################################
+# CSM logic preferences
+##########################################################################
+BLOCK PATH FROM CLKNET "clk_in_c" TO CLKNET "sclk" ; 
+BLOCK PATH FROM CLKNET "clk_in_c" TO CLKNET "*clocking/clkos" ; 
+BLOCK PATH FROM CLKNET "sclk" TO CLKNET "clk_in_c" ; 
+BLOCK PATH FROM CLKNET "*sclk2x" TO CLKNET "clk_in_c" ;
+BLOCK PATH FROM CLKNET "clk_in_c" TO CLKNET "*eclk" ;
+
+BLOCK PATH FROM CLKNET "*clocking/clkos" TO CLKNET "*eclk" ;
+BLOCK PATH FROM CLKNET "*clocking/clkos" TO CLKNET "sclk" ;
+BLOCK PATH FROM CLKNET "*sclk2x" TO CLKNET "*clocking/clkos" ;
+
+MAXDELAY NET "*clocking/pll_phase*" 2.50 ns;
+MAXDELAY NET "*dqclk1bar_ff" 0.65 ns ;
+MAXDELAY NET "*eclk" 1.20 ns ;
+MAXDELAY NET "*clocking/stop" 0.80 ns ;
+MAXDELAY NET "*clocking/clkos" 1.10 ns ;
+
+##########################################################################
+# IO Type Declarations
+##########################################################################
+IOBUF ALLPORTS IO_TYPE=LVCMOS15 ;
+DEFINE PORT GROUP "EM_DDR_DQS_GRP" "em_ddr_dqs*" ;
+IOBUF GROUP "EM_DDR_DQS_GRP" IO_TYPE=SSTL15D EQ_CAL=0 ;
+DEFINE PORT GROUP "EM_DDR_DATA_GRP" "em_ddr_data*" ;
+IOBUF GROUP "EM_DDR_DATA_GRP" IO_TYPE=SSTL15 ;
+DEFINE PORT GROUP "EM_DDR_DM_GRP" "em_ddr_dm_*" ;
+IOBUF GROUP "EM_DDR_DM_GRP" IO_TYPE=SSTL15 ;
+DEFINE PORT GROUP "EM_DDR_ADDR_GRP" "em_ddr_addr_*" ;
+IOBUF GROUP "EM_DDR_ADDR_GRP" IO_TYPE=SSTL15 BANK=0;
+DEFINE PORT GROUP "EM_DDR_BA_GRP" "em_ddr_ba_*" ;
+IOBUF GROUP "EM_DDR_BA_GRP" IO_TYPE=SSTL15 BANK=0;
+IOBUF PORT "em_ddr_ras_n" IO_TYPE=SSTL15 BANK=0;
+IOBUF PORT "em_ddr_cas_n" IO_TYPE=SSTL15 BANK=0;
+IOBUF PORT "em_ddr_we_n" IO_TYPE=SSTL15 BANK=0;
+DEFINE PORT GROUP "EM_DDR_CS_GRP" "em_ddr_cs_n_*" ;
+IOBUF GROUP "EM_DDR_CS_GRP" IO_TYPE=SSTL15 BANK=0;
+DEFINE PORT GROUP "EM_DDR_ODT_GRP" "em_ddr_odt_*" ;
+IOBUF GROUP "EM_DDR_ODT_GRP" IO_TYPE=SSTL15 BANK=0;
+DEFINE PORT GROUP "EM_DDR_CKE_GRP" "em_ddr_cke_*" ;
+IOBUF GROUP "EM_DDR_CKE_GRP" IO_TYPE=SSTL15 BANK=0;
+DEFINE PORT GROUP "EM_DDR_CLK_GRP" "em_ddr_clk_*" ;
+IOBUF GROUP "EM_DDR_CLK_GRP" IO_TYPE=SSTL15D BANK=0;
+IOBUF PORT "clk_in" IO_TYPE=SSTL15D PULLMODE=NONE DIFFRESISTOR=OFF ;
+IOBUF PORT "em_ddr_reset_n" IO_TYPE=LVCMOS15 ;
+
+##########################################################################
+## LOCATE FOR CSM logic
+##########################################################################
+LOCATE COMP "clk_in"  SITE "L5" ;
+LOCATE COMP "clocking/pll/PLLInst_0" SITE "PLL_R35C5" ;
+LOCATE COMP "clocking/sync"          SITE "LECLKSYNC2" ;
+
+LOCATE PGROUP "clocking/clk_phase/phase_ff_0_inst/clk_phase0"    SITE "R24C5D" ;
+LOCATE PGROUP "clocking/clk_phase/dqclk1bar_ff_inst/clk_phase1a" SITE "R34C2D" ;
+LOCATE PGROUP "clocking/clk_phase/phase_ff_1_inst/clk_phase1b"   SITE "R34C2D" ;
+LOCATE PGROUP "clocking/clk_stop/clk_stop"                       SITE "R34C2D" ;
+
+##########################################################################
+# LOCATE FOR DQS pins                                                     
+##########################################################################
+
+LOCATE COMP "em_ddr_dqs_0" SITE "F5" ;
+LOCATE COMP "em_ddr_dqs_1" SITE "H5" ;
+
+##########################################################################
+# LOCATE FOR READ PULSE logic
+##########################################################################
+
+LOCATE PGROUP "U1_ddr3core/U1_ddr3_sdram_mem_io_top/read_pulse_delay_0/read_pulse_delay_0" SITE "R13C2D" ;
+LOCATE PGROUP "U1_ddr3core/U1_ddr3_sdram_mem_io_top/read_pulse_delay_1/read_pulse_delay_1" SITE "R22C2D" ;

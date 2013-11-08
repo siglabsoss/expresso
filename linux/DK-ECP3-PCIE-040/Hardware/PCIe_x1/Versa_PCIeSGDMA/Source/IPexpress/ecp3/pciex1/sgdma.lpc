@@ -1,0 +1,48 @@
+[Device]
+Family=ep5c00
+PartType=LFE3-95E
+PartName=LFE3-95E-7FN672CES
+SpeedGrade=-7
+Package=FPBGA672
+OperatingCondition=COM
+Status=P
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=IPCFG
+CoreStatus=Demo
+CoreName=Scatter-Gather DMA Controller
+CoreRevision=2.3
+ModuleName=sgdma
+SourceFormat=Verilog HDL
+ParameterFileVersion=2.1
+Date=01/20/2010
+Time=14:16:53
+
+[Parameters]
+NUM_CHAN=2
+NUM_SUB=0
+DWIDTHA=64
+DWIDTHB=64
+AWIDTH=32
+AUX=0
+PBUFF_SIZE=0
+NUM_BD=256
+FULL_ADDR_SIZE=0
+FULL_ADDR=0
+BIGENDIAN=1
+WEIGHTED=0
+BUFFER_STATUS=0
+SRC_BUS_SIZE=from BD
+SRC_BUS_SEL=from BD
+SRC_BUS_ADDR=from BD
+DST_BUS_SIZE=from BD
+DST_BUS_SEL=from BD
+DST_BUS_ADDR=from BD
+LOCK_VALUE=from BD
+AUTORETRY_VALUE=from BD
+RETRYTHRESH=from BD
+FMax=100
+GenBehav=1
+GenNetlist=1
+GenEval=1

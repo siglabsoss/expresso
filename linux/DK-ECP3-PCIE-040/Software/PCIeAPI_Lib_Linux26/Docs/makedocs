@@ -1,0 +1,8 @@
+# Run this to build the html based documentation using the Doxygen tool.
+# The resulting hyper-text navigatable files are placed in html/
+# The image files and some pages are copied into html/
+
+doxygen PCIeAPI_Lib.doxy
+
+cp SupportPages/*.gif html
+

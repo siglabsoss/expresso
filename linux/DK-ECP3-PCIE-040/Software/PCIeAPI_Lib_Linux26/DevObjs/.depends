@@ -1,0 +1,59 @@
+Device.o: Device.cpp Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h
+GPIO.o: GPIO.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h GPIO.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h
+Mem.o: Mem.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h Mem.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h
+SGDMA.o: SGDMA.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h SGDMA.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/LSCDMA_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscdma/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/PCIe_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/MemFormat.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DevObjs/Device.h
+SFIF.o: SFIF.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/PCIeAPI.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h SFIF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h Device.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/LSCPCIe2_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie2/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/PCIe_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/MemFormat.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DevObjs/Device.h

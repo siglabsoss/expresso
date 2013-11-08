@@ -1,0 +1,13 @@
+JDF B
+// Created by Version 8.0 
+PROJECT sgdma_eval
+DESIGN sgdma_eval Normal
+DEVKIT LFE3-95E-7FN672CES
+ENTRY Verilog HDL
+MODULE ..\..\..\sgdma_bb.v
+MODSTYLE sgdma Normal
+MODULE ..\src\sgdmac_top.v
+MODSTYLE sgdmac_top Normal
+MODULE C:/ispTOOLS8_0/ispcpld/tcltk/lib/ipwidgets/ispipbuilder/../../../../..\cae_library\simulation\verilog\pmi\pmi_ram_dp.v
+MODSTYLE pmi_ram_dp Normal
+SYNTHESIS_TOOL Synplify

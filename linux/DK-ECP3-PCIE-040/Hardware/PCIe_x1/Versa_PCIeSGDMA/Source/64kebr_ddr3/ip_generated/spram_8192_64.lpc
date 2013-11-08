@@ -1,0 +1,49 @@
+[Device]
+Family=latticeecp3
+PartType=LFE3-95E
+PartName=LFE3-95E-7FN672CES
+SpeedGrade=-7
+Package=FPBGA672
+OperatingCondition=COM
+Status=P
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=RAM_DQ
+CoreRevision=7.1
+ModuleName=spram_8192_64
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=12/30/2010
+Time=11:35:56
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+Address=8192
+Data=64
+enByte=1
+ByteSize=8
+outPipeline=1
+GSR=Enabled
+Reset=Sync
+MemFile=
+MemFormat=bin
+EnECC=0
+Write=Normal
+adPipeline=0
+inPipeline=0
+MOR=0
+Pad=0
+Optimization=Speed
+Pipeline=0
+
+[FilesGenerated]
+=mem

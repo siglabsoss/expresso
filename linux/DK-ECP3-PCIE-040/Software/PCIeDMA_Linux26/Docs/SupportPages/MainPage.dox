@@ -1,0 +1,42 @@
+
+/** \mainpage Lattice PCIe DMA Demo User Manual
+ 
+This manual provides documentation on the theory and operation of the
+Lattice PCIe DMA Demos.  The DMA demos illustrate Lattice PCIe and SGDMA
+IP Cores working together to transfering data over the PCIe bus.
+The SGDMA operates as a Master DMA, reading and writing data to PC system
+memory.
+
+One demo illustrates moving large amounts of image data
+from the eval board to PC system memory and display on the screen.
+The other demo implements a simple hardware image processor, in that pixel
+data from a source image on the screen is read by the eval board, modified
+by the hardware and written back and redisplayed.
+
+<img align=center src="./demo_sys.jpg" alt="PCIe DMA Demo System">
+
+A test program is also provided that checks all the driver and IP functionality.
+
+Refer to the following sections for details on the specifc areas.
+
+<ul>
+<li>\ref Intro_page "Introduction to the PCIe DMA Demos"
+ 
+<li>\ref DMATest_page "DMA IP Test Demo Description"
+
+<li>\ref ColorBars_page "DMA ColorBars Demo Description"
+
+<li>\ref ImgMove_page "DMA ImageMove Demo Description"
+
+<li>\ref Build_page "Building and Running the PCIe DMA Demos"
+</ul>
+
+*/
+
+/** \page Intro_page Introduction
+ *  \htmlinclude Intro.html
+ */
+
+/** \page Build_page Building and Running
+ *  \htmlinclude bld.html
+ */

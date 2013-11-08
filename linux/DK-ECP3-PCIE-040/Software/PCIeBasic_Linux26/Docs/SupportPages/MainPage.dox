@@ -1,0 +1,29 @@
+
+/** \mainpage Lattice PCIe Basic Demo Manual
+ 
+This manual provides documentation on the operation of the
+Lattice PCIe Basic Demo and application software.
+
+\image html DemoImg.gif
+
+Refer to the following sections for details on the following specific subjects:
+
+<ul>
+<li>\ref Intro_page  "Introduction to the PCIe Basic Demo Operations"
+
+<li>\ref Menu_page  "PCIe Basic Demo Menu Description"
+
+<li>\ref GUI_page  "PCIe Basic Demo GUI Description"
+
+<li>\ref Build_page  "Building and Running"
+</ul> 
+*/
+
+/** \page Intro_page Introduction to the PCIe Basic Demo Operations
+ *  \htmlinclude DemoHelp.html
+ */
+
+/** \page Build_page Building and Running the Demos
+ *  \htmlinclude bld.html
+ */
+

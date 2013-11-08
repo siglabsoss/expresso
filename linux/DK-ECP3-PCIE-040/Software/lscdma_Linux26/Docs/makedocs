@@ -1,0 +1,3 @@
+doxygen lscdma.doxy
+cp SupportPages/*.gif html
+

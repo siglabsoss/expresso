@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject title="ddr3core_eval" device="LFE3-35EA-8FN484C" synthesis="precision" default_implementation="ddr3core_eval">
+    <Implementation title="ddr3core_eval" dir="ddr3core_eval" description="ddr3core_eval" default_strategy="ddr3core_eval">
+        <Options>
+            <Option name="include path" value="../../src/params/"/>
+            <Option name="top" value="ddr3_sdram_mem_top"/>
+        </Options>
+        <Source name="../../../models/ecp3/clk_phase.v" type="Verilog"/>
+        <Source name="../../../models/ecp3/clk_stop.v" type="Verilog"/>
+        <Source name="../../../models/ecp3/pll_control.v" type="Verilog"/>
+        <Source name="../../../models/ecp3/jitter_filter.v" type="Verilog"/>
+        <Source name="../../../models/ecp3/ddr3_pll.v" type="Verilog"/>
+        <Source name="../../../models/ecp3/ddr3_clks.v" type="Verilog"/>
+        <Source name="../../../../ddr3core_bb.v" type="Verilog"/>
+        <Source name="../../impl/ddr3_sdram_mem_top_wrapper.v" type="Verilog"/>
+        <Source name="ddr3core_eval.lpf" type="Logic Preference"/>
+    </Implementation>
+    <Strategy name="ddr3core_eval" file="ddr3core_eval.sty"/>
+</BaliProject>
+

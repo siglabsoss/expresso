@@ -1,0 +1,42 @@
+SimHdw.o: SimHdw.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h SimHdw.h
+SimDemoIP.o: SimDemoIP.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  SimDemoIP.h SimHdw.h
+PCIe_Sim.o: PCIe_Sim.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  PCIe_Sim.h SimDemoIP.h SimHdw.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/PCIe_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h
+LSCPCIe2_Sim.o: LSCPCIe2_Sim.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  LSCPCIe2_Sim.h SimDemoIP.h SimHdw.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/LSCPCIe2_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie2/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/PCIe_IF.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//DriverIF/RegisterAccess.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//include/lscpcie/Ioctl.h
+GPIO_Sim.o: GPIO_Sim.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h \
+  GPIO_Sim.h SimHdw.h
+Mem_Sim.o: Mem_Sim.cpp \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26//Utils/DebugPrint.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/dllDef.h \
+  /root/DK-ECP3-PCIE-030/Software/PCIeAPI_Lib_Linux26/sysDefs.h Mem_Sim.h \
+  SimHdw.h

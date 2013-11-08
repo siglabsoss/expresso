@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="fifo_down" module="FIFO_DC" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2011 04 15 17:18:52.125" version="5.4" type="Module" synthesis="" source_format="Verilog">
+  <Package>
+		<File name="fifo_down.lpc" type="lpc" modified="2011 04 15 17:18:46.656"/>
+		<File name="fifo_down.v" type="top_level_verilog" modified="2011 04 15 17:18:48.015"/>
+		<File name="fifo_down_tmpl.v" type="template_verilog" modified="2011 04 15 17:18:48.015"/>
+		<File name="tb_fifo_down_tmpl.v" type="testbench_verilog" modified="2011 04 15 17:18:48.062"/>
+  </Package>
+</DiamondModule>

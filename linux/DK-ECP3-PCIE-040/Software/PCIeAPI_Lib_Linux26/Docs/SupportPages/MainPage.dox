@@ -1,0 +1,147 @@
+/** \mainpage Lattice PCIe API Library Manual
+ *
+ * This manual provides documentation for the source code (classes) that
+ * implement the Lattice PCIeAPI Library.  The library allows a user to
+ * open a device driver to access a specific PCIe Eval Board.  Classes
+ * and methods are provided to use IP modules at a higher level, or
+ * direct memory access can be used.  See the following sections for
+ * detailed documentation on each topic, or browse the available library
+ * APIs using the Classes tab.
+ *
+ * <ul>
+ * <li>\ref Intro_page "Introduction to the PCIeAPI Library"
+ * 
+ * <li>\ref DrvrIF_page "Driver Interface Classes"
+ *
+ * <li>\ref DevObj_page "Device Objects Classes"
+ *  
+ * <li>\ref Open_page "Opening a Driver"
+ *
+ * <li>\ref RdWr_page "Methods of Accessing Hardware"
+ *
+ * <li>\ref Build_page "Building the Library"
+ *
+ * <li>\ref Sim_page "Simulating Hardware Devices"
+ * </ul>
+ */
+
+
+/** \page Intro_page Introduction
+ *  \htmlinclude Intro.html
+ */
+
+/** \page RdWr_page Hardware Access
+ *  \htmlinclude HdwAccess.html
+ */
+
+/** \page Open_page Openning a Driver
+ *  \htmlinclude Open.html
+ */
+
+/** \page Build_page Building the API Library
+ *  \htmlinclude Build.html
+ */
+
+/** \page Sim_page Simulating Hardware Devices
+ *  \htmlinclude Sim.html
+ */
+
+
+/** \page DrvrIF_page Driver Interfaces
+    <H2>Introduction</H2>
+    Driver Interface classes provide access to the underlying driver via its IOCTL
+    and MMAP calls.  The Driver Interface does not assume any knowledge of IP devices in
+    the demo hardware.  It may have some knowledge of specific register
+    locations, but for the most part it is meant to be isolated from the
+    specific memory map layout and IP design.  
+    It knows about the functionality of the driver
+    which is exposed to the User Space via the standard Linux file APIs (open,
+    read, write, ioctrl, mmap, close).  These APIs are
+    wrapped by methods in the Driver Interface class that provides the proper
+    constants, insulating the above user demo app from needing to know how to 
+    implement and call these OS APIs to perform operations.
+    <p>
+    Driver Interfaces also hide some of the details with opening the driver
+    handle initially.  The kernel drivers are opened using the device node
+    filename in the /dev directory.  The class
+    constructor handles assamembling the filename based on the predefined Lattice
+    format and opening the file handle that represents the driver interface in the OS.
+    The constructor also does the mmap'ing of the available BARs into the object's
+    memory space.
+    
+    <p>
+    Again, Driver Interfaces make accessing the functionality of the driver easier.
+    They do not attempt to implement device specific control. That is the job
+    of the Device Objects (which work through the Driver Interface).
+    <p>
+    The following Driver Interface Classes are present in the PCIeAPI Library.
+
+
+    <h2>LSCPCIe2_IF</h2>
+    Access to the lscpcie2 driver used in the Basic demo and Thruput demo.
+    <br>
+    See class LatticeSemi_PCIe::LSCPCIe2_IF
+
+    <h2>LSCDMA_IF</h2>
+    Access to the lscdma driver used in the PCIe SGDMA demo.
+    <br>
+    See class LatticeSemi_PCIe::LSCDMA_IF
+
+    <h2>Driver Interface Base Class</h2>
+    All above driver interfaces inherit from this base class.  If you want to create
+    a new driver interface class, then base it on this class.
+    <br>
+    See LatticeSemi_PCIe::PCIe_IF
+
+ */
+
+
+
+/** \page DevObj_page Device Objects
+ *
+    <H2>Introduction</H2>
+    Device Objects provide access to the internal register map of a specific
+    hardware device.  These classes have knowledge of the internal layout of
+    the device and its functionality.  They use the read/write methods provided
+    in the driver interface to perform the register access.  They may also use
+    driver specific APIs to access specific driver functionality i.e. reading
+    or writing into the Common DMA buffer in the driver.  They do not 
+    (should not) do direct system IOCTL calls to the driver, going around
+    the driver interface.
+    <p>
+    The following Device Object Classes are present in the PCIeAPI Library.
+
+
+    <h2>GPIO</h2>
+    Access to and methods for the Wishbone slave GPIO IP module used in 
+    all the demos.
+    <br>
+    See class LatticeSemi_PCIe::GPIO
+
+    <h2>Memory</h2>
+    Access to and methods for the Wishbone slave EBR IP module used in 
+    demos for memory access.
+    <br>
+    See class LatticeSemi_PCIe::Mem
+
+    <h2>SFIF</h2>
+    Access to and methods for the Wishbone slave SFIF IP module used in 
+    the Thruput demo.
+    <br>
+    See LatticeSemi_PCIe::SFIF
+
+    <h2>SGDMA</h2>
+    Access to and methods for the Wishbone slave SGDMA IP module used  
+    for testing SGDMA operations.
+    <br>
+    See LatticeSemi_PCIe::SGDMA 
+
+    <h2>Device Base Class</h2>
+    All above devices inherit from this base class.  If you want to create
+    a new device object class, then base it on this class.
+    <br>
+    See LatticeSemi_PCIe::Device
+
+ */
+
+
