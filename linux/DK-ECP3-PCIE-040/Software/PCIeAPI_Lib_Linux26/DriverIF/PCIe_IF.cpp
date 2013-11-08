@@ -14,11 +14,13 @@
 #include <exception>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cstring>
 #include <stdint.h>
 #include <sys/types.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <time.h>
+#include <stdint.h>
 
 #include <errno.h>
 #include <sys/mman.h>
@@ -1281,6 +1283,8 @@ int PCIe_IF::OpenDriver(HANDLE &hnd,
 	int fd;
 	char drivername[MAX_DEV_FILENAME_SIZE];
 
+	DEBUGPRINT(("Hello world"));
+
 	ENTER();
 
 	if ((pFunctionName != NULL) && (strlen(pFunctionName) >= MAX_FUNCTION_NAME_SIZE))
@@ -1314,6 +1318,7 @@ int PCIe_IF::OpenDriver(HANDLE &hnd,
 		strcat(drivername, pFunctionName);
 	}
 
+	DEBUGPRINT(("before open"));
 
 	DEBUGPRINT(("Opening: %s", drivername));
 

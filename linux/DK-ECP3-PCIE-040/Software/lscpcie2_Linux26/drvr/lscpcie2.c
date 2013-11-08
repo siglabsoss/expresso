@@ -305,7 +305,7 @@ static lscpcie2_t lscpcie2;
 
 
 
-static int DrvrDebug = 0;
+static int DrvrDebug = 1;
 
 
 static const char Version[] = "lscpcie2 v2.1.7 - ECP3 support";  /**< version string for display */
@@ -591,7 +591,7 @@ static pcie_board_t* initBoard(struct pci_dev *PCI_Dev_Cfg, void * devID)
 
 	//================ DMA Common Buffer (Consistent) Allocation ====================
 	// First see if platform supports 32 bit DMA address cycles (like what won't!)
-	if (pci_set_dma_mask(PCI_Dev_Cfg, DMA_32BIT_MASK))
+	if (pci_set_dma_mask(PCI_Dev_Cfg, DMA_BIT_MASK(32)))
 	{
 		printk(KERN_WARNING "lscpcie2: init DMA not supported!\n");
 		pBrd->hasDMA = FALSE;
@@ -802,14 +802,14 @@ int lscpcie2_release(struct inode *inode, struct file *filp)
  * device interrupts and such.
  * IOCTL works on a board object as a whole, not a BAR.
  */
-int lscpcie2_ioctl(struct inode *inode, 
+long lscpcie2_ioctl(
 		  struct file *filp,
 		  unsigned int cmd,
 		  unsigned long arg)
 {
 	int i;
 	int status = OK;
-	int mnr = iminor(inode);
+	int mnr = 3;//iminor(inode);
 	pcie_board_t *pBrd = NULL; 
 	PCIResourceInfo_t *pInfo;
 	ExtraResourceInfo_t *pExtra;
@@ -1097,7 +1097,7 @@ static struct file_operations drvr_fops =
 	owner:   THIS_MODULE,
 	open:    lscpcie2_open,
 	release: lscpcie2_release,
-	ioctl:   lscpcie2_ioctl,
+	unlocked_ioctl:   lscpcie2_ioctl,
 	mmap:    lscpcie2_mmap,
 	read:	 lscpcie2_read,
 	write:	 lscpcie2_write,
@@ -1196,7 +1196,7 @@ static int __init lscpcie2_probe(struct pci_dev *pdev,
 	 * Examples are "sc_basic_0", "sc_basic_1", "ecp2m_sfif_0"
 	 */
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,12))
-	class_device_create(lscpcie2.sysClass,
+	device_create(lscpcie2.sysClass,
 				NULL,
 				MKDEV(brd->majorNum,brd->minorNum),
 				 &(pdev->dev),   // this is of type struct device, the PCI device?
@@ -1270,7 +1270,7 @@ static void __devexit lscpcie2_remove(struct pci_dev *pdev)
 	// Remove the device entry in the /sys/class/lscpcie2/ tree
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,12))
-	class_device_destroy(lscpcie2.sysClass, MKDEV(brd->majorNum, brd->minorNum));
+	device_destroy(lscpcie2.sysClass, MKDEV(brd->majorNum, brd->minorNum));
 #else
 	class_simple_device_remove(MKDEV(brd->majorNum, brd->minorNum));
 #endif
@@ -1328,7 +1328,7 @@ static int __init lscpcie2_init(void)
 	//pcie_board_t *pB;
 
 	printk(KERN_INFO "lscpcie2: _init()   debug=%d\n", debug);
-	DrvrDebug = debug;
+	DrvrDebug = 1;
 
 	/* Initialize the driver database to nothing found, no BARs, no devices */
 	memset(&lscpcie2, 0, sizeof(lscpcie2));

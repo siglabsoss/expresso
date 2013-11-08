@@ -10,7 +10,8 @@
 #ifndef LATTICE_SEMI_LSCDMA_IF_H
 #define LATTICE_SEMI_LSCDMA_IF_H
 
-
+#include <stdint.h>
+#include <cstring>
 #include <unistd.h>
 #include <sys/types.h>
 #include <linux/types.h>

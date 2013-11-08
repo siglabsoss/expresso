@@ -15,9 +15,14 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+#include <stdint.h>
 #include <string>
+#include <cstring>
 #include <time.h>
 #include <exception>
+#include <cstdio>
+#include <stdio.h>
+#include <iostream>
 
 #include "dllDef.h"
 #include "Device.h"

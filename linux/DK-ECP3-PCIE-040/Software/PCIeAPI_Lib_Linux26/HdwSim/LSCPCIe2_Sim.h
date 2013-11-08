@@ -20,7 +20,8 @@
 
 #include <unistd.h>
 #include <sys/types.h>
-
+#include <stdint.h>
+#include <cstring>
 
 #include "SimDemoIP.h"
 #include "LSCPCIe2_IF.h"

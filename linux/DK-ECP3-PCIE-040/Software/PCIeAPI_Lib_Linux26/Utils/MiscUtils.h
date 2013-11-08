@@ -11,6 +11,8 @@
 #define LATTICE_SEMI_MISCUTILS_H
 
 #include "dllDef.h"
+#include <stdint.h>
+#include <cstring>
 
 #define LSC_PCIE_BOARD_NAME_LEN 17
 #define LSC_PCIE_DEMO_NAME_LEN 15

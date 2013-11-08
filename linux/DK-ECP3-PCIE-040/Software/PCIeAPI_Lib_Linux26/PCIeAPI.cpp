@@ -13,6 +13,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <syslog.h>
+#include <stdint.h>
 
 #include "dllDef.h"
 #include "bld_num.h"

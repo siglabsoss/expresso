@@ -14,6 +14,8 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <string>
 #include <exception>
 

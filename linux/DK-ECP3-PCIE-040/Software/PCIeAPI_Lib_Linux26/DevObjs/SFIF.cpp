@@ -12,7 +12,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-
+#include <cstring>
 using namespace std;
 
 #include "PCIeAPI.h"

@@ -11,6 +11,7 @@
 #define LSC_PCIEAPI_H
 
 #include "dllDef.h"
+#include <stdint.h>
 
  
  
