@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+</head>
+<body>
+    This page describes how to build the source code into the demo executables.
+    Running the resulting programs is really intended to be done from the 
+    <b>Demonstration/Basic</b>
+    directory using scripts to setup the environment and launch the demo.
+
+
+    <H2>Basic Menu</H2>
+
+    <H3>Building</H3>
+    The Basic Menu demo application is built in the <b>BasicMenu/</b> directory.
+    The build environment is the GNU C++ compiler. The GNU compiler and tools should be installed
+    and available on any Linux distribution.
+    Command line Makefiles are used to run the compiler and linker.
+
+    <p>
+    Before building, the enviroment variable <B>LSC_PCIEAPI_DIR</B> needs to be set to point 
+    to the PCIeAPI_Lib directory.  This variable is used by the Makefile to find the PCIeAPI
+    header files and link in the ishare library (DLL).  The Basic Menu uses the PCIeAPI 
+    library to open the
+    driver and create all the device objects accessed in the demo.  The easiest way to set up
+    this variable is to run the <b>setup</b> script in the PCIeAPI_Lib directory, or run 
+    <b>make devel</b> from the top level Source directory to permanently install the needed paths
+    and variables into your .bashrc file.
+
+    <p>
+    Ensure <B>LSC_PCIEAPI_DIR</B> is defined - check with <b>set</b>.  If not, see above. 
+    <p>
+    Ensure <B>gcc</B> and <B>g++</B> are in the <B>PATH</B>.  Try <B>gcc -v</B> 
+    <p>
+  
+    <p>
+    From the <B>BasicMenu</B> directory, run:
+    <ul>
+	<li><B>make clean</B> to clear any old versions
+	<li><B>make debug</B> to build with debugging symbols and event logging
+	<li><B>make</B> to build a release version (optimized, no debugging)
+    </ul>
+
+
+    <H3>Installing</H3>
+    The driver and the PCIeAPI_Lib needs to be installed before the demo can be run.
+    If the PATH variable includes the path to the PCIeAPI_Lib directory then the OS
+    will be able to find the DLL when the demo executable is run.  If not, you can copy
+    the lscpcieapi.so file to the same directory as the demo executable.  See OS specific
+    search paths for a DLL (for example LD_LIBRARY_PATH).
+    <p>
+    There are no special installation procedures needed for the demo executable program.
+    It is just run like any console application.
+
+    <H3>Running</H3>
+    The eval board to open is specified by environment variables.  These variables are
+    set via scripts in the <b>Demonstration/Basic/</b> directory.  See <b>rundemo.sh</b>
+    for an example.  The boards to connect to can be seen from the entries under
+    <b>/dev/lscpcie2/</b>.
+    <p>
+    Once the environment variables are set (by using the script file to start the demo,
+    or manually entering values for  LSC_PCIE_BOARD, LSC_PCIE_IP_ID and LSC_PCIE_INSTANCE)
+    the demo can be run.
+ 
+
+
+
+    <H2>The GUI</H2>
+    <H3>Building</H3>
+    Building the GUI is done in 2 steps.  First the Java source code is built using the
+    NetBean Java IDE. Second the C++ code is built into a DLL that the Java class can use.
+    Currently the Java GUI development is only done using the Windows version of the DevKit and 
+    the Windows version of NetBeans.  The resulting JAR file and header files have been
+    included in the Linux software tree, but the actual Java sources and project are not
+    included. 
+
+    <H4>Java GUI</H4>
+    The GUI code is developed using the NetBeans 5.0 IDE on a Windows platform.
+    Consult the Windows version of the DevKit for the project and instructions
+    on editting and building the GUI.
+
+    <H4>JNI DLL Interface</H4>
+    The C++ code interface between the Java GUI and the PCIeAPI library is located in
+    <B>BasicGUI/Cpp_DLL/</B>.  The code is built with a makefile with <b>make</b>.
+    <p>
+    Prerequisits:
+    <ul>
+	<li>LSC_PCIEAPI_DIR defined (see above)
+	<li>LD_LIBRARY_PATH defined (see above)
+	<li>Java system header files must be  installed - see Makefile.dll for the
+            expected path, modify if necessary if your installation is different
+    </ul>
+    This will compile the C++ code,
+    link with the PCIeAPI_Lib, and produce a resulting shared library (DLL)  that can
+    be loaded by the Java GUI.
+    <p>
+    Make options:
+    <ul>
+	<li><B>make clean</B> - erase all .o, .dll files
+	<li><B>make</B> - build for release (optimized, no debugging)
+	<li><B>make dll_debug</B> - build for debugging
+    </ul>
+
+    <p>
+    The Java header file is not rebuilt here.  It is regenerated when the GUI JAR file
+    is built, which is currently only done on Windows systems.  Do not remove
+    <b>com_latticesemi_lpa_apps_pcie_DemoUI.h</b> because it will not be regenerated
+    with the Linux development tools.
+
+
+    <H3>Installing</H3>
+    The driver and the PCIeAPI_Lib needs to be installed before the GUI can be run.
+    If the PATH variable includes the path to the PCIeAPI_Lib directory then the OS
+    will be able to find the DLL when the GUI is run.  If not, you can copy
+    the lscpcieapi.so and libCpp_Jni.so files to the <b>Demonstration/Basic/</b> 
+    directory where the Java GUI is located and can be run from the scripts.
+    See OS specific search paths for a DLL.
+    <p>
+    Make sure that the Java JVM is the one from the JDK that was used to build the NetBeans
+    project and create the JNI header files.  Don't use another JVM.
+    The correct version of the Java Virtual Machine is already inlcuded in the Demonstration
+    directory.
+
+    <H3>Running</H3>
+    The best way to run this is to copy the .so files into the Demonstration/Basic directory
+    and launch the GUI from there using the <b>rundemo.sh</b> script.
+
+
+    <H2>Debugging</H2>
+
+    <H3>Diagnostic Output</H3>
+    The DLL can be built with the <B>dll_debug</b> option to enable verbose output and symbol generation
+    for debugging.  This will enable
+    logging of events.  The events can be seen by dumping the contents of the system message log.
+    To do this, su to root and enter <b>tail -f /var/log/messages</b>.
+    <p>
+    Monitoring the diagnostic output is the easiest way of tracking the code flow and displaying
+    parameter value using printf like statements.  This isn't sophisticated, but it is quick and
+    easy to get working and see results.
+
+
+</body>
+</html>

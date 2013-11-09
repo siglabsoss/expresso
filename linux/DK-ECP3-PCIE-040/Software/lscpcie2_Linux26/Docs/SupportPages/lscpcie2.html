@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+</head>
+<body>
+    <H2>Driver Source Code</H2>
+    The <b>lscpcie2</b> driver is a Linux 2.6.x based PCI style device driver.
+    The driver uses the Linux device model introduced in the 2.6 kernel to register the driver and
+    devices in the /sys/class tree and have them known to the system and user.
+    The driver source is based  on the simple form of all functions in one file, since it
+    is a relatively small driver.
+    <ul>
+	<li><b>lscpcie2.c</b> - contains all the driver source code
+	<li><b>Ioctl.h</b> - contains the definitions of all the supported interfaces/access points between
+	the driver and user space code.  All shared structures, constants and IOCTL commands are defined here.
+	<li><b>sysDefs.h</b> - contains data type definitions to port so types used in the driver code to Linux
+	<li><b>9-lscpcie2.rules</b> - the <b>udev</b> rules for creating device nodes in the <b>/dev</b> tree
+	<li><b>insdrvr</b> - script file to manually install the driver; used mainly for development and testing
+	<li><b>rmdrvr</b> - script file to manually remove the driver; used mainly for development and testing 
+    </ul>
+
+    <p>
+    All global functions are prefixed with <B>lscpcie2_</B> to indicate they belong to this driver.
+
+    <H2>Loading the Driver</H2>
+    The driver is loaded into the Linux kernel by a system call.  
+    There are two ways to load a driver.  The choice depends on 
+    usage: development or automated.
+    <ul>
+	<li>insdrvr - use the script file to insert the driver manually for development purposes.
+	This script uses the <b>insmod</b> system call to load the driver module into the kernel.
+	<li>init script - the DevKit install script will add to the init file /etc/rc.d/rc.local
+	a line to execute the modprobe call for the respective drivers, which then uses the kernel's
+	automated services to load registered modules based on hardware discovered.   
+    </ul>
+
+    For standard operations, the driver is installed and loaded automatically by the system when the OS starts.
+    This is done using the <b>modprobe</b> call and associated configuration files.  
+
+    <h3>Installation</h3>
+    <ol>
+	<li> The driver file <b>lscpcie2.ko</b> is copied into the system's 
+	<b>/lib/modules/.../extra/</b> location for extra modules added to the kernel
+	<li> The command <b>depmod</b> is run that gerenates a list of rules that associate
+	the driver with PCI hardware ID's that the board supports.
+	<li> <b>modprobe</b> is added to the system's local startup script so that once the
+	system boots it will probe for Lattice PCIe eval boards and will load the driver if
+	they are found.
+    </ol>
+
+    <h3>Inserting</h3>
+    The following figure illustrates this process.
+	<br>
+	<img align=center src="./modprobe.gif" alt="Loading the driver">
+	<br>
+    <ol>
+	<li> <b>modprobe</b> is called to look for Lattice PCIe eval boards
+	<li> <b>modprobe</b> uses the <b>modules.deps</b> and <b>modules.alias</b> files to associate
+	the correct driver with the discovered hardware
+	<li> <b>modprobe</b> installs the <b>lscpcie2.ko</b> file into the kernel
+    </ol>
+
+
+    <h3>Initializing</h3>
+     Once the driver is loaded, the kernel calls the <b>lscpcie2_init() </b> entry point.
+	The driver registers the <b>lscpcie2_probe()</b> function to be called when-ever
+	the PCI sub-system detects a board corresponding to the Lattice Device, Vendor and
+	sub-system IDs.
+	<p>
+	The kernel then invokes the callback for each eval board it discovers.  The job of 
+	the <b>lscpcie2_probe()</b> function is to initialize the board hardware and setup
+	the structures to make it appear in the <b>/dev</b> devices tree. 
+        The following figure illustrates this process.
+	<br>
+	<img align=center src="./udev.gif" alt="Creating the devices">
+	<br>
+    
+    <ol>
+	<li> The driver adds an <b>lscpcie2</b> into the <b>/sys/class/</b> tree.
+	Making entries in the /sys/class directory structure allows the driver to announce
+	it has found a device and provide identifying details to the system.  The system
+	services then know that this device belongs to the driver, so any accesses to this
+	class of device should be referred to the driver.  This is done in the lscpcie2_probe()
+	function with class_device_create() and friends.
+	<li> Creating entries in the /sys tree causes the udev service (daemon) to examine
+	what has changed and look for rules on how to deal with the new device. 
+	<li> Once an entry has been created in the /sys/class tree, the system udev service is
+	notified, and it examines the tree for new entries.  It tries to match entries with
+	rules contained in files in /etc/udev/rules.d directory.  
+	<li>The file 9-lscpcie2.rules provides the pattern matching rules for identifying a
+	 Lattice lscpcie2 type device.
+	<li> The rules specify how to create an entry in the /dev/lscpcie2/ directory.  
+	This is done automatically by the system without any user or driver initiation. 
+	 Older style drivers manually created device nodes in /dev using the mknod command.  
+	udev gives Linux the Plug-N-Play look and feel.
+    </ol>
+
+    After the driver is loaded and hardware devices are discovered, the board hardware has
+    been initialized. The driver writes to the hardware and displays an "I" on the 16 segment LEDs.
+    The udev service creates nodes in the /dev/lscpcie2 tree corresponding to each board found.
+    The hardware and driver are now ready to be "opened" and used.
+	
+    <p>
+	Note that the udev service (and installed rules) is required for either the manual load
+	 (with insmod) or the standard automatic load.  udev is the way the device nodes appear
+	in /dev/lscpcie2. 
+
+    <H2>How a Device is Opened</H2>
+    To use the board, a User application needs to open a file handle to it.  This is done the standard
+    Unix way by opening the filename in /dev that corresponds to the device/driver pair.
+    The device file name appears in the directory /dev/lscpcie2.  It has been automatically created 
+    by udev and the specific lscpcie2 rules file.  The device file will have a major number that
+    matches the lscpcie2 driver.  Each device entry will have a unique minor number that matches
+    the driver's index of boards it supports.
+    <p>
+    Upon successfully opening the lscpcie2 device file, the caller now can use the driver's read, write
+    and ioctl calls to access driver resources and hardware memory.  The Linux file system will 
+    now direct any system calls operating on that file to the driver's entry points.
+
+
+    <H2>How Device Memory is Accessed</H2>
+	The eval board's registers are made available to the user space application via the
+	mmap() system call.  The driver implements mmap() which maps the board's BAR1 address
+	space into the caller's virtual memory.  A translation is setup in the user's pages
+	such that memory addresses (via a pointer) map directly to the hardware on the 
+	eval board.
+	<p>
+	mmap() returns a pointer to the memory window, like malloc'ing it, but accesses
+	to this memory range will become direct PCIe MRd/MWr transactions.
+	
+    <H2>DMA Common Buffer</H2>
+	The driver allocates up to 64KB of memory for use by the eval board when performing
+	the Thruput demo.  The Thruput demo needs a valid place to read/write PCIe data
+	from/to that will not corrupt system operation.  The driver kmalloc's a block of
+	memory and the physical bus address of this memory is available through ioctl()
+	calls.  The address can then be programmed into the IP when performing the transfers.
+	The contents of this "DMA" memory buffer can be accessed by the user using the
+	read() and write() file operations.  This way the buffer contents can be cleared with
+	a write() before the IP is programmed to transfer into it (MWr thruput test), and then
+	later examined with a read() to verify the IP really did move data into PC system memory. 
+
+
+    <H2>Closing the Device</H2>
+    Closing access to an lscpcie2 device (PCIe eval board) is done with a standard close() call.  
+    The driver's lscpcie2_release() call does very little, since this is a very light-weight
+    driver.  It displays a "C" on the 16 segment LEDs to indicate the board is closed and no one
+    is using it now.
+    There are no resources to release so nothing else is done.  The standard file system will
+    prevent further access via this file handle since the file has been closed.
+
+    <H2>Removing the Driver</H2>
+    Normally the driver is not removed, since the boards are not hot-swapable, but manually
+    using the rmdrvr script will cause the driver to be removed.  This will release all resource
+    acquired by the driver (mainly mapping the GPIO registers into driver memory for displaying
+    characters on the 16 segment display.)  The driver is also unregistered from the PCI subsystem
+    and the entries in /sys/class are removed, which causes the device nodes in /dev/lscpcie2 to
+    disappear.
+
+
+    <H2>Debug Output</H2>
+    The driver contains debug macros that send output to the system log (if the driver was installed with the
+    option <b>debug=1</b>).
+    The system log can be viewed with <b>tail -f /var/log/messages</b> (need to be root).
+    Information about opening the driver, executing a commands, etc. will all be
+    sent to the system log, as well as messages from the demo application and library.
+
+</body>
+</html>

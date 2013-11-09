@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+</head>
+<body>
+    <H2>Why the lscdma Driver?</H2>
+    All modern operating systems (Windows, Linux, Solaris, etc.) prevent user
+    space code (regular applications) from having direct access to hardware
+    registers, bus memory spaces and interrupts.  These system resources are claimed
+    by the operating system and managed by trusted drivers in the kernel to
+    ensure system stability and security.
+    <p>
+    In order to demonstrate the operation of the Lattice PCI Express evaluation
+    board, a driver needs to be loaded to allow the demo application access to
+    the board hardware and IP to setup and execute the demo.
+    <p>
+    The driver is associated with a Lattice PCIe Evaluation Board containing the PCIe
+    SG-DMA Demo bitstream and is loaded into the Window's kernel by the Plug and
+    Play Manager.  The driver provides the following services:
+    <ul>
+	<li>Accesses IP hardware registers
+	<li>Handles interrupts
+	<li>Maps User memory and MDL's into DMA SG-lists
+	<li>Allocates physical memory
+    </ul>
+    By using the service access points (standard file operations such as Open,
+    Close, Read, Write and IOCTL) the application code can access the eval board
+    hardware and setup DMA transfers.
+
+    <br>
+    <img align=center src="./overview.gif" alt="Demo/Driver/Hardware Relationship">
+    <br>
+    The above figure shows the relationship between the application demo,
+    the driver and the evaluation board hardware.  The Application must use
+    the OS system calls to gain access to the driver.  The driver in turn
+    uses HAL functions to perform register reads and writes to the hardware.
+
+    <H3>Defining Features</H3>
+    This driver, lscdma, extends the lscpcie2 driver by providing SGDMA support directly
+    in the kernel driver.  This driver manages the hardware directly - SGDMA setup, buffer
+    descriptor configuration, channel allocation, interrupt handling, user space buffer
+    mapping, etc.  Previous Lattice PCIe drivers meerly provided access to hardware
+    registers.  All control and functionality was in the user space device class methods.
+    This driver puts all such control in the kernel space for fast and efficient operation
+    of buffer management and interrupts.  user space code simply opens a file (channel) and
+    reads and writes which perform the SGDMA operations completely in the kernel.
+
+
+    <H2>Windows WDM Drivers</H2>
+    This driver is written using the Windows Driver Model (WDM) protocol.
+    WDM drivers provide a set of fixed interfaces for the kernel.  The kernel
+    calls the driver, in response to discovering hardware, system changes
+    and user operations. 
+   <p> 
+    All WDM drivers support Plug and Play, and power management. 
+    WDM drivers are source-compatible (and mostly binary-compatible) across
+    Windows 2000, XP and Server 2003.
+    Kernel-mode drivers are implemented as discrete, modular components that
+    have a well-defined set of required functionalities. All kernel-mode drivers
+    supply a set of system-defined standard driver routines.
+    Kernel-mode drivers that follow WDM rules are called WDM drivers. All WDM drivers must:
+    <ul>
+    <li>Include wdm.h, not ntddk.h. (Note that wdm.h is a subset of ntddk.h.) 
+    <li>Be designed as a bus driver, a function driver, or a filter driver
+    <li>Create device objects as described in WDM Device Objects and Device Stacks. 
+    <li>Support Plug and Play. 
+    <li>Support power management. 
+    <li>Support Windows Management Instrumentation (WMI) 
+    </ul>
+
+
+    <H3>Types of WDM Drivers</H3>
+   There are three kinds of WDM drivers:
+    <ol>
+	<li><B>Bus drivers</b>, which drive an I/O bus and provide per-slot functionality that is device-independent. 
+    <li><b>Function drivers</b>, which drive an individual device.
+    <li><b>Filter drivers</b>, which filter I/O requests for a device, a class of devices, or a bus.
+    </ol>
+
+    A bus is any device to which other physical, logical, or virtual devices are attached; a bus includes traditional buses such as SCSI and PCI, as well as parallel ports, serial ports, and i8042 ports.
+
+    It is important for driver writers to understand the different kinds of WDM drivers and to know which kind of driver they are writing. For example, whether or not a driver handles each Plug and Play IRP and how to handle such IRPs depends on what kind of driver is being written (bus driver, function driver, or filter driver).
+
+    The following figure shows the relationship between the bus driver, function driver, and filter drivers for a device.
+
+    <br>
+    <img align=center src="./wdm_drivers.gif" alt="Bus, Filter and Function Drivers">
+    <br>
+
+    <H3>Bus Drivers</H3>
+    <P>A bus driver services a bus controller, adapter, or bridge. Microsoft provides bus drivers for most common buses, such as PCI, PnpISA, SCSI, and USB. Other bus drivers can be provided by IHVs or OEMs. Bus drivers are required drivers; there is one bus driver for each type of bus on a machine. A bus driver can service more than one bus if there is more than one bus of the same type on the machine.</P>
+    <P>The primary responsibilities of a bus driver are to: </P>
+    <UL type="disc">
+    <LI>Enumerate the devices on its bus.</LI>
+    <LI>Respond to Plug and Play IRPs and power management IRPs.</LI>
+    <LI>Multiplex access to the bus (for some buses).</LI>
+    <LI>Generically administer the devices on its bus.</LI>
+    </UL>
+    <P>During enumeration, a bus driver identifies the devices on its bus and creates device objects for them.  The method a bus driver uses to identify connected devices depends on the particular bus.  For our purposes, the PCI/PCI Express bus driver is the one that enumerates the eval board.</P>
+    <P>A bus driver performs certain operations on behalf of the devices on its bus, including accessing device registers to physically change the power state of a device. For example, when the device goes to sleep, the bus driver sets device registers to put the device in the proper device power state. </P>
+    <P>Note, however, that a bus driver does not handle read and write requests for the devices on its bus. Read and write requests to a device are handled by the device's function driver. Only if the device is being used in raw mode does the parent bus driver handle reads and writes for the device.</P>
+    <P>A bus driver acts as the function driver for its controller, adapter, or bridge, and therefore manages device power policy for these components.</P>
+    
+
+    <H3>Function Drivers</H3>
+    A function driver is the main driver for a device. A function driver is typically written by the device vendor and is required (unless the device is being used in raw mode). The PnP manager loads at most one function driver for a device. A function driver can service one or more devices.
+    <p>
+    A function driver provides the operational interface for its device. Typically the function driver handles reads and writes to the device and manages device power policy. 
+    <p>
+    The PCIe LSCDMA driver is a function driver for the Lattice Evaluation Board when the PCIe SG-DMA
+    demo bitstream is loaded.
+
+
+    <H3>Filter Drivers</H3>
+    Filter drivers are optional drivers that add value to or modify the behavior of a device. A filter driver can service one or more devices.
+    Filter drivers are inserted above or below a function driver and modify the functionality
+    of the overall stack by performing operations on the data before passing on to the user or
+    the device.  An example would be a compression algorithm inserted below a file system driver
+    to compress data before being written to the hard drive.
+    <p>
+    Filter drivers are not used in the Lattice PCIe LSCDMA driver or demo.
+
+    <H3>Life Cycle of a Driver</H3>
+
+<P>On a WDM PnP system, a device transitions through various PnP states as it is configured, started, possibly stopped to rebalance resources, and possibly removed. This section provides an overview of the PnP device states. The overview is a road map for much of the PnP support required in a driver.</P>
+<P>The following figure shows the PnP states for a device and how a device transitions from one state to another.</P>
+    <img align=center src="./wdm_states.gif" alt="WDM States">
+</p>
+<P>Starting at the top left of the above figure, a PnP device is physically present in the system because either the user just inserted the device or the device was present at boot time. The device is not yet known to the system software.</P>
+<P>To begin software configuration for the device, the PnP manager and the parent bus driver enumerate the device. The PnP manager, possibly with help from user-mode components, identifies the drivers for the device, including the function driver and any optional filter drivers. The PnP manager calls the <b>DriverEntry</b> routine of each driver if the driver is not yet loaded. 
+<P>Once a driver is initialized, it must be ready to initialize its devices. The PnP manager calls a driver's <b>AddDevice</b> routine for each device the driver controls.</P>
+<P>When a driver receives an <b>IRP_MN_START_DEVICE</b> request from the PnP manager, the driver starts the device and is ready to process I/O requests for the device.
+<P>If the PnP manager must reconfigure the hardware resources of an active device, it sends <b>IRP_MN_QUERY_STOP_DEVICE</b> and <b>IRP_MN_STOP_DEVICE</b> requests to the device's drivers. After it reconfigures the hardware resources, the PnP manager directs the drivers to restart the device by sending an <b>IRP_MN_START_DEVICE</b> request. (The drivers for a boot-configured device can receive IRP_MN_QUERY_STOP_DEVICE and IRP_MN_STOP_DEVICE requests before the device has been started, although this step is not shown in the previous figure.) </P>
+<P>When a PnP device is being physically removed from the system or has already been removed, the PnP manager sends various remove IRPs to the device's drivers, directing them to remove the device's software representation (device objects, and so forth). 
+<P>At some point after all of a driver's devices have been removed, the PnP manager calls the drivers <b>Unload</b> routine and unloads the driver.</P>
+
+
+    <H2>Windows WDM Resources</H2>
+    The Microsoft DDK (Driver Development Kit) is required for building the driver
+    source and is also an excellent source of documentation and examples.
+    <p>
+    The following Microsoft® Web sites contain additional information for using the Windows® Driver Development Kit (DDK):
+
+    <ul>
+	<li><a href="http://www.microsoft.com/whdc/devtools/ddk/default.mspx">DDK Overview</a>
+	<li><a href="http://www.microsoft.com/whdc/device/default.mspx">Device Fundamentals</a>
+	<li><a href="http://www.microsoft.com/whdc/hwtest/default.mspx">Windows Hardware Quality Labs (WHQL) testing</a>
+	<li><a href="http://msdn.microsoft.com">Microsoft Developers Network (MSDN®)</a>
+
+    </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+<HTML>
+<HEAD>
+<TITLE>
+Lattice PCIe IP Basic Demo Help
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<H1><u>Lattice PCIe IP Basic Demo</u></H1>
+
+<H1>Introduction</H1>
+The demo runs on a standard PC, and accesses the Lattice PCIe evaluation board that is installed in a PCIe slot.  The following figure shows the relationship of the hardware and software components of the demo.
+The PCIe IP, in the Lattice FPGA on the eval board, acts as a PCIe endpoint.  A PCIe end-point device looks like a regular PCI device to application software executing on a PC. It is just a memory-mapped device occupying a certain range(s) of the PCI memory space.  When the PC boots the BIOS and OS probe the PCI Express and PCI buses and detect the devices present on the buses and assign them ranges in the PCI memory space.  The PCI memory space is mapped into the application software’s memory space by the supplied driver and OS system calls.  Once the mapping is done, application IP  registers, sitting  on top of the PCIe IP core, can be read/written as memory locations by the application software.  The demo software writes to the LED register, reads and displays the DIP switch setting and reads/writes the internal FPGA EBR memory.
+
+<p>
+<IMG src="BasicDemo.gif">
+
+<p>
+The demo software shows that the Lattice PCIe IP correctly handles the PCI Express protocol in a PC through the interaction with the devices on the eval board.  The demo exercises the following functions: 
+
+<ul>
+    <li> Displays Operating System information on the detected Lattice evaluation board.
+    <li> Displays information about the PCIe IP core, such as reading and displaying all the pertinent information in the configuration registers, and driver parameters.
+    <li> Performs GPIO Register Access: blink LED’s; read DIP switch values
+    <li> Performs Memory Access:  write a pattern of values into internal FPGA EBR memory, read back and verify the all accesses are error-free.  
+</ul>
+
+
+<h2>Supported Boards</h2>
+<ul>
+    <li> LatticeECP2M PCIe Solutions Board
+    <li> LatticeECP2M35 x4 PCI Express Board
+    <li> LatticeECP2M50 x4 PCI Express Board
+    <li> LatticeSCM80 x4/x8 PCI Express Board
+    <li> LatticeSCM25 x1 PCI Express Board
+</ul>
+
+
+<H1>Setup and Installation</H1>
+Consult the appropriate Demo Installation Guides and Evaluation Board User's Guides to ensure the proper bitstream
+is loaded into the SPI flash, the board is installed correctly, is functioning correctly, the proper driver has
+been loaded and the demo application has be installed.
+
+<H1>Demo Operations</H1>
+
+<H2>Device Info Page</H2>
+The opening page, <B>Device Info</B>, displays information about the device driver and the device's PCI configuration registers.
+<p>
+The data displayed is for informational purposes and can not be edited.  This information is obtained from the Lattice PCIe driver when the OS detects the board and loads the driver.  Displaying this page also causes the driver to issue PCI Config Type 0 read requests again to see if register values have changed.
+
+<H2>Tests Page</H2>
+The <B>Tests</B> tab has various tests that can be run to show that the IP is accessible from host software via the PCIe bus.  The GUI has fields for entering data to be sent to device registers in the FPGA design.  These fields are color-coded to indicate the data format they accept.
+<ul>
+    <li> <B>GREEN</B> = hex values, do not include any prefixes (0x) or suffires (H), just enter digits
+    <li> <B>YELLOW</B> = character string, ie. File names, paths, a letter
+    <li> <B>BLUE</B> = decimal (base 10) values
+</ul>
+
+<H3>EBR Memory Section</H3>
+The EBR Memory section tests the access to the 16KB of EBR internal to the FPGA.  Accesses are done on a byte basis.  All 16k memory locations are accessed successively, testing the throughput of PCIe and memory interface.  The following actions can be performed
+<ul>
+    <li><B>Pattern Tests</B> - pressing <B>Run</B> starts a test that checks all locations of the EBR can be read and written and that the contents are correct.  First, all 16KB are cleared to 0 and checked.  Then various patterns (AA, 55, 01, FF) are written to all locations and verified.  If everything passes, PASS is displayed.  If a memory location ever has an incorrect value the test aborts and displays FAIL.
+    <li><B>READ</B> - The contents of the EBR memory are read from the value entered in the offset field.  256 bytes are read and displayed in the window above. 
+    <li><B>CLEAR</B> - sets all 16KB to 0x00. 
+    <li><B>FILL</B> - writes the byte value entered in the field to all 16K locations. 
+    <li><B>LOAD</B> - loads 16KB of binary data from the file specified (or as much data as is in the file) into EBR memory, starting at location 0.  This can be used to load a known pattern into the EBR memory by using a file created by some other tool. 
+    <li><B>SAVE</B> - writes all 16KB of EBR memory to the file specified.  This can be used to save the contents of EBR memory for off-line processing ie. To verify that the pattern loaded in with LOAD is correctly saved in the EBR.
+</ul>
+
+
+<H3>16 Segment Display Section</H3>
+The 16 Segment display section has two test modes.  In the first mode a pre-set sequence of segments are lit and then characters are written to the display.  Pressing the <B>Run</B> button starts this operation.  It will take approximately 30 seconds to complete.  You must observe the 16 Segment LEDs to see if it is operating correctly.  The correct sequence is:
+<ol>
+<li>Light all segments, one at a time, around the perimeter.
+<li>Light all inner segments in a clock-wise order.
+<li>Turn off all inner segments in reverse order
+<li>Turn off all outer segments in reverse order
+<li>Write the characters <B>LATTICE*</B> one at a time to the display
+<li>The asterix character should be displayed when the test ends
+</ol>
+
+The second mode of operation allows a single character to be sent to the display by typing the character into the box to the right of the Set button and then pressing Set.  Any printable ASCII character can be displayed (lower case are displayed as upper case).
+
+<H3>DIP Switch</H3>
+The DIP Switch section shows that user changes to the switches on the eval board are seen by the application software on the PC.  The GUI polls the DIP switch register 10 times a second and displays the value read from the 8 bit DIP switch register.
+<p>
+The <B>Get</B> button can be used to immediately update the value.  This would be used if No Polling was selected from the Settings drop-down menu.  Normally this is not used.
+
+<H3>Counter</H3>
+The Counter section allows you to control a 32 bit down counter in the FPGA hardware.  The counter is driven by the 125 Mhz clock that feeds the IP.  The counter is started by selecting the <B>Start</B> radio button.  Counting begins from the value entered into the <B>Reload Value</B> field.  The current count value is displayed in the <B>Current Count</B> field.
+<p>
+The Current Count value is updated 10 times a second by the GUI polling (reading) the count register in the FPGA application IP.
+
+
+<H2>Rd/Wr Page</H2>
+The Read/Write page is used for peeking and poking registers and EBR memory values in the application IP.  This is primarily used for debugging and diagnosing the application IP registers.  Consult the demo IP register map for a list of device registers and their functions.
+<p>
+Data accesses can be specified as byte, short or word operations by selecting the <B>Data Size</B>.  Access are done to the selected BAR.  The memory contents are displayed in the window.  The address uses the convention that the upper nibble (31:28) specifies the BAR being accessed.
+
+<p>
+Data can be written to registers using the <B>WRITE</B> button.  Specify the offset in the BAR to start writing at and the hex data in the <B>Data</B> field.  Separate each value with a space.  Data size should match the Data Size selected at the top of the page in <B>Memory Settings</B>.
+
+<p>
+Only BAR1 is accessible in the current demo.
+
+<H2>16 Seg Page</H2>
+The <B>16 Segment</B> page provides a way to interactively light segments on the display.  Clicking on a segment in the image will immediately cause the corresponding segment on the LED to be lit.  The states of the LED segments are converted to a 16 bit word value (each segment is controlled by a bit) and written to the LED control register in the GPIO portion of the IP in the FPGA.  This demonstrates a memory write across the PCIe bus.
+<p>
+Demo Operations:
+<ul>
+    <li>Clicking on a segment will turn it on or off (toggles).  
+    <li>Right-click on the background area behind the segments will clear the entire display.
+    <li>The 16 bit value written to the LED register in the FPGA is shown in the bottom left.
+</ul>
+
+<H1>IP Design Details</H1>
+<H2>IP Block Diagram</H2>
+<IMG src="ip_pic.gif">
+<H2>GPIO Register Map</H2>
+<CENTER>
+	<TABLE WIDTH=586 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0>
+		<COL WIDTH=91>
+		<COL WIDTH=93>
+		<COL WIDTH=112>
+		<COL WIDTH=100>
+		<COL WIDTH=117>
+		<TR>
+			<TD WIDTH=91 VALIGN=TOP>
+				<P><B>BAR1</B></P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER><B>Location</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=100>
+				<P><B>Offset (Hex)</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 3 [31:24]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 2 [23:16]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 1[15:8]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 0 [7:0]</B></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>0000</P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER>ID Register</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>0004</P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER>Scratch Pad Register</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>0008</P>
+			</TD>
+			<TD WIDTH=93>
+				<P ALIGN=CENTER>DIP Switch</P>
+			</TD>
+			<TD WIDTH=112>
+				<P ALIGN=CENTER>rsvd</P>
+			</TD>
+			<TD COLSPAN=2 WIDTH=231>
+				<P ALIGN=CENTER STYLE="margin-bottom: 0in">16 Segment LED 
+				</P>
+				<P ALIGN=CENTER>upper 8 bits               lower 8 bits</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>000C</P>
+			</TD>
+			<TD WIDTH=93>
+				<P ALIGN=CENTER>rsvd</P>
+			</TD>
+			<TD WIDTH=112>
+				<P ALIGN=CENTER>rsvd</P>
+			</TD>
+			<TD WIDTH=100>
+				<P ALIGN=CENTER>rsvd</P>
+			</TD>
+			<TD WIDTH=117>
+				<P ALIGN=CENTER>Counter ctrl</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>0010</P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER>Current Counter Value</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>0014</P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER>Counter Reload Value</P>
+			</TD>
+		</TR>
+	</TABLE>
+</CENTER>
+
+<p>
+<ul>
+    <li>Demo ID Register (0x00): 32 bit pre-programmed, read-only value: 0x53030100 [DeviceID][HdwRev][AppID]
+    <li>Scratch Pad Register (0x04): 32 bit register that can be read or written with any user value to verify reads/writes.  Byte, short or long access is supported.
+    <li>16 Segment LED Regsiter (0x08): 16 bit register, writing a 1 to a bit lights the LED segment, writing a 0 turns it off; LED segment A wired to lsb (d0) and segment U wired to msb (d15)
+    <li> DIP Switch Register (0x0b): Read Only; Each bit indicates the position of a corresponding switch. 0=up, 1=down
+    <li> Counter Control (0x0c): bits to control operating mode of the 32 bit counter register
+    <ul>
+	<li>Bit 0 = Run : 0 = stop, 1 = counter runs
+	<li>Bit 1 = Reload : 0 = halt at 0, 1 = reload with Reload Register and continue counting
+    </ul>
+    <li>Current Counter Value (0x10) – 32 bit current down-count value 
+    <li>Counter Reload Value (0x14) – 32 bit value to reload into Counter when count reaches 0 
+</ul>
+
+<H2>EBR Memory</H2>
+<P>The EBR is mapped as a 32 bit wide
+device with 4096 addresses.  The total size is 16kB (4096 x 32 bit). 
+It can be accessed with byte, short or word accesses.</P>
+<CENTER>
+	<TABLE WIDTH=586 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=7 CELLSPACING=0>
+		<COL WIDTH=91>
+		<COL WIDTH=93>
+		<COL WIDTH=112>
+		<COL WIDTH=100>
+		<COL WIDTH=117>
+		<TR>
+			<TD WIDTH=91 VALIGN=TOP>
+				<P><B>BAR1</B></P>
+			</TD>
+			<TD COLSPAN=4 WIDTH=464>
+				<P ALIGN=CENTER><B>Location</B></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=100>
+				<P><B>Offset (Hex)</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 3 [31:24]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 2 [23:16]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 1[15:8]</B></P>
+			</TD>
+			<TD WIDTH=100>
+				<P><B>Byte 0 [7:0]</B></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER><FONT FACE="Courier New, monospace">1000</FONT></P>
+			</TD>
+			<TD WIDTH=93>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=112>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=100>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=117>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER>. . .</P>
+			</TD>
+			<TD WIDTH=93>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=112>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=100>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+			<TD WIDTH=117>
+				<P ALIGN=CENTER><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+			<P ALIGN=CENTER>. . .</P>
+			</TD>
+			<TD WIDTH=93 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=112 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=100 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=117 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=91>
+				<P ALIGN=CENTER><FONT FACE="Courier New, monospace">4ffc</FONT></P>
+			</TD>
+			<TD WIDTH=93 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=112 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=100 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+			<TD WIDTH=117 VALIGN=TOP>
+				<P><BR>
+				</P>
+			</TD>
+		</TR>
+	</TABLE>
+	</CENTER>
+
+
+<H1>Trouble Shooting (Windows)</H1>
+<H2>Trouble with the Board</H2>
+Ensure the board is installed in a PCIe slot.  It can physically fit into a PCI slot.  This could damage the board or PC if power is applied when its the wrong type of slot.  
+<p>
+Ensure the board has a valid PCIe bitstream loaded in the SPI flash (and if applicable, that the Mode DIP switches are set to program from SPI flash).
+<p>
+Ensure the 4 Status LEDs are on, indicating the board is seen as a PCIe endpoint.  If the 2 yellow LEDs and 2 green LEDs are not on, the board will not be recognized by the PC BIOS or OS.  You can try installing in a different PCIe slot to see if that fixes the link-up problem.  You can also try pressing the Eval Board's reset button immediately after the PC boots.
+<p>
+Ensure the board is seen by the OperatingSystem. For Winodows, check <B>My Computer > Properties > Hardware > Device Manager</B> and verify the lscpcie2.sys driver and eval board are shown in the list.  If not, shutdown the system and try another slot.  If the board is present, check it <B>Properties</B> and the <B>Resource</B> tab to verify memory was assigned to it.  Also verify the <B>Vendor ID</B> and <B>Device ID</B> are valid, as seen be Windows Plug-n-Play.  If the values are invalid, perhaps the bitstream is corrupt and needs to be reloaded into SPI flash.
+
+<H2>Trouble with the Driver</H2>
+The eval board must be installed in the PC, and seen by Windows, for the driver to be installed.  If you do not see the <B>Found New Hardware</B> message when logging in after installing the board, check the board LEDs.  Try a different PCIe slot.
+<p>
+Make sure you specify the correct search location for the driver during installation.  Tell Windows to install from the Drvrs\ directory.
+<p>
+You will need administrator permission to install device driver files.
+
+<H2>Trouble Running the Demo</H2>
+The eval board must be installed in the PC, and seen by Windows, for the driver to be installed or loaded.  The driver must be loaded by Windows in order to run the demo.  Again verify Windows sees the board and has loaded a driver for it.  
+<p>
+If the GUI displays an error (ERROR LOADING LIBRARY:Cpp_Jni - running in View Only mode) when launched, then the driver could not be found or loaded.  There are 2 causes
+<ol>
+    <li>The driver was never loaded (or eval board is not installed)
+    <li>The board failed to be detected by Windows.
+</ol>
+Either way, the board needs to be re-installed and seen by Windows and the lscpcie2.sys driver needs to be associated with the hardware.
+
+<H2>Windows Debug Tools</H2>
+Windows offers some utilities to interrogate the operation of hardware devices.  Use these tools to verify the eval board device driver is loaded and running.
+<p>
+Right-click on the <B>My Computer</B> icon and select <B>Properties</B> to bring up the <B>Hardware Wizard</B> and <B>Device Manager</B>.  The <B>Device Manager</B> provides software driver information for devices detected by Windows Plug-n-Play manager.  The most useful utility is to verify that the <b>lscpcie2</b> driver has been installed and resources assigned to it.
+
+
+<H1>Trouble Shooting (Linux)</H1>
+<H2>Trouble Installing</H2>
+You will need root permission to install device driver files.
+<p>
+The Linux distribution needs to have the <b>udev</b> service running.
+You may also need the kernel development package (just the header files, not the complete source package)
+installed if you need to rebuild the drivers from their source.
+<p>
+If you get errors during install such as <b>FATAL: Error inserting lscpcie2...</b> then you will need to rebuild the
+drivers to match your Linux kernel and distribution.  
+This can be done by simply running <code><b>make drivers</b></code>.
+If probelms are encountererd, see the documentation in the <b>lscpcie2</b> or <b>lscdma</b>
+driver source for details on building from the source.
+You may also need to rebuild the demo applications from the source if the Linux kernel and distribution 
+varies greatly. Simply run <b><code>make demos</code></b>.
+
+<H2>Trouble with the Board</H2>
+Ensure the board is installed in a PCIe slot.  It can physically fit into a PCI slot.  This could damage the board or PC if power is applied when its the wrong type of slot.  
+<p>
+Ensure the board has a valid PCIe bitstream loaded in the SPI flash (and if applicable, that the Mode DIP switches are set to program from SPI flash).
+<p>
+Ensure the 4 Status LEDs are on, indicating the board is seen as a PCIe endpoint.  If the 2 yellow LEDs and 2 green LEDs are not on, the board will not be recognized by the PC BIOS or OS.  You can try installing in a different PCIe slot to see if that fixes the link-up problem.  You can also try pressing the Eval Board's reset button immediately after the PC boots.
+<p>
+The eval board must be installed in the PC, and seen by Linux for the demo (and driver) to operate properly.
+Check that the board is seen with the command: <b><code>/sbin/lspci</code></b>
+This will display all enumerated PCI and PCIe devices in the system.  Look for a Lattice board.
+If the board is not listed (vendor ID = 0x1204) then try another PCIe slot.  Also verify the 4 PCIe link status LEDs
+are all lit.
+<p>
+If the board is seen with <b>lspci</b>, then verify the 16 segment LED is displaying an "I", which means the driver has
+initialized the board.  If the "I" is not displayed then see the next section.
+<H2>Trouble with the Driver</H2>
+If the board is seen by the PCI subsystem, but does not display an "I" when the driver is first loaded, the driver may
+have errored, or not loaded at all.  To check the driver status use the following commands:
+
+    <ul>
+	<li><b><code>/sbin/lsmod</code></b> - The output should list either the <b>lscpcie2</b> or <b>lscdma</b> drivers are loaded.
+	<li><b><code>dmesg</code></b> - This displays error and status messages from the driver during its load and operation.
+	Normal builds will not have much debug info present, but error conditions and warnings will be logged.
+	The log entry will be prefixed with <b>lscpcie2</b> or <b>lscdma</b>. 
+	<li><b><code>/dev</code></b> - check for <b>lscpcie2</b> or <b>lscdma</b> device nodes in the /dev directory.  If they
+	are not present (and the driver module is loaded) then the driver did not find any boards. Check for errors with dmesg.
+	<li><b><code>/sys/class</code></b> - check for <b>lscpcie2</b> or <b>lscdma</b> class types in the directory.  If they
+	are not present (and the driver module is loaded) then the driver did not find any boards. Check for errors with dmesg.
+    </ul>
+<p>
+The driver directories under each demo contain script files to manually load and remove the driver for debugging.
+Try running <b><code>insdrvr debug=1</code></b> to insert the driver and enable debugging.  Check the driver messages with
+<b>dmesg</b>.  Use <b>rmdrvr</b> to remove the driver and try inserting again.
+<p>
+Remember, you will probably need to rebuild the driver to match your Linux kernel distribution. Do not expect the 
+distributed driver binary to work on all Linux systems.
+<p>
+If you can not get the driver to load, please contact Lattice Support for further assistance.
+
+<H2>Trouble Running the Demo</H2>
+The eval board must be installed in a PCIe slot in the PC, and seen by Linux, for the driver to properly load.
+The driver must be loaded by Linux in order to run the demo.  Again verify Linux sees the board and has loaded a driver for it.  
+<p>
+If the GUI displays an error (ERROR LOADING LIBRARY:Cpp_Jni - running in View Only mode) when launched, then the driver could not be found or loaded.  There are 3 causes
+<ol>
+    <li>The driver was never loaded (or eval board is not installed) - run <b>make install</b>
+    <li>The board failed to be detected by Linux - verify the status LEDs
+    <li>The driver errored during detection of the board - run <b>dmesg</b> for diagnostics
+</ol>
+
+<H2>Linux Debug Tools</H2>
+The following is a list of command line tools that can be run to discover the status of drivers and devices in the system.
+    <ul>
+	<li><b><code>/sbin/lsmod</code></b> - The output will list drivers loaded in the system.
+	<li><b><code>dmesg</code></b> - This displays error and status messages from the kernel and drivers.
+	<li><b><code>cat /proc/devices | grep lsc</code></b> - checks for <b>lscpcie2</b> or <b>lscdma</b> devices detected
+	<li><b><code>cat /proc/modules | grep lsc</code></b> - checks for <b>lscpcie2</b> or <b>lscdma</b> drivers installed
+	<li><b><code>cat /proc/interrupts</code></b> - displays interrupt connectivity of driver/board when demo is running
+	<li><b><code>cat /proc/driver/lscpcie2</code></b> - displays driver parameter information
+	<li><b><code>cat /proc/driver/lscdma</code></b> - displays driver parameter information
+    </ul>
+    
+</BODY>
+</HTML>
+

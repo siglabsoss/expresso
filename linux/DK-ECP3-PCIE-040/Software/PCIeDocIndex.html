@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+	<TITLE>Lattice PCI Express Software Development Resources</TITLE>
+</head>
+<body>
+
+    <h1><u>Lattice PCI Express Software Development Resources</u></h1>
+
+    <H2>Introduction</H2>
+    Lattice Semiconductor provides the complete source code for all the PCIe Demos.
+    In this context, source code refers to the software compiled to run on a
+    Linux 2.6.x kernel PC.  The Verilog HDL is also available, but is located in a separate
+    <B>Hardware</B> directory.  Everything dicsussed here is targetted towards the Software
+    Engineer building applications for a Linux PC.
+    <p>
+    The source code packages fall into 3 categories:
+    <ol>
+	<li><B>Hardware Drivers</B>
+	<li><B>API Library</B>
+	<li><B>Demo Applications</B>
+    </ol>
+    <p>
+    <a href="#Docs">Documentation</a> is provided for all <a href="#Src">source packages</a>.
+    
+    
+    <H3>Hardware Drivers</H3>
+    The Hardware Drivers provide access to the Lattice PCIe Eval Boards.  There
+    are currently two drivers used for all the demos.  The lscpcie2.ko driver
+    supports the PCIeBasic demo and the PCIeSFIF (Thruput) demo.  The lscdma.ko
+    driver supports the PCIeDMA demo.
+
+    <H3>API Library</H3>
+    The LSC_PCIeAPI_Lib library provides a DLL (.so) that bridges the user space
+    demo applications to the kernel space driver code, and provides routines to 
+    control the IP modules.  The PCIeAPI has 2 important functions:
+    <ol>
+	<li>Interface to the driver - knowledge of how to open each driver type
+	and what IOCTL commands it supports.
+	<li>Device Classes - OO representations of the IP modules found in hardware
+    </ol>
+    All demos link with and use this library.  It is common for all demo applications.
+    The demo code instantiates classes found in the PCIeAPI library to open access
+    to an eval board and creates Device Objects (i.e. GPIO, EBR, SFIF, SGDMA) to
+    access the IP modules in the hardware. Consult the PCIeAPI Reference Manual
+    for all classes and methods.
+
+    <H3>Demo Applications</H3>
+    Demo applications are the demos that the user actually runs.  The demos are
+    simple "main()" programs that instantiate classes in the PCIeAPI DLL to
+    access and control the hardware.  The demos usually include a GUI, written
+    in Java, and a separate text menu application.  The GUI is intended for
+    customer demo purposes - its more visually appealing.  The text menu is intended for
+    lab testing and a starting point for software engineers to extend the demo.
+    The flow of execution is much easier to understand in text menu programs
+    than in GUIs.
+    <p>
+    Three demos are currently provided that demonstrate various uses of the
+    PCIe IP:
+    <ul>
+	<li><B>Basic Demo</B> - shows how to open a driver and send control plane
+	type read/writes to registers in the IP (light LEDs, read switches)
+	<li><B>Thruput Demo</B> - shows the PCIe IP core's throughput rates for various
+	TLP traffic patterns
+	<li><B>SGDMA Demo</B> - shows how the SGDMA IP core, used with the PCIe IP core,
+	can be setup to transfer data between user space buffers and the eval 
+	board IP.
+    </ul>
+    
+    <H2>Development Environments</H2>
+    The source code is written in ANSI C/C++ and Java.  
+    The demo applications and API library are written in C++.
+    The driver code is written in C.
+    The Graphical User Interfaces (available in some demos)
+    are written in Java.  The following development environments and tools are
+    needed to rebuild all source code packages.
+    <ul>
+	<li>C++ compiler - the standard GNU compiler tools are used for
+	all user space C++ development.  It should be available on all Linux installs.
+	Standard ANSI makefiles are used to drive the build process.
+	<li>Java development - the NeatBeans 5.0 IDE is used for all Java GUIs.
+	At this time all Java development is done on Windows.  The resulting JAR files
+	are just used in Linux.  See the Windows distribution for the Java source.
+	<li>Driver development - the Linux Kernel Module Driver code is written in C
+	and builds with the Linux Kernel tools that are installed with the kernel-devel
+	pacakge. This package needs to be installed.  The full kernel source tree is
+	not necessary.
+    </ul>
+    Other optional tools used to support building and documentation:
+    <ul>
+	<li>Python - script language use throughout for various batch editing
+	tasks that bash script files can't handle.  Not required to build code, 
+	but makes development management tasks easier.
+	<li>Doxygen - documentation tools used to generate all the HTML source
+	code documentation packages.
+	<li>NetBeans - Java GUI IDE used to create the user interfaces for the demos.
+    </ul>
+
+    <a name="Src"></a>
+    <H2>Directory Structure</H2>
+    The source code packages are each located (and built) in their own separate directory.
+    <ul>
+	<li><a href="./lscpcie2_Linux26">lscpcie2_Linux26</a>
+	    - hardware driver for Basic and Thruput demos
+	<li><a href="./lscdma_Linux26">lscdma_Linux26</a>
+	    - hardware driver for DMA demo
+	<li><a href="./PCIeAPI_Lib_Linux26">PCIeAPI_Lib_Linux26</a>
+	     - API library used by all demo applications
+	<li><a href="./PCIeBasic_Linux26">PCIeBasic_Linux26</a>
+	    - Basic access over PCIe bus demo source code (GUI and menu)
+	<li><a href="./PCIeSFIF_Linux26">PCIeSFIF_Linux26</a>
+	    - Thruput demo source code (GUI and menu)
+	<li><a href="./PCIeDMA_Linux26">PCIeDMA_Linux26</a>
+	    - DMA demo (ColorBars, ImageMove and tests)
+    </ul>
+
+
+    <a name="Docs"></a>
+    <H2>Documentation</H2>
+
+
+    <ul>
+	<li><a href="./lscpcie2_Linux26/Docs/html/index.html">
+	    lscpcie2 Driver Reference Manual</a>
+	<li><a href="./lscdma_Linux26/Docs/html/index.html">
+	    lscdma Driver Reference Manual</a>
+	<li><a href="./PCIeAPI_Lib_Linux26/Docs/html/index.html">
+	    PCIe API Reference Manual</a>
+	<li> <a href="./PCIeBasic_Linux26/Docs/html/index.html">
+	    PCIe Basic Demo Reference Manual</a>
+	<li><a href="./PCIeSFIF_Linux26/Docs/html/index.html">
+	    PCIe Thruput Demo Reference Manual</a>
+	<li><a href="./PCIeDMA_Linux26/Docs/html/index.html">
+	    PCIe DMA Demo Reference Manual</a>
+    </ul>
+
+    <H2>Resources</H2>
+    <ul>
+	<li>"Linux Device Drivers", 3rd Edition, Rubini et. all
+	<li>Linux Documentation Project: DMA-mapping.txt
+	<li>Linux Documentation Project: DMA-API.txt
+	<li>"How To Write Linux PCI Drivers", Martin Mares
+	<li>Writing udev rules, and sysfs
+    </ul>
+
+</body>
+</html>
