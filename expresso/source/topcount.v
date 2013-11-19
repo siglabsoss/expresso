@@ -10,7 +10,7 @@ module topcount
 , input ADC0_D3_D2_P
 , input ADC0_D5_D4_P
 , input ADC0_D7_D6_P
-, input ADC0_DCO_P
+, input clk_ADC0_DCO_P
 , input ADC0_D9_D8_P
 , input ADC0_D11_D10_P
 , input ADC0_D13_D12_P
@@ -23,7 +23,9 @@ module topcount
 	
 	
 	
-	wire ADC0_D1_D0_P;
+	reg clk_ADC0_DCO_P;
+	
+	//define_attribute {clk_ADC0_DCO_P} syn_useioff {1};
 	
 	reg g_trash2;
 	
@@ -48,10 +50,12 @@ module topcount
 	wire junk_lock;
 	wire clk_200Mhz;
 	
+	wire what_is_this_net;
+	
 	//ADC0_CLK_P
 	
 	// 200 mhz is actualyl 100 mhz
-	adc_pll adc_pll_inst (.CLK(clk), .CLKOP(clk_200Mhz), .LOCK(junk_lock));
+	//adc_pll adc_pll_inst (.CLK(clk), .CLKOP(clk_200Mhz), .LOCK(junk_lock));
 	
 	clockDivider clockDivider_inst( CLKOK, clk_1Hz );
 	// set the clock divider parameter
@@ -63,12 +67,10 @@ module topcount
 	// divide by 100 for 1mhz
 	defparam clockDivider2.periodInCycles = 100;
 	
-	// how many mhz does this give us?
-	//clockDivider clockDivider3( CLKOK, clk_200Mhz);
-	//defparam clockDivider3.periodInCycles = 2;
+
 	
 	always @(*) begin
-		ADC0_CLK_P <= clk_200Mhz;
+		ADC0_CLK_P <= clk;
 	end
 	
 	
@@ -80,20 +82,42 @@ module topcount
 	LEDtest my_LEDtest( direction, seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
 	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, countt);
 	
+	wire[15:0] ADC_Q;
+	wire ddr_sclk;
+	ddr_generic ddr(.clk(clk_ADC0_DCO_P), .datain({ADC0_D15_D14_P,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P}), .sclk(ddr_sclk), .q(ADC_Q));
+	 
 	
-	Pop_ADC popAdc( clk_1Mhz, reset, ADC0_CSB, ADC0_SCLK, ADC0_SDIO, ADC0_D1_D0_P );
+	wire ADC0_CSB, ADC0_SCLK, ADC0_SDIO;
+	
+	/*
+	Pop_ADC popAdc( clk_1Mhz, clk, reset, ADC0_CSB, ADC0_SCLK, ADC0_SDIO,
+	ADC0_D1_D0_P,
+	ADC0_D3_D2_P,
+	ADC0_D5_D4_P,
+	ADC0_D7_D6_P,
+	1'b0,
+	ADC0_D9_D8_P,
+	ADC0_D11_D10_P,
+	ADC0_D13_D12_P,
+	ADC0_D15_D14_P,
+	ADC0_OR_P
+	//ADC_Q
+	);*/
+	
+	always @(posedge ddr_sclk )begin
+		seg_1 = ADC_Q[0];
+		seg_2 = ADC_Q[1];
+		seg_3 = ADC_Q[2];
+		seg_4 = ADC_Q[3];
+		seg_5 = ADC_Q[4];
+		seg_6 = ADC_Q[5];
+		seg_7 = ADC_Q[6];
+	end
 	 
 	
 	always @(posedge clk_1Hz )begin
 		directionR = direction;
-	 seg_1 = seg1;
-	 seg_2 = seg2;
-	 seg_3 = ADC0_D1_D0_P | ADC0_D3_D2_P | ADC0_D5_D4_P | ADC0_D7_D6_P | ADC0_DCO_P | ADC0_D9_D8_P | ADC0_D11_D10_P | ADC0_D13_D12_P | ADC0_D15_D14_P | ADC0_OR_P;
-	 //seg_3 = seg3;
-	 seg_4 = seg4;
-	 seg_5 = seg5;
-	 seg_6 = seg6;
-	 seg_7 = seg7;
+	 
 	 seg_8 = seg8;
 	 seg_9 = seg9;
 	 seg_10 = seg10;
@@ -103,17 +127,9 @@ module topcount
 	 seg_14 = seg14;
 	 seg_15 = seg15;
 	 seg_16 = seg16;
-	 //g_trash2 = ;
+	 //seg_16 = ADC0_D1_D0_P | ADC0_D3_D2_P | ADC0_D5_D4_P | ADC0_D7_D6_P | ADC0_D9_D8_P | ADC0_D11_D10_P | ADC0_D13_D12_P | ADC0_D15_D14_P | ADC0_OR_P;
 end
 
-	reg g_trash;
-	always @(*)begin
-		g_trash = ADC0_D1_D0_P;
-		
-		if( g_trash != ADC0_D1_D0_P ) begin
-			ADC0_CLK_P = 1;
-		end
-	end
 	
 endmodule
 

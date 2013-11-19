@@ -15,7 +15,7 @@ module Pop_ADC(
 , input ADC0_D13_D12
 , input ADC0_D15_D14
 , input ADC0_OR
-//, output [15:0] ADC_Q
+, output [15:0] ADC_Q
 );
 
 //wire chip_select;
@@ -34,13 +34,11 @@ always@(*)begin
 	ADC_Data_In <= {ADC0_D15_D14,ADC0_D13_D12,ADC0_D11_D10,ADC0_D9_D8,ADC0_D7_D6,ADC0_D5_D4,ADC0_D3_D2,ADC0_D1_D0};
 end
 
-//wire ddr_sclk;
-wire spi_clock;
-wire spi_masteroutslaivein;
+wire ddr_sclk;
 
+wire[15:0] ADC_Q;
 
-//wire[15:0] ADC_Q;
-//ddr_generic ddr(.clk(ADC0_DCO), .datain({ADC0_D15_D14,ADC0_D13_D12,ADC0_D11_D10,ADC0_D9_D8,ADC0_D7_D6,ADC0_D5_D4,ADC0_D3_D2,ADC0_D1_D0}), .sclk(ddr_sclk), .q(ADC_Q));
+ddr_generic ddr(.clk(ADC0_DCO), .datain({ADC0_D15_D14,ADC0_D13_D12,ADC0_D11_D10,ADC0_D9_D8,ADC0_D7_D6,ADC0_D5_D4,ADC0_D3_D2,ADC0_D1_D0}), .sclk(ddr_sclk), .q(ADC_Q));
 
 
 // wires for the spiMaster using internal names
@@ -83,7 +81,7 @@ reg chip_select;
 
 reg [7:0] m_count;
 
-always @(*) begin
+always @(posedge clk_1Mhz) begin
 	if(reset) begin
 		m_count <= 8'h0;
 	end

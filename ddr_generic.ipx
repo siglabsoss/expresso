@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="ddr_generic" module="ddr_generic" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2013 11 19 14:44:49.347" version="5.4" type="Module" synthesis="synplify" source_format="Verilog HDL">
+  <Package>
+		<File name="ddr_generic.lpc" type="lpc" modified="2013 11 19 14:44:48.188"/>
+		<File name="ddr_generic.v" type="top_level_verilog" modified="2013 11 19 14:44:48.235"/>
+		<File name="ddr_generic_tmpl.v" type="template_verilog" modified="2013 11 19 14:44:48.237"/>
+  </Package>
+</DiamondModule>

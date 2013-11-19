@@ -27,10 +27,16 @@
         <Source name="my_pll.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
-        <Source name="expresso/source/pop_adc.v" type="Verilog" type_short="Verilog">
+        <Source name="expresso/source/pop_adc.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
         <Source name="expresso/source/spi_master.vhd" type="VHDL" type_short="VHDL" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="adc_pll.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="ddr_generic.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
         <Source name="expresso.tpf" type="Timing Analysis" type_short="TPF" excluded="TRUE">

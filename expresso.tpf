@@ -31,4 +31,4 @@ USE DOUT TRUE CELL "counter1_countio[4]" ;
 USE DOUT TRUE CELL "counter1_countio[3]" ;
 USE DOUT TRUE CELL "counter1_countio[5]" ;
 USE DOUT TRUE CELL "counter1_countio[6]" ;
-FREQUENCY PORT "clk" 200.000000 MHz CLOCK_JITTER 0.100000 nS ;
+FREQUENCY PORT "clk" 100.000000 MHz;
