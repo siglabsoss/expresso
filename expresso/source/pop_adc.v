@@ -1,7 +1,22 @@
 module Pop_ADC(
-input clk_1Mhz
+  input clk_1Mhz
 , input reset
+, output chip_select
+, output spi_clock
+, output spi_masteroutslaivein
+, input pin0_p
 );
+
+//wire chip_select;
+
+// ADC Specific stuff
+
+// chip select is active low
+//assign chip_select = spi_ssel_o;
+//assign spi_clock = spi_sck_o;
+//assign spi_masteroutslaivein = spi_mosi_o;
+
+
 
 
 
@@ -38,37 +53,9 @@ assign rst_i = reset;
 
 
 
+reg chip_select;
 
 
-
-spi_master spiMaster(
-  sclk_i
-, pclk_i
-, rst_i
-, spi_ssel_o
-, spi_sck_o
-, spi_mosi_o
-, spi_miso_i
-, di_req_o
-, di_i
-, wren_i
-, wr_ack_o
-, do_valid_o
-, do_o
-, sck_ena_o
-, sck_ena_ce_o
-, do_transfer_o
-, wren_o
-, rx_bit_reg_o
-, state_dbg_o
-, core_clk_o
-, core_n_clk_o
-, core_ce_o
-, core_n_ce_o
-, sh_reg_dbg_o
-);
-
-defparam spiMaster.SPI_2X_CLK_DIV = 2;
 
 
 reg [7:0] m_count;
@@ -78,9 +65,16 @@ always @(*) begin
 		m_count <= 8'h0;
 	end
 
-	if(~reset) begin
+	if(~reset && pin0_p) begin
 		m_count <= m_count + 1;
+		//m_count <= m_count;
 	end
+	
+	if(~pin0_p) begin
+		chip_select = 1'b0;
+	end
+		
+	
 end
 
 
