@@ -2,7 +2,7 @@
 <BaliProject version="2.0" title="expresso" device="LFE3-35EA-8FN484C" synthesis="synplify" default_implementation="expresso">
     <Options/>
     <Implementation title="expresso" dir="expresso" description="expresso" default_strategy="Strategy1">
-        <Options def_top="topcount"/>
+        <Options def_top="spi_master"/>
         <Source name="expresso/source/clockDivider.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
@@ -29,6 +29,9 @@
         </Source>
         <Source name="expresso/source/pop_adc.v" type="Verilog" type_short="Verilog">
             <Options/>
+        </Source>
+        <Source name="expresso/source/spi_master.vhd" type="VHDL" type_short="VHDL">
+            <Options top_module="spi_master"/>
         </Source>
         <Source name="expresso.tpf" type="Timing Analysis" type_short="TPF" excluded="TRUE">
             <Options/>

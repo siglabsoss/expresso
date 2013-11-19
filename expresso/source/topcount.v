@@ -9,7 +9,7 @@ module topcount
 	wire [3:0] count2t;
 	wire [7:0] count3t;
 	reg directionR;
-	wire CLKOP, clk_1Hz,CLKOK;
+	wire CLKOP, clk_1Hz, CLKOK, clk_1Mhz;
 	
 	wire seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
 	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16;
@@ -18,6 +18,15 @@ module topcount
 	my_pll my_pll_inst (.CLK(clk), .CLKOK(CLKOK), .CLKOP(CLKOP),.LOCK(LOCK));
 	
 	clockDivider clockDivider_inst( CLKOK, clk_1Hz);
+	// set the clock divider parameter
+	defparam clockDivider_inst.periodInCycles = 2000000;
+	
+	// clk is 100mhz
+	clockDivider clockDivider2( clk, clk_1Mhz);
+	
+	// divide by 100 for 1mhz
+	defparam clockDivider2.periodInCycles = 100;
+	
 	
 	count8 counter1 (CLKOP,reset, directionR,count3t);
 	count4 counter2 (clk,directionR,reset,count2t);
@@ -28,7 +37,7 @@ module topcount
 	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, countt);
 	
 	
-	Pop_ADC popAdc( clk, reset );
+	Pop_ADC popAdc( clk_1Mhz, reset );
 	 
 	
 	always @(posedge clk_1Hz )begin
