@@ -26,6 +26,9 @@ module topcount
 	
 	LEDtest my_LEDtest( direction, seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
 	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, countt);
+	
+	
+	Pop_ADC popAdc( clk, reset );
 	 
 	
 	always @(posedge clk_1Hz )begin
