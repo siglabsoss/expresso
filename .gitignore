@@ -91,3 +91,6 @@ expresso.opt
 */work/*
 */slp/*
 */compile/*
+
+# this changes when fiels are added to the project, but not needed
+run_options.txt
