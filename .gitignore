@@ -48,7 +48,6 @@ Edfmap.ini
 *.pt
 .reordref
 *.rpt
-*.sdc
 *.sdf
 *.set
 *.sort

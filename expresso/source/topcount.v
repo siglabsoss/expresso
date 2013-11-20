@@ -10,7 +10,7 @@ module topcount
 , input ADC0_D3_D2_P
 , input ADC0_D5_D4_P
 , input ADC0_D7_D6_P
-, input clk_ADC0_DCO_P
+, input clk_ADC0_DCO_P // synthesis syn_useioff = 1
 , input ADC0_D9_D8_P
 , input ADC0_D11_D10_P
 , input ADC0_D13_D12_P
@@ -22,10 +22,17 @@ module topcount
 	);
 	
 	
+	wire reset; /* synthesis syn_keep= 1 OPT= "KEEP" */
 	
-	reg clk_ADC0_DCO_P;
+	wire clk_ADC0_DCO_c;
+	wire ADC0_D13_D12_P;
+	reg ADC0_D15_D14;
 	
-	//define_attribute {clk_ADC0_DCO_P} syn_useioff {1};
+	
+	assign clk_ADC0_DCO_c = clk_ADC0_DCO_P;
+	always@(*) begin
+		ADC0_D15_D14 <= ADC0_D15_D14_P;
+	end
 	
 	reg g_trash2;
 	
@@ -43,10 +50,6 @@ module topcount
 	wire seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
 	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16;
 	
-	// clk is 100 mhz, clkop is 500mhz
-	// CLKOK is actually 50 mhz
-	my_pll my_pll_inst (.CLK(clk), .CLKOK(CLKOK), .CLKOP(CLKOP),.LOCK(LOCK));
-	
 	wire junk_lock;
 	wire clk_200Mhz;
 	
@@ -57,16 +60,6 @@ module topcount
 	// 200 mhz is actualyl 100 mhz
 	//adc_pll adc_pll_inst (.CLK(clk), .CLKOP(clk_200Mhz), .LOCK(junk_lock));
 	
-	clockDivider clockDivider_inst( CLKOK, clk_1Hz );
-	// set the clock divider parameter
-	defparam clockDivider_inst.periodInCycles = 2000000;
-	
-	// clk is 100mhz
-	clockDivider clockDivider2( clk, clk_1Mhz);
-	
-	// divide by 100 for 1mhz
-	defparam clockDivider2.periodInCycles = 100;
-	
 
 	
 	always @(*) begin
@@ -74,17 +67,10 @@ module topcount
 	end
 	
 	
-	count8 counter1 (CLKOP,reset, directionR,count3t);
-	count4 counter2 (clk,directionR,reset,count2t);
-	count4 counter3 (clk_1Hz,directionR,reset,countt);
-	
-	
-	LEDtest my_LEDtest( direction, seg1, seg2, seg3, seg4, seg5, seg6, seg7, 
-	seg8,seg9, seg10,seg11,seg12,seg13,seg14,seg15,seg16, countt);
-	
 	wire[15:0] ADC_Q;
 	wire ddr_sclk;
-	ddr_generic ddr(.clk(clk_ADC0_DCO_P), .datain({ADC0_D15_D14_P,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P}), .sclk(ddr_sclk), .q(ADC_Q));
+	// ADC0_D5_D4_P is a TDQS
+	ddr_generic ddr(.clk(clk_ADC0_DCO_c), .datain({ADC0_D15_D14,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P}), .sclk(ddr_sclk), .q(ADC_Q));
 	 
 	
 	wire ADC0_CSB, ADC0_SCLK, ADC0_SDIO;
@@ -104,17 +90,37 @@ module topcount
 	//ADC_Q
 	);*/
 	
+	reg debug;
+	
 	always @(posedge ddr_sclk )begin
+		if( reset ) begin
+			debug <= 1'b1;
+		end
+		
+		seg_8 = ADC_Q[8];
+		seg_9 = ADC_Q[9];
+		seg_10 = ADC_Q[10];
+		seg_11 = ADC_Q[11];
+		seg_12 = ADC_Q[12];
+		seg_13 = ADC_Q[13];
+		seg_14 = ADC_Q[14];
+		seg_15 = ADC_Q[15];
+		
+		
+		
 		seg_1 = ADC_Q[0];
 		seg_2 = ADC_Q[1];
-		seg_3 = ADC_Q[2];
+		if( ~reset ) begin
+			seg_3 = ADC_Q[2];
+		end
 		seg_4 = ADC_Q[3];
 		seg_5 = ADC_Q[4];
 		seg_6 = ADC_Q[5];
 		seg_7 = ADC_Q[6];
+		seg_8 = ADC_Q[7];
 	end
 	 
-	
+	/*
 	always @(posedge clk_1Hz )begin
 		directionR = direction;
 	 
@@ -128,7 +134,7 @@ module topcount
 	 seg_15 = seg15;
 	 seg_16 = seg16;
 	 //seg_16 = ADC0_D1_D0_P | ADC0_D3_D2_P | ADC0_D5_D4_P | ADC0_D7_D6_P | ADC0_D9_D8_P | ADC0_D11_D10_P | ADC0_D13_D12_P | ADC0_D15_D14_P | ADC0_OR_P;
-end
+end*/
 
 	
 endmodule
