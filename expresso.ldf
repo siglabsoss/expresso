@@ -3,19 +3,19 @@
     <Options/>
     <Implementation title="expresso" dir="expresso" description="expresso" default_strategy="Strategy1">
         <Options def_top="topcount"/>
-        <Source name="expresso/source/clockDivider.v" type="Verilog" type_short="Verilog">
+        <Source name="expresso/source/clockDivider.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="expresso/source/count4.v" type="Verilog" type_short="Verilog">
+        <Source name="expresso/source/count4.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="expresso/source/count8.vhd" type="VHDL" type_short="VHDL">
+        <Source name="expresso/source/count8.vhd" type="VHDL" type_short="VHDL" excluded="TRUE">
             <Options/>
         </Source>
         <Source name="expresso/source/testbench.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="expresso/source/LEDtest.v" type="Verilog" type_short="Verilog">
+        <Source name="expresso/source/LEDtest.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
         <Source name="expresso/source/topcount.v" type="Verilog" type_short="Verilog">
@@ -24,7 +24,7 @@
         <Source name="expresso/source/typepackage.vhd" type="VHDL" type_short="VHDL">
             <Options/>
         </Source>
-        <Source name="my_pll.ipx" type="IPX_Module" type_short="IPX">
+        <Source name="my_pll.ipx" type="IPX_Module" type_short="IPX" excluded="TRUE">
             <Options/>
         </Source>
         <Source name="expresso/source/pop_adc.v" type="Verilog" type_short="Verilog" excluded="TRUE">

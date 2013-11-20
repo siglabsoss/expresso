@@ -97,14 +97,15 @@ module topcount
 			debug <= 1'b1;
 		end
 		
-		seg_8 = ADC_Q[8];
-		seg_9 = ADC_Q[9];
-		seg_10 = ADC_Q[10];
-		seg_11 = ADC_Q[11];
-		seg_12 = ADC_Q[12];
-		seg_13 = ADC_Q[13];
-		seg_14 = ADC_Q[14];
-		seg_15 = ADC_Q[15];
+		
+		seg_9 = ADC_Q[8];
+		seg_10 = ADC_Q[9];
+		seg_11 = ADC_Q[10];
+		seg_12 = ADC_Q[11];
+		seg_13 = ADC_Q[12];
+		seg_14 = ADC_Q[13];
+		seg_15 = ADC_Q[14];
+		seg_16 = ADC_Q[15];
 		
 		
 		
