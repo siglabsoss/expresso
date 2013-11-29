@@ -1,4 +1,6 @@
 clk  i
+pll_lock  o
+pll_reset  i
 sclk  o
 datain[7]  i
 datain[6]  i

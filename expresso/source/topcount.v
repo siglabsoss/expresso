@@ -66,11 +66,19 @@ module topcount
 		ADC0_CLK_P <= clk;
 	end
 	
-	
+	wire pll_lock;
 	wire[15:0] ADC_Q;
 	wire ddr_sclk;
 	// ADC0_D5_D4_P is a TDQS
-	ddr_generic ddr(.clk(clk_ADC0_DCO_c), .datain({ADC0_D15_D14,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P}), .sclk(ddr_sclk), .q(ADC_Q));
+	ddr_generic ddr(
+		.clk(clk_ADC0_DCO_c),
+		.datain({ADC0_D15_D14,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P}),
+		.pll_reset(reset),
+		// out
+		.pll_lock(pll_lock),
+		.sclk(ddr_sclk),
+		.q(ADC_Q)
+	);
 	 
 	
 	wire ADC0_CSB, ADC0_SCLK, ADC0_SDIO;
