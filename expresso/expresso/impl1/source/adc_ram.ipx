@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="adc_ram" module="adc_ram" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2013 11 28 21:44:53.152" version="6.2" type="Module" synthesis="synplify" source_format="Verilog HDL">
+  <Package>
+		<File name="adc_ram.lpc" type="lpc" modified="2013 11 28 21:44:51.895"/>
+		<File name="adc_ram.v" type="top_level_verilog" modified="2013 11 28 21:44:51.950"/>
+		<File name="adc_ram_tmpl.v" type="template_verilog" modified="2013 11 28 21:44:51.952"/>
+		<File name="c:/users/joel/documents/popwi_expresso/expresso/expresso/impl1/source/test_data.mem" type="mem" modified="2013 11 28 21:44:46.711"/>
+		<File name="tb_adc_ram_tmpl.v" type="testbench_verilog" modified="2013 11 28 21:44:51.961"/>
+  </Package>
+</DiamondModule>

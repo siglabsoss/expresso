@@ -1,0 +1,402 @@
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Fri Nov 29 13:40:27 2013
+#
+
+
+Top view:               top
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    C:\Users\joel\Documents\popwi_expresso\expresso\expresso\top.sdc
+                       
+@N: MT320 |Timing report estimates place and route data. Please look at the place and route timing report for final timing.
+
+@N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock.
+
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: -0.404
+
+                   Requested     Estimated     Requested     Estimated                 Clock        Clock             
+Starting Clock     Frequency     Frequency     Period        Period        Slack       Type         Group             
+----------------------------------------------------------------------------------------------------------------------
+clk_125_c          125.0 MHz     107.5 MHz     8.000         9.300         -1.300      declared     default_clkgroup_3
+refclkn            100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0
+refclkp            100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_1
+System             1.0 MHz       459.7 MHz     1000.000      2.175         997.825     system       system_clkgroup   
+======================================================================================================================
+
+
+
+Clock Relationships
+*******************
+
+Clocks                |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-------------------------------------------------------------------------------------------------------------
+Starting   Ending     |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-------------------------------------------------------------------------------------------------------------
+System     System     |  0.000       0.000   |  No paths    -      |  No paths    -      |  No paths    -    
+System     clk_125_c  |  0.000       -0.264  |  No paths    -      |  No paths    -      |  No paths    -    
+clk_125_c  System     |  0.000       0.688   |  No paths    -      |  No paths    -      |  No paths    -    
+clk_125_c  clk_125_c  |  0.000       -0.404  |  No paths    -      |  No paths    -      |  No paths    -    
+=============================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: clk_125_c
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                    Starting                                                     Arrival           
+Instance                            Reference     Type        Pin     Net                        Time        Slack 
+                                    Clock                                                                          
+-------------------------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[0]     clk_125_c     FD1P3DX     Q       read_head_address_p[0]     0.748       -0.404
+sfif.wbs.read_head_address_p[1]     clk_125_c     FD1P3DX     Q       read_head_address_p[1]     0.748       -0.404
+sfif.wbs.read_head_address_p[2]     clk_125_c     FD1P3DX     Q       read_head_address_p[2]     0.748       -0.404
+sfif.wbs.read_head_address_p[3]     clk_125_c     FD1P3DX     Q       read_head_address_p[3]     0.748       -0.404
+sfif.wbs.read_head_address_p[4]     clk_125_c     FD1P3DX     Q       read_head_address_p[4]     0.748       -0.404
+sfif.wbs.read_head_address_p[5]     clk_125_c     FD1P3DX     Q       read_head_address_p[5]     0.748       -0.404
+sfif.wbs.read_head_address_p[6]     clk_125_c     FD1P3DX     Q       read_head_address_p[6]     0.748       -0.404
+sfif.wbs.read_head_address_p[7]     clk_125_c     FD1P3DX     Q       read_head_address_p[7]     0.748       -0.404
+sfif.wbs.read_head_address_p[8]     clk_125_c     FD1P3DX     Q       read_head_address_p[8]     0.748       -0.404
+sfif.wbs.read_head_address_p[9]     clk_125_c     FD1P3DX     Q       read_head_address_p[9]     0.748       -0.404
+===================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                   Starting                                                      Required           
+Instance                           Reference     Type       Pin       Net                        Time         Slack 
+                                   Clock                                                                            
+--------------------------------------------------------------------------------------------------------------------
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB3      read_head_address_p[0]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB4      read_head_address_p[1]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB5      read_head_address_p[2]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB6      read_head_address_p[3]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB7      read_head_address_p[4]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB8      read_head_address_p[5]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB9      read_head_address_p[6]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB10     read_head_address_p[7]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB11     read_head_address_p[8]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB12     read_head_address_p[9]     1.152        -0.404
+====================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+    Propagation time:                        0.748
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             1.152
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (critical) :                     -0.404
+
+    Number of logic level(s):                0
+    Starting point:                          sfif.wbs.read_head_address_p[0] / Q
+    Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB3
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
+
+Instance / Net                                  Pin      Pin               Arrival     No. of     
+Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
+--------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[0]     FD1P3DX     Q        Out     0.748     0.748       -          
+read_head_address_p[0]              Net         -        -       -         -           2(33554432)
+sfif.wbs.pop_ram.adc_ram_0_0_1      DP16KC      ADB3     In      0.000     0.748       -          
+==================================================================================================
+
+
+Path information for path number 2: 
+    Propagation time:                        0.748
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             1.152
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (critical) :                     -0.404
+
+    Number of logic level(s):                0
+    Starting point:                          sfif.wbs.read_head_address_p[1] / Q
+    Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB4
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
+
+Instance / Net                                  Pin      Pin               Arrival     No. of     
+Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
+--------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[1]     FD1P3DX     Q        Out     0.748     0.748       -          
+read_head_address_p[1]              Net         -        -       -         -           2(33554432)
+sfif.wbs.pop_ram.adc_ram_0_0_1      DP16KC      ADB4     In      0.000     0.748       -          
+==================================================================================================
+
+
+Path information for path number 3: 
+    Propagation time:                        0.748
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             1.152
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (critical) :                     -0.404
+
+    Number of logic level(s):                0
+    Starting point:                          sfif.wbs.read_head_address_p[2] / Q
+    Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB5
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
+
+Instance / Net                                  Pin      Pin               Arrival     No. of     
+Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
+--------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[2]     FD1P3DX     Q        Out     0.748     0.748       -          
+read_head_address_p[2]              Net         -        -       -         -           2(33554432)
+sfif.wbs.pop_ram.adc_ram_0_0_1      DP16KC      ADB5     In      0.000     0.748       -          
+==================================================================================================
+
+
+Path information for path number 4: 
+    Propagation time:                        0.748
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             1.152
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (critical) :                     -0.404
+
+    Number of logic level(s):                0
+    Starting point:                          sfif.wbs.read_head_address_p[3] / Q
+    Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB6
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
+
+Instance / Net                                  Pin      Pin               Arrival     No. of     
+Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
+--------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[3]     FD1P3DX     Q        Out     0.748     0.748       -          
+read_head_address_p[3]              Net         -        -       -         -           2(33554432)
+sfif.wbs.pop_ram.adc_ram_0_0_1      DP16KC      ADB6     In      0.000     0.748       -          
+==================================================================================================
+
+
+Path information for path number 5: 
+    Propagation time:                        0.748
+    + Clock delay at starting point:         0.000 (ideal)
+    - Requested Period:                      0.000
+    - Hold time:                             1.152
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (critical) :                     -0.404
+
+    Number of logic level(s):                0
+    Starting point:                          sfif.wbs.read_head_address_p[4] / Q
+    Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB7
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
+
+Instance / Net                                  Pin      Pin               Arrival     No. of     
+Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
+--------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[4]     FD1P3DX     Q        Out     0.748     0.748       -          
+read_head_address_p[4]              Net         -        -       -         -           2(33554432)
+sfif.wbs.pop_ram.adc_ram_0_0_1      DP16KC      ADB7     In      0.000     0.748       -          
+==================================================================================================
+
+
+
+
+====================================
+Detailed Report for Clock: System
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                                   Starting                                                                Arrival           
+Instance                                           Reference     Type              Pin           Net                       Time        Slack 
+                                                   Clock                                                                                     
+---------------------------------------------------------------------------------------------------------------------------------------------
+pcie.u1_dut                                        System        pcie              rx_st_vc0     rx_st                     0.000       -0.264
+wb_tlc.req_fifo.I_async_pkt_fifo.I_pmi_ram_dp      System        pmi_ram_dp_Z1     Q[0]          from_req_fifo_dout[0]     0.000       -0.059
+wb_tlc.cpld_fifo.I_async_pkt_fifo.I_pmi_ram_dp     System        pmi_ram_dp_Z2     Q[0]          fifo_out[0]               0.000       -0.059
+wb_tlc.req_fifo.I_async_pkt_fifo.I_pmi_ram_dp      System        pmi_ram_dp_Z1     Q[1]          from_req_fifo_dout[1]     0.000       -0.059
+wb_tlc.cpld_fifo.I_async_pkt_fifo.I_pmi_ram_dp     System        pmi_ram_dp_Z2     Q[1]          fifo_out[1]               0.000       -0.059
+wb_tlc.req_fifo.I_async_pkt_fifo.I_pmi_ram_dp      System        pmi_ram_dp_Z1     Q[2]          from_req_fifo_dout[2]     0.000       -0.059
+wb_tlc.cpld_fifo.I_async_pkt_fifo.I_pmi_ram_dp     System        pmi_ram_dp_Z2     Q[2]          fifo_out[2]               0.000       -0.059
+wb_tlc.cpld_fifo.I_async_pkt_fifo.I_pmi_ram_dp     System        pmi_ram_dp_Z2     Q[3]          fifo_out[3]               0.000       -0.059
+wb_tlc.req_fifo.I_async_pkt_fifo.I_pmi_ram_dp      System        pmi_ram_dp_Z1     Q[3]          from_req_fifo_dout[3]     0.000       -0.059
+wb_tlc.cpld_fifo.I_async_pkt_fifo.I_pmi_ram_dp     System        pmi_ram_dp_Z2     Q[4]          fifo_out[4]               0.000       -0.059
+=============================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                           Starting                                          Required           
+Instance                   Reference     Type        Pin     Net             Time         Slack 
+                           Clock                                                                
+------------------------------------------------------------------------------------------------
+wb_tlc.dec.drop            System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[0]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[1]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[2]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[3]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[4]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[5]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+wb_tlc.dec.fifo_bar[6]     System        FD1P3DX     SP      rx_st           0.264        -0.264
+ur.attribute_field[0]      System        FD1P3DX     D       rx_data[12]     0.059        -0.059
+ur.attribute_field[1]      System        FD1P3DX     D       rx_data[13]     0.059        -0.059
+================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+    Propagation time:                        0.000
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             0.264
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 -0.264
+
+    Number of logic level(s):                0
+    Starting point:                          pcie.u1_dut / rx_st_vc0
+    Ending point:                            wb_tlc.dec.drop / SP
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            clk_125_c [rising] on pin CK
+
+Instance / Net                  Pin           Pin               Arrival     No. of    
+Name                Type        Name          Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------------
+pcie.u1_dut         pcie        rx_st_vc0     Out     0.000     0.000       -         
+rx_st               Net         -             -       -         -           25        
+wb_tlc.dec.drop     FD1P3DX     SP            In      0.000     0.000       -         
+======================================================================================
+
+
+Path information for path number 2: 
+    Propagation time:                        0.000
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             0.264
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 -0.264
+
+    Number of logic level(s):                0
+    Starting point:                          pcie.u1_dut / rx_st_vc0
+    Ending point:                            wb_tlc.dec.fifo_bar[6] / SP
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            clk_125_c [rising] on pin CK
+
+Instance / Net                         Pin           Pin               Arrival     No. of    
+Name                       Type        Name          Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------
+pcie.u1_dut                pcie        rx_st_vc0     Out     0.000     0.000       -         
+rx_st                      Net         -             -       -         -           25        
+wb_tlc.dec.fifo_bar[6]     FD1P3DX     SP            In      0.000     0.000       -         
+=============================================================================================
+
+
+Path information for path number 3: 
+    Propagation time:                        0.000
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             0.264
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 -0.264
+
+    Number of logic level(s):                0
+    Starting point:                          pcie.u1_dut / rx_st_vc0
+    Ending point:                            wb_tlc.dec.fifo_bar[5] / SP
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            clk_125_c [rising] on pin CK
+
+Instance / Net                         Pin           Pin               Arrival     No. of    
+Name                       Type        Name          Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------
+pcie.u1_dut                pcie        rx_st_vc0     Out     0.000     0.000       -         
+rx_st                      Net         -             -       -         -           25        
+wb_tlc.dec.fifo_bar[5]     FD1P3DX     SP            In      0.000     0.000       -         
+=============================================================================================
+
+
+Path information for path number 4: 
+    Propagation time:                        0.000
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             0.264
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 -0.264
+
+    Number of logic level(s):                0
+    Starting point:                          pcie.u1_dut / rx_st_vc0
+    Ending point:                            wb_tlc.dec.fifo_bar[4] / SP
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            clk_125_c [rising] on pin CK
+
+Instance / Net                         Pin           Pin               Arrival     No. of    
+Name                       Type        Name          Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------
+pcie.u1_dut                pcie        rx_st_vc0     Out     0.000     0.000       -         
+rx_st                      Net         -             -       -         -           25        
+wb_tlc.dec.fifo_bar[4]     FD1P3DX     SP            In      0.000     0.000       -         
+=============================================================================================
+
+
+Path information for path number 5: 
+    Propagation time:                        0.000
+    + Clock delay at starting point:         0.000 (ideal)
+-0.000
+    - Requested Period:                      0.000
+    - Hold time:                             0.264
+    - Clock delay at ending point:           0.000 (ideal)
+    = Slack (non-critical) :                 -0.264
+
+    Number of logic level(s):                0
+    Starting point:                          pcie.u1_dut / rx_st_vc0
+    Ending point:                            wb_tlc.dec.fifo_bar[3] / SP
+    The start point is clocked by            System [rising]
+    The end   point is clocked by            clk_125_c [rising] on pin CK
+
+Instance / Net                         Pin           Pin               Arrival     No. of    
+Name                       Type        Name          Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------
+pcie.u1_dut                pcie        rx_st_vc0     Out     0.000     0.000       -         
+rx_st                      Net         -             -       -         -           25        
+wb_tlc.dec.fifo_bar[3]     FD1P3DX     SP            In      0.000     0.000       -         
+=============================================================================================
+
+
+
+##### END OF TIMING REPORT #####]
+

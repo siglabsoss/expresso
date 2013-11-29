@@ -34,7 +34,6 @@ Edfmap.ini
 *.mrp
 *.ncd
 *.ngd
-*.ngo
 *.order
 *.p2t
 *.p3d
@@ -58,7 +57,6 @@ Edfmap.ini
 *.srr
 *.srs
 *.t2b
-*.tcl
 *.tlg
 *.tops
 *.twr
@@ -90,6 +88,3 @@ expresso.opt
 */work/*
 */slp/*
 */compile/*
-
-# this changes when fiels are added to the project, but not needed
-run_options.txt

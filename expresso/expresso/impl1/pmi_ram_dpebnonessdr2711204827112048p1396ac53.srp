@@ -1,0 +1,24 @@
+SCUBA, Version Diamond_2.2_Production (99)
+Fri Nov 29 13:40:32 2013
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2013 Lattice Semiconductor Corporation,  All rights reserved.
+
+    Issued command   : C:/lscc/diamond/2.2_x64/ispfpga/bin/nt64/scuba -w -bus_exp 7 -bb -arch ep5c00 -type bram -wp 10 -rp 0011 -data_width 27 -num_rows 2048 -rdata_width 27 -read_reg1 outreg -gsr DISABLED -sync_reset -memformat bin -cascade -1 -n pmi_ram_dpebnonessdr2711204827112048p1396ac53 -pmi 
+    Circuit name     : pmi_ram_dpebnonessdr2711204827112048p1396ac53
+    Module type      : RAM_DP
+    Module Version   : 6.2
+    Ports            : 
+	Inputs       : WrAddress[10:0], RdAddress[10:0], Data[26:0], WE, RdClock, RdClockEn, Reset, WrClock, WrClockEn
+	Outputs      : Q[26:0]
+    I/O buffer       : not inserted
+    EDIF output      : pmi_ram_dpebnonessdr2711204827112048p1396ac53.edn
+    Bus notation     : big endian
+    Report output    : pmi_ram_dpebnonessdr2711204827112048p1396ac53.srp
+    Element Usage    :
+         DP16KC : 3
+    Estimated Resource Usage:
+            EBR : 3
