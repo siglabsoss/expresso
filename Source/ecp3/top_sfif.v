@@ -13,11 +13,49 @@ module top  (
    pll_lk, poll, l0, dl_up, usr0, usr1, usr2, usr3,
    //na_pll_lk, na_poll, na_l0, na_dl_up, na_usr0, na_usr1, na_usr2, na_usr3, //  chngd frm org
    dip_switch, led_out, dp,
-   TP);
-   //la//chngd frm org
-
+   TP
    
-   //);
+    // adc stuff
+, ADC0_D1_D0_P
+, ADC0_D3_D2_P
+, ADC0_D5_D4_P
+, ADC0_D7_D6_P
+, clk_ADC0_DCO_P
+, ADC0_D9_D8_P
+, ADC0_D11_D10_P
+, ADC0_D13_D12_P
+, ADC0_D15_D14_P
+, ADC0_OR_P	
+, ADC0_CSB
+, ADC0_SCLK
+, ADC0_SDIO
+, ADC0_CLK_P
+  
+   
+   );
+
+input ADC0_D1_D0_P;
+input ADC0_D3_D2_P;
+input ADC0_D5_D4_P;
+input ADC0_D7_D6_P;
+input clk_ADC0_DCO_P;
+input ADC0_D9_D8_P;
+input ADC0_D11_D10_P;
+input ADC0_D13_D12_P;
+input ADC0_D15_D14_P;
+input ADC0_OR_P;
+output ADC0_CSB;
+output ADC0_SCLK;
+output ADC0_SDIO;
+output ADC0_CLK_P;
+wire clk_ADC0_DCO_net;
+assign clk_ADC0_DCO_net = clk_ADC0_DCO_P;
+reg ADC0_CLK_P;
+
+always @(*) begin
+	ADC0_CLK_P <= clk_125;
+end
+	
 
 input rstn;
 
@@ -411,6 +449,11 @@ sfif sfif (.rstn(core_rst_n),
           .rx_st(rx_st), .rx_end(rx_end), .rx_data(rx_data),                     
           .rx_cr_cpld(sfif_cpld_cr), .rx_cr_cplh(sfif_cplh_cr),
           .enabled(), .sm(), .debug()
+		  
+		  ,.clk_ADC0_DCO_P(clk_ADC0_DCO_net)
+		  ,.ADC0_BUS({ADC0_D15_D14_P,ADC0_D13_D12_P,ADC0_D11_D10_P,ADC0_D9_D8_P,ADC0_D7_D6_P,ADC0_D5_D4_P,ADC0_D3_D2_P,ADC0_D1_D0_P})
+		  //,.clk_ADC0_DCO_P()
+		  //,.ADC0_BUS()
 );
              
 wbs_gpio gpio(.wb_clk_i(clk_125), .wb_rst_i(~core_rst_n),

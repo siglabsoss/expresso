@@ -2,4 +2,4 @@
 @N: MF666 |Clock conversion enabled 
 @N: MT480 :"C:/Users/joel/Documents/popwi_expresso/expresso/expresso/top.sdc":4:0:4:0|Assigning clock "refclkn" to command: define_clock {p:refclkn} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"C:/Users/joel/Documents/popwi_expresso/expresso/expresso/top.sdc":5:0:5:0|Assigning clock "refclkp" to command: define_clock {p:refclkp} -freq {100} -clockgroup {default_clkgroup_1} 
-@N: MT480 :"C:/Users/joel/Documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Assigning clock "clk_125" to command: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
+@N: MT480 :"C:/Users/joel/Documents/popwi_expresso/expresso/expresso/top.sdc":8:0:8:0|Assigning clock "clk_ADC0_DCO_P" to command: define_clock {p:clk_ADC0_DCO_P} -freq {100} -clockgroup {default_clkgroup_0} 

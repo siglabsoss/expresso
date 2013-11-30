@@ -15,10 +15,22 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 <data>Slack</data>
 </row>
 <row>
-<data>clk_125_c</data>
-<data>125.0 MHz</data>
-<data>107.5 MHz</data>
-<data>-1.300</data>
+<data>clk_ADC0_DCO_P</data>
+<data>100.0 MHz</data>
+<data>NA</data>
+<data>NA</data>
+</row>
+<row>
+<data>ddr_generic|sclk_inferred_clock</data>
+<data>1.0 MHz</data>
+<data>NA</data>
+<data>NA</data>
+</row>
+<row>
+<data>pcie_top|sys_clk_125_inferred_clock</data>
+<data>1.0 MHz</data>
+<data>104.7 MHz</data>
+<data>990.447</data>
 </row>
 <row>
 <data>refclkn</data>

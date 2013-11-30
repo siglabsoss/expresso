@@ -118,6 +118,9 @@
         <Source name="tb_sfif_wbs.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="ddr_generic.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
         <Source name="expresso/expresso.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>

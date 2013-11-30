@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version G-2012.09L-SP1 
 #--  Project file C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\run_options.txt
-#--  Written on Fri Nov 29 13:40:11 2013
+#--  Written on Fri Nov 29 17:19:48 2013
 
 
 #project files
@@ -43,6 +43,7 @@ add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../.
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/impl1/source/pop_data.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/impl1/source/adc_ram.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/tb_sfif_wbs.v"
+add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/ddr_generic.v"
 
 
 #implementation: "impl1"

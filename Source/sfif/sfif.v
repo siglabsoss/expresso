@@ -13,7 +13,13 @@ module sfif(rstn,
             rx_cr_cplh, rx_cr_cpld,
             
             enabled, sm, debug
+			
+			, clk_ADC0_DCO_P
+			, ADC0_BUS
 );
+
+input clk_ADC0_DCO_P;
+input [7:0] ADC0_BUS;
 
 input rstn;
 
@@ -78,6 +84,12 @@ sfif_wbs wbs(.wb_clk_i(wb_clk_i), .wb_rst_i(wb_rst_i), .wb_dat_i(wb_dat_i), .wb_
              .ipg_cnt(ipg_cnt), .tx_data(tx32_data), .tx_dv(tx32_dv), .rx_data(rx32_data), .rx_data_read(rx32_data_read),
              .elapsed_cnt(elapsed_cnt), .tx_tlp_cnt(tx_tlp_cnt), .rx_tlp_cnt(rx_tlp_cnt), .rx_empty(rx_empty),
              .credit_wait_p_cnt(credit_wait_p_cnt), .credit_wait_np_cnt(credit_wait_np_cnt), .rx_tlp_timestamp(rx_tlp_timestamp)
+			 
+			 //,.clk_ADC0_DCO_P()
+		     //,.ADC0_BUS()
+			 
+			 ,.clk_ADC0_DCO_P(clk_ADC0_DCO_P)
+		     ,.ADC0_BUS(ADC0_BUS)
 );
 
 assign enabled = enable;

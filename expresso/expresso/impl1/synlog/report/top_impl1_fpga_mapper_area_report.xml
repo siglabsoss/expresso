@@ -11,7 +11,7 @@ The file contains the area information from mapper to be displayed as part of th
 <data>1360</data>
 </parameter>
 <parameter tooltip="Total I/O cells used" name="I/O cells">
-<data>50</data>
+<data>63</data>
 </parameter>
 <parameter tooltip="Total Block RAMs used" name="Block RAMs">
 <data>2</data>
@@ -20,6 +20,6 @@ The file contains the area information from mapper to be displayed as part of th
 <data>0</data>
 </parameter>
 <parameter tooltip="Total ORCA LUTs used" name="ORCA LUTs">
-<data>1417</data>
+<data>1374</data>
 </parameter>
 </report_table>

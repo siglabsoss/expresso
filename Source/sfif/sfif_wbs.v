@@ -8,8 +8,13 @@ module sfif_wbs(wb_clk_i, wb_rst_i,
             tx_dwen, tx_nlfy, tx_end, tx_st, tx_ctrl,
             ipg_cnt, tx_data, tx_dv, rx_data, elapsed_cnt, tx_tlp_cnt, rx_tlp_cnt, rx_empty, rx_data_read,
             credit_wait_p_cnt, credit_wait_np_cnt, rx_tlp_timestamp
+            , clk_ADC0_DCO_P
+			, ADC0_BUS
           
 );
+
+input clk_ADC0_DCO_P;
+input [7:0] ADC0_BUS;
 
 input         wb_clk_i;
 input         wb_rst_i;
@@ -118,8 +123,12 @@ begin
 	//end else begin
 	  pop_counter <= pop_counter + 1;	
 	//end
+	if( write_head < FIFO_SAMPLES ) begin
+		write_head <= write_head + 1;
+	end else begin
+		write_head <= 0;
+	end
 	
-	write_head <= write_head + 1;
 end
 
 
@@ -149,15 +158,41 @@ assign read_head_address = read_head + (wb_adr_i - POP_START_ADDRESS) / 8;
 //wire read_head_address = 10'h001;
 //wire read_enable = wb_adr_i > POP_START_ADDRESS;
 
+
+
+// Pop DDR
+
+wire pll_lock;
+wire ddr_sclk;
+wire[15:0] ADC_Q;
+
+ddr_generic ddr(
+		.clk(clk_ADC0_DCO_P),
+		.datain(ADC0_BUS),
+		.pll_reset(reset),
+		// out
+		.pll_lock(pll_lock),
+		.sclk(ddr_sclk),
+		.q(ADC_Q)
+	);
+	
+
+
+
+
+// Circular RAM
+
+
+
 adc_ram pop_ram (
 .WrAddress( write_head ),
 .RdAddress( read_head_address_p ),
-.Data( pop_counter ),
+.Data( ADC_Q ),
 .WE( 1'b1 ),
 .RdClock( wb_clk_i ), 
 .RdClockEn( 1'b1 ),
 .Reset( wb_rst_i ),
-.WrClock( wb_clk_i ),
+.WrClock( ddr_sclk ),
 .WrClockEn( 1'b1 ),
 .Q( pop_ram_q_wire )
 );

@@ -1,8 +1,8 @@
 @N|Running in 64-bit mode
 @N: CG334 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\pmi_ram_dp.v":76:9:76:21|Read directive translate_off 
 @N: CG333 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\pmi_ram_dp.v":535:9:535:20|Read directive translate_on 
-@N: CG334 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":118:19:118:31|Read directive translate_off 
-@N: CG333 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":121:19:121:30|Read directive translate_on 
+@N: CG334 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":156:19:156:31|Read directive translate_off 
+@N: CG333 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":159:19:159:30|Read directive translate_on 
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\led_status.v":3:7:3:16|Synthesizing module led_status
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcs_pipe_bb.v":11:7:11:18|Synthesizing module pcs_pipe_top
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcie_bb.v":14:7:14:10|Synthesizing module pcie
@@ -24,27 +24,32 @@
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld_fifo.v":4:7:4:22|Synthesizing module wb_tlc_cpld_fifo
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc.v":3:7:3:12|Synthesizing module wb_tlc
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":3:7:3:12|Synthesizing module wb_arb
+@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1683:7:1683:13|Synthesizing module IDDRXD1
+@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1029:7:1029:9|Synthesizing module VLO
+@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1552:7:1552:13|Synthesizing module EHXPLLF
+@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1801:7:1801:12|Synthesizing module DELAYC
+@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":392:7:392:8|Synthesizing module IB
+@N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\ddr_generic.v":8:7:8:17|Synthesizing module ddr_generic
 @N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1025:7:1025:9|Synthesizing module VHI
 @N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1253:7:1253:12|Synthesizing module DP16KC
-@N: CG364 :"C:\lscc\diamond\2.2_x64\cae_library\synthesis\verilog\ecp3.v":1029:7:1029:9|Synthesizing module VLO
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\source\adc_ram.v":8:7:8:13|Synthesizing module adc_ram
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":3:7:3:14|Synthesizing module sfif_wbs
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element tx_nlfy.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element tx_end.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element tx_dwen.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element tx_ctrl.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element rx_filter.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element run.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element reset.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element mrd.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element lpbk.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element loop.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element ipg_cnt.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element enable.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element c_ph.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element c_pd.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element c_nph.
-@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Sharing sequential element c_npd.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element tx_nlfy.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element tx_end.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element tx_dwen.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element tx_ctrl.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element rx_filter.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element run.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element reset.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element mrd.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element lpbk.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element loop.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element ipg_cnt.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element enable.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element c_ph.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element c_pd.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element c_nph.
+@N: CL177 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Sharing sequential element c_npd.
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\pmi_ram_dp.v":49:7:49:16|Synthesizing module pmi_ram_dp
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\pmi_ram_dp.v":49:7:49:16|Synthesizing module pmi_ram_dp
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":3:7:3:18|Synthesizing module sfif_tx_fifo
@@ -68,7 +73,7 @@
 @N: CG364 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":4:7:4:9|Synthesizing module top
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":147:0:147:5|Found seqShift read_valid, depth=3, width=1
 @N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":43:0:43:5|Trying to extract state machine for register sm
-@N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":182:0:182:5|Found seqShift read_shift_a, depth=3, width=16
+@N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Found seqShift read_shift_a, depth=3, width=16
 @N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":355:0:355:5|Trying to extract state machine for register rr
 @N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld_fifo.v":110:0:110:5|Trying to extract state machine for register state
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":42:0:42:5|Found seqShift valid_p5, depth=5, width=1

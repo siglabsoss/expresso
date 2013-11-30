@@ -82,6 +82,7 @@ add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../.
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/impl1/source/pop_data.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/impl1/source/adc_ram.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/tb_sfif_wbs.v}
+add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/ddr_generic.v}
 
 #-- top module name
 set_option -top_module top

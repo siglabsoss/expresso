@@ -1,2 +1,12 @@
-@E: CL123 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":133:0:133:5|Logic for data_fill[15:0] does not match a standard flip-flop
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":41:0:41:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":44:0:44:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":45:0:45:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":47:0:47:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":48:0:48:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":49:0:49:5|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":52:0:52:5|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":54:0:54:4|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":55:0:55:5|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":56:0:56:5|Redeclaration of ports. Cannot mix styles.
+@E: CG254 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":57:0:57:5|Redeclaration of ports. Cannot mix styles.
 

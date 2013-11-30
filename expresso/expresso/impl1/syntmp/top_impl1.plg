@@ -1,9 +1,19 @@
-@P:  Worst Slack : -1.300
-@P:  clk_125_c - Estimated Frequency : 107.5 MHz
-@P:  clk_125_c - Requested Frequency : 125.0 MHz
-@P:  clk_125_c - Estimated Period : 9.300
-@P:  clk_125_c - Requested Period : 8.000
-@P:  clk_125_c - Slack : -1.300
+@P:  Worst Slack : 990.447
+@P:  clk_ADC0_DCO_P - Estimated Frequency : NA
+@P:  clk_ADC0_DCO_P - Requested Frequency : 100.0 MHz
+@P:  clk_ADC0_DCO_P - Estimated Period : NA
+@P:  clk_ADC0_DCO_P - Requested Period : 10.000
+@P:  clk_ADC0_DCO_P - Slack : NA
+@P:  ddr_generic|sclk_inferred_clock - Estimated Frequency : NA
+@P:  ddr_generic|sclk_inferred_clock - Requested Frequency : 1.0 MHz
+@P:  ddr_generic|sclk_inferred_clock - Estimated Period : NA
+@P:  ddr_generic|sclk_inferred_clock - Requested Period : 1000.000
+@P:  ddr_generic|sclk_inferred_clock - Slack : NA
+@P:  pcie_top|sys_clk_125_inferred_clock - Estimated Frequency : 104.7 MHz
+@P:  pcie_top|sys_clk_125_inferred_clock - Requested Frequency : 1.0 MHz
+@P:  pcie_top|sys_clk_125_inferred_clock - Estimated Period : 9.553
+@P:  pcie_top|sys_clk_125_inferred_clock - Requested Period : 1000.000
+@P:  pcie_top|sys_clk_125_inferred_clock - Slack : 990.447
 @P:  refclkn - Estimated Frequency : NA
 @P:  refclkn - Requested Frequency : 100.0 MHz
 @P:  refclkn - Estimated Period : NA
@@ -19,12 +29,22 @@
 @P:  System - Estimated Period : 2.175
 @P:  System - Requested Period : 1000.000
 @P:  System - Slack : 997.825
-@P:  Worst Slack(min analysis) : -0.404
-@P:  clk_125_c - Estimated Frequency(min analysis) : 107.5 MHz
-@P:  clk_125_c - Requested Frequency(min analysis) : 125.0 MHz
-@P:  clk_125_c - Estimated Period(min analysis) : 9.300
-@P:  clk_125_c - Requested Period(min analysis) : 8.000
-@P:  clk_125_c - Slack(min analysis) : -1.300
+@P:  Worst Slack(min analysis) : -1.192
+@P:  clk_ADC0_DCO_P - Estimated Frequency(min analysis) : NA
+@P:  clk_ADC0_DCO_P - Requested Frequency(min analysis) : 100.0 MHz
+@P:  clk_ADC0_DCO_P - Estimated Period(min analysis) : NA
+@P:  clk_ADC0_DCO_P - Requested Period(min analysis) : 10.000
+@P:  clk_ADC0_DCO_P - Slack(min analysis) : NA
+@P:  ddr_generic|sclk_inferred_clock - Estimated Frequency(min analysis) : NA
+@P:  ddr_generic|sclk_inferred_clock - Requested Frequency(min analysis) : 1.0 MHz
+@P:  ddr_generic|sclk_inferred_clock - Estimated Period(min analysis) : NA
+@P:  ddr_generic|sclk_inferred_clock - Requested Period(min analysis) : 1000.000
+@P:  ddr_generic|sclk_inferred_clock - Slack(min analysis) : NA
+@P:  pcie_top|sys_clk_125_inferred_clock - Estimated Frequency(min analysis) : 104.7 MHz
+@P:  pcie_top|sys_clk_125_inferred_clock - Requested Frequency(min analysis) : 1.0 MHz
+@P:  pcie_top|sys_clk_125_inferred_clock - Estimated Period(min analysis) : 9.553
+@P:  pcie_top|sys_clk_125_inferred_clock - Requested Period(min analysis) : 1000.000
+@P:  pcie_top|sys_clk_125_inferred_clock - Slack(min analysis) : 990.447
 @P:  refclkn - Estimated Frequency(min analysis) : NA
 @P:  refclkn - Requested Frequency(min analysis) : 100.0 MHz
 @P:  refclkn - Estimated Period(min analysis) : NA
@@ -40,7 +60,7 @@
 @P:  System - Estimated Period(min analysis) : 2.175
 @P:  System - Requested Period(min analysis) : 1000.000
 @P:  System - Slack(min analysis) : 997.825
-@P:  Total Area : 1444.0
+@P:  Total Area : 1401.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
@@ -70,4 +90,5 @@
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
-@P:  CPU Time : 0h:00m:11s
+@P:  Total Area : 0.0
+@P:  CPU Time : 0h:00m:10s
