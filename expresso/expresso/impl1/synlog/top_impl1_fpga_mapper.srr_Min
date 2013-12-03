@@ -1,9 +1,8 @@
-@W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Unable to assign name to clock: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Unable to assign name to clock: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Fri Nov 29 17:20:03 2013
+# Timing Report written on Mon Dec 02 17:32:32 2013
 #
 
 
@@ -25,17 +24,16 @@ Performance Summary
 
 Worst slack in design: -1.192
 
-                                        Requested     Estimated     Requested     Estimated                 Clock        Clock              
-Starting Clock                          Frequency     Frequency     Period        Period        Slack       Type         Group              
---------------------------------------------------------------------------------------------------------------------------------------------
-clk_ADC0_DCO_P                          100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
-ddr_generic|sclk_inferred_clock         1.0 MHz       NA            1000.000      NA            NA          inferred     Inferred_clkgroup_1
-pcie_top|sys_clk_125_inferred_clock     1.0 MHz       104.7 MHz     1000.000      9.553         990.447     inferred     Inferred_clkgroup_0
-refclkn                                 100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
-refclkp                                 100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_1 
-System                                  1.0 MHz       459.7 MHz     1000.000      2.175         997.825     system       system_clkgroup    
-============================================================================================================================================
-@W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Clock source n:clk_125 not found in netlist: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
+                                    Requested     Estimated     Requested     Estimated                 Clock        Clock              
+Starting Clock                      Frequency     Frequency     Period        Period        Slack       Type         Group              
+----------------------------------------------------------------------------------------------------------------------------------------
+clk_125_c                           125.0 MHz     117.0 MHz     8.000         8.548         -0.548      declared     default_clkgroup_3 
+clk_ADC0_DCO_P                      100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
+ddr_generic|sclk_inferred_clock     1.0 MHz       NA            1000.000      NA            NA          inferred     Inferred_clkgroup_0
+refclkn                             100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
+refclkp                             100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_1 
+System                              1.0 MHz       459.7 MHz     1000.000      2.175         997.825     system       system_clkgroup    
+========================================================================================================================================
 @W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Clock source n:ddr_sclk not found in netlist: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
 
 
@@ -43,17 +41,17 @@ System                                  1.0 MHz       459.7 MHz     1000.000    
 Clock Relationships
 *******************
 
-Clocks                                                                    |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Starting                             Ending                               |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-System                               System                               |  0.000       0.000   |  No paths    -      |  No paths    -      |  No paths    -    
-System                               pcie_top|sys_clk_125_inferred_clock  |  0.000       -0.264  |  No paths    -      |  No paths    -      |  No paths    -    
-System                               ddr_generic|sclk_inferred_clock      |  0.000       -1.192  |  No paths    -      |  No paths    -      |  No paths    -    
-pcie_top|sys_clk_125_inferred_clock  System                               |  0.000       0.688   |  No paths    -      |  No paths    -      |  No paths    -    
-pcie_top|sys_clk_125_inferred_clock  pcie_top|sys_clk_125_inferred_clock  |  0.000       -0.404  |  No paths    -      |  No paths    -      |  No paths    -    
-pcie_top|sys_clk_125_inferred_clock  ddr_generic|sclk_inferred_clock      |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
-=================================================================================================================================================================
+Clocks                                      |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-----------------------------------------------------------------------------------------------------------------------------------
+Starting   Ending                           |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-----------------------------------------------------------------------------------------------------------------------------------
+System     System                           |  0.000       0.000   |  No paths    -      |  No paths    -      |  No paths    -    
+System     clk_125_c                        |  0.000       -0.264  |  No paths    -      |  No paths    -      |  No paths    -    
+System     ddr_generic|sclk_inferred_clock  |  0.000       -1.192  |  No paths    -      |  No paths    -      |  No paths    -    
+clk_125_c  System                           |  0.000       0.688   |  No paths    -      |  No paths    -      |  No paths    -    
+clk_125_c  clk_125_c                        |  0.000       -0.404  |  No paths    -      |  No paths    -      |  No paths    -    
+clk_125_c  ddr_generic|sclk_inferred_clock  |  Diff grp    -       |  No paths    -      |  No paths    -      |  No paths    -    
+===================================================================================================================================
  Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
        'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
 
@@ -67,7 +65,7 @@ No IO constraint found
 
 
 ====================================
-Detailed Report for Clock: pcie_top|sys_clk_125_inferred_clock
+Detailed Report for Clock: clk_125_c
 ====================================
 
 
@@ -75,41 +73,41 @@ Detailed Report for Clock: pcie_top|sys_clk_125_inferred_clock
 Starting Points with Worst Slack
 ********************************
 
-                                    Starting                                                                               Arrival           
-Instance                            Reference                               Type        Pin     Net                        Time        Slack 
-                                    Clock                                                                                                    
----------------------------------------------------------------------------------------------------------------------------------------------
-sfif.wbs.read_head_address_p[0]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[0]     0.748       -0.404
-sfif.wbs.read_head_address_p[1]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[1]     0.748       -0.404
-sfif.wbs.read_head_address_p[2]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[2]     0.748       -0.404
-sfif.wbs.read_head_address_p[3]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[3]     0.748       -0.404
-sfif.wbs.read_head_address_p[4]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[4]     0.748       -0.404
-sfif.wbs.read_head_address_p[5]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[5]     0.748       -0.404
-sfif.wbs.read_head_address_p[6]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[6]     0.748       -0.404
-sfif.wbs.read_head_address_p[7]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[7]     0.748       -0.404
-sfif.wbs.read_head_address_p[8]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[8]     0.748       -0.404
-sfif.wbs.read_head_address_p[9]     pcie_top|sys_clk_125_inferred_clock     FD1P3DX     Q       read_head_address_p[9]     0.748       -0.404
-=============================================================================================================================================
+                                    Starting                                                     Arrival           
+Instance                            Reference     Type        Pin     Net                        Time        Slack 
+                                    Clock                                                                          
+-------------------------------------------------------------------------------------------------------------------
+sfif.wbs.read_head_address_p[0]     clk_125_c     FD1P3DX     Q       read_head_address_p[0]     0.748       -0.404
+sfif.wbs.read_head_address_p[1]     clk_125_c     FD1P3DX     Q       read_head_address_p[1]     0.748       -0.404
+sfif.wbs.read_head_address_p[2]     clk_125_c     FD1P3DX     Q       read_head_address_p[2]     0.748       -0.404
+sfif.wbs.read_head_address_p[3]     clk_125_c     FD1P3DX     Q       read_head_address_p[3]     0.748       -0.404
+sfif.wbs.read_head_address_p[4]     clk_125_c     FD1P3DX     Q       read_head_address_p[4]     0.748       -0.404
+sfif.wbs.read_head_address_p[5]     clk_125_c     FD1P3DX     Q       read_head_address_p[5]     0.748       -0.404
+sfif.wbs.read_head_address_p[6]     clk_125_c     FD1P3DX     Q       read_head_address_p[6]     0.748       -0.404
+sfif.wbs.read_head_address_p[7]     clk_125_c     FD1P3DX     Q       read_head_address_p[7]     0.748       -0.404
+sfif.wbs.read_head_address_p[8]     clk_125_c     FD1P3DX     Q       read_head_address_p[8]     0.748       -0.404
+sfif.wbs.read_head_address_p[9]     clk_125_c     FD1P3DX     Q       read_head_address_p[9]     0.748       -0.404
+===================================================================================================================
 
 
 Ending Points with Worst Slack
 ******************************
 
-                                   Starting                                                                                Required           
-Instance                           Reference                               Type       Pin       Net                        Time         Slack 
-                                   Clock                                                                                                      
-----------------------------------------------------------------------------------------------------------------------------------------------
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB3      read_head_address_p[0]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB4      read_head_address_p[1]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB5      read_head_address_p[2]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB6      read_head_address_p[3]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB7      read_head_address_p[4]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB8      read_head_address_p[5]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB9      read_head_address_p[6]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB10     read_head_address_p[7]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB11     read_head_address_p[8]     1.152        -0.404
-sfif.wbs.pop_ram.adc_ram_0_0_1     pcie_top|sys_clk_125_inferred_clock     DP16KC     ADB12     read_head_address_p[9]     1.152        -0.404
-==============================================================================================================================================
+                                   Starting                                                      Required           
+Instance                           Reference     Type       Pin       Net                        Time         Slack 
+                                   Clock                                                                            
+--------------------------------------------------------------------------------------------------------------------
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB3      read_head_address_p[0]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB4      read_head_address_p[1]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB5      read_head_address_p[2]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB6      read_head_address_p[3]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB7      read_head_address_p[4]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB8      read_head_address_p[5]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB9      read_head_address_p[6]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB10     read_head_address_p[7]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB11     read_head_address_p[8]     1.152        -0.404
+sfif.wbs.pop_ram.adc_ram_0_0_1     clk_125_c     DP16KC     ADB12     read_head_address_p[9]     1.152        -0.404
+====================================================================================================================
 
 
 
@@ -128,8 +126,8 @@ Path information for path number 1:
     Number of logic level(s):                0
     Starting point:                          sfif.wbs.read_head_address_p[0] / Q
     Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB3
-    The start point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CK
-    The end   point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CLKB
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
 
 Instance / Net                                  Pin      Pin               Arrival     No. of     
 Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
@@ -151,8 +149,8 @@ Path information for path number 2:
     Number of logic level(s):                0
     Starting point:                          sfif.wbs.read_head_address_p[1] / Q
     Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB4
-    The start point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CK
-    The end   point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CLKB
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
 
 Instance / Net                                  Pin      Pin               Arrival     No. of     
 Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
@@ -174,8 +172,8 @@ Path information for path number 3:
     Number of logic level(s):                0
     Starting point:                          sfif.wbs.read_head_address_p[2] / Q
     Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB5
-    The start point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CK
-    The end   point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CLKB
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
 
 Instance / Net                                  Pin      Pin               Arrival     No. of     
 Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
@@ -197,8 +195,8 @@ Path information for path number 4:
     Number of logic level(s):                0
     Starting point:                          sfif.wbs.read_head_address_p[3] / Q
     Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB6
-    The start point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CK
-    The end   point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CLKB
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
 
 Instance / Net                                  Pin      Pin               Arrival     No. of     
 Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 
@@ -220,8 +218,8 @@ Path information for path number 5:
     Number of logic level(s):                0
     Starting point:                          sfif.wbs.read_head_address_p[4] / Q
     Ending point:                            sfif.wbs.pop_ram.adc_ram_0_0_1 / ADB7
-    The start point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CK
-    The end   point is clocked by            pcie_top|sys_clk_125_inferred_clock [rising] on pin CLKB
+    The start point is clocked by            clk_125_c [rising] on pin CK
+    The end   point is clocked by            clk_125_c [rising] on pin CLKB
 
 Instance / Net                                  Pin      Pin               Arrival     No. of     
 Name                                Type        Name     Dir     Delay     Time        Fan Out(s) 

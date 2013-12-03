@@ -50,13 +50,24 @@ output ADC0_SDIO;
 output ADC0_CLK_P;
 wire clk_ADC0_DCO_net;
 assign clk_ADC0_DCO_net = clk_ADC0_DCO_P;
-reg ADC0_CLK_P;
+//reg ADC0_CLK_P;
 
-always @(*) begin
-	ADC0_CLK_P <= clk_125;
-end
+// Pop stuff
+
+//wire clk_135;
+
+wire ADC0_CLK_P;
+
+wire adc_pll_lock;
+
+// should make 135mzh
+adc_clock adc_pll_inst(
+		.CLK(clk_125),
+		.CLKOP(ADC0_CLK_P),
+		.LOCK(adc_pll_lock)
+	);
 	
-
+	
 input rstn;
 
 // These two inputs are set in the .lpf file

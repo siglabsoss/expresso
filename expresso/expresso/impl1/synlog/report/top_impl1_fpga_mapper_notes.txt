@@ -18,6 +18,7 @@
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":65:0:65:5|Removing sequential instance tx.t of view:PrimLib.dffre(prim) in hierarchy view:work.sfif(verilog) because there are no references to its outputs 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":4:0:4:0|Assigning clock "refclkn" to command: define_clock {[find -internal -port refclkn]} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":5:0:5:0|Assigning clock "refclkp" to command: define_clock {[find -internal -port refclkp]} -freq {100} -clockgroup {default_clkgroup_1} 
+@N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Assigning clock "clk_125" to command: define_clock {[find -internal -net clk_125]} -freq {125} -clockgroup {default_clkgroup_3} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":8:0:8:0|Assigning clock "clk_ADC0_DCO_P" to command: define_clock {[find -internal -port clk_ADC0_DCO_P]} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT204 |Auto Constrain mode is disabled because clocks are defined in the SDC file
 @N: MF179 :|Found 11 bit by 11 bit '==' comparator, 'req_fifo.I_async_pkt_fifo.un2_rd_addr'
@@ -25,6 +26,7 @@
 @N: MF179 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_intf.v":76:11:206:52|Found 11 bit by 11 bit '==' comparator, 'wb_sel_o24'
 @N: MF179 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_intf.v":213:14:213:47|Found 11 bit by 11 bit '==' comparator, 'wb_cti_o11'
 @N: MF179 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":116:13:116:44|Found 11 bit by 11 bit '==' comparator, 'dout_eop5'
+@N: BN362 :|Removing sequential instance G_26 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_24 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_22 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_20 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
@@ -39,7 +41,6 @@
 @N: BN362 :|Removing sequential instance G_32 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_30 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_28 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
-@N: BN362 :|Removing sequential instance G_26 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: BN362 :|Removing sequential instance G_42 in hierarchy view:work.wb_tlc_cpld(verilog) because there are no references to its outputs 
 @N: MF179 :|Found 11 bit by 11 bit '==' comparator, 'un19_rd_addr'
 @N: MF179 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":97:15:97:41|Found 11 bit by 11 bit '==' comparator, 'Empty'
@@ -176,7 +177,6 @@
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":147:0:147:5|Removing sequential instance I_bridge_16b_to_64b.read_data[68] in hierarchy view:work.sfif(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Removing sequential instance gpio.int_out in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cplh_cr in hierarchy view:work.top(verilog) because there are no references to its outputs 
-@N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[0] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[7] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[6] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[5] in hierarchy view:work.top(verilog) because there are no references to its outputs 
@@ -184,6 +184,7 @@
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[3] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[2] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[1] in hierarchy view:work.top(verilog) because there are no references to its outputs 
+@N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_cr.v":19:0:19:5|Removing sequential instance sfif.cr.cpld_cr[0] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":175:0:175:5|Removing sequential instance sfif.I_bridge_16b_to_64b.rx_data_64b[38] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":175:0:175:5|Removing sequential instance sfif.I_bridge_16b_to_64b.rx_data_64b[37] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":175:0:175:5|Removing sequential instance sfif.I_bridge_16b_to_64b.rx_data_64b[36] in hierarchy view:work.top(verilog) because there are no references to its outputs 
@@ -229,17 +230,20 @@
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":116:4:116:7|Removing sequential instance sfif.ctrl.sm_1[4] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":60:4:60:7|Removing sequential instance sfif.ctrl.sm_1[0] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: FX164 |The option to pack flops in the IOB has not been specified 
-@N: FO126 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":217:0:217:5|Generating RAM sfif.wbs.read_shift_a_CR15[15:0]
+@N: FO126 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Generating RAM sfif.wbs.read_shift_a_CR15[15:0]
 @N: FO126 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":42:0:42:5|Generating RAM wb_tlc.cpld.din_p5_CR15[15:0]
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":4:0:4:0|Assigning clock "refclkn" to command: define_clock {p:refclkn} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":5:0:5:0|Assigning clock "refclkp" to command: define_clock {p:refclkp} -freq {100} -clockgroup {default_clkgroup_1} 
+@N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Assigning clock "clk_125_c" to command: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":8:0:8:0|Assigning clock "clk_ADC0_DCO_P" to command: define_clock {p:clk_ADC0_DCO_P} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":4:0:4:0|Assigning clock "refclkn" to command: define_clock {p:refclkn} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":5:0:5:0|Assigning clock "refclkp" to command: define_clock {p:refclkp} -freq {100} -clockgroup {default_clkgroup_1} 
+@N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Assigning clock "clk_125_c" to command: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":8:0:8:0|Assigning clock "clk_ADC0_DCO_P" to command: define_clock {p:clk_ADC0_DCO_P} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: BW106 |Synplicity Constraint File capacitance units using default value of 1pF 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":4:0:4:0|Assigning clock "refclkn" to command: define_clock {p:refclkn} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":5:0:5:0|Assigning clock "refclkp" to command: define_clock {p:refclkp} -freq {100} -clockgroup {default_clkgroup_1} 
+@N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Assigning clock "clk_125_c" to command: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @N: MT480 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":8:0:8:0|Assigning clock "clk_ADC0_DCO_P" to command: define_clock {p:clk_ADC0_DCO_P} -freq {100} -clockgroup {default_clkgroup_0} 
 @N: MT320 |Timing report estimates place and route data. Please look at the place and route timing report for final timing.
 @N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock.

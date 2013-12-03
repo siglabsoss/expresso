@@ -14,11 +14,11 @@ The file contains the job information from compiler to be displayed as part of t
   </job_status>
 <job_info> 
 			<info name="Notes">
-  <data>86</data>
+  <data>90</data>
   <report_link name="more"><data>C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\synlog\report\top_impl1_compiler_notes.txt</data></report_link>
   </info>
 			<info name="Warnings">
-  <data>116</data>
+  <data>120</data>
   <report_link name="more"><data>C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\synlog\report\top_impl1_compiler_warnings.txt</data></report_link>
   </info>
 			<info name="Errors">
@@ -29,13 +29,13 @@ The file contains the job information from compiler to be displayed as part of t
   <data>-</data>
   </info>
 			<info name="Real Time">
-  <data>0h:00m:02s</data>
+  <data>0h:00m:03s</data>
   </info>
 			<info name="Peak Memory">
   <data>-</data>
   </info>
 			<info name="Date &amp;Time">
-  <data type="timestamp">1385774390</data>
+  <data type="timestamp">1386034338</data>
   </info>
 			</job_info>
 </job_run_status>

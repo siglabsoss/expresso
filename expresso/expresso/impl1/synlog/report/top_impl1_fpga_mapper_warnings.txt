@@ -87,32 +87,24 @@
 @W|Block-path constraint from CLKNET "ddr_generic|sclk_inferred_clock" to PORT "refclkn" not forward annotated in -lpf file. 
 @W|Block-path constraint from CLKNET "ddr_generic|sclk_inferred_clock" to PORT "clk_ADC0_DCO_P" not forward annotated in -lpf file. 
 @W|Block-path constraint from CLKNET "ddr_generic|sclk_inferred_clock" to PORT "refclkp" not forward annotated in -lpf file. 
-@W|Block-path constraint from CLKNET "pcie_top|sys_clk_125_inferred_clock" to PORT "refclkn" not forward annotated in -lpf file. 
-@W|Block-path constraint from CLKNET "pcie_top|sys_clk_125_inferred_clock" to PORT "clk_ADC0_DCO_P" not forward annotated in -lpf file. 
-@W|Block-path constraint from CLKNET "pcie_top|sys_clk_125_inferred_clock" to PORT "refclkp" not forward annotated in -lpf file. 
 @W|Block-path constraint from PORT "refclkn" to CLKNET "ddr_generic|sclk_inferred_clock" not forward annotated in -lpf file. 
-@W|Block-path constraint from PORT "refclkn" to CLKNET "pcie_top|sys_clk_125_inferred_clock" not forward annotated in -lpf file. 
 @W|Block-path constraint from PORT "clk_ADC0_DCO_P" to CLKNET "ddr_generic|sclk_inferred_clock" not forward annotated in -lpf file. 
-@W|Block-path constraint from PORT "clk_ADC0_DCO_P" to CLKNET "pcie_top|sys_clk_125_inferred_clock" not forward annotated in -lpf file. 
 @W|Block-path constraint from PORT "refclkp" to CLKNET "ddr_generic|sclk_inferred_clock" not forward annotated in -lpf file. 
-@W|Block-path constraint from PORT "refclkp" to CLKNET "pcie_top|sys_clk_125_inferred_clock" not forward annotated in -lpf file. 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":131:3:131:14|Blackbox pmi_ram_dp_Z6 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":130:3:130:6|Blackbox pmi_ram_dp_Z4 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":101:3:101:9|Blackbox pmi_ram_dp_Z3 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
-@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":126:11:126:23|Blackbox DELAYC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
-@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":101:12:101:24|Blackbox EHXPLLF is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
-@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":77:12:77:27|Blackbox IDDRXD1 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":147:11:147:23|Blackbox DELAYC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":121:11:121:22|Blackbox TRDLLB is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":105:12:105:24|Blackbox DLLDELB is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":102:12:102:24|Blackbox CLKDIVB is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\ddr_generic.v":97:12:97:27|Blackbox IDDRXD1 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":72:3:72:14|Blackbox pmi_ram_dp_Z2 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":72:3:72:14|Blackbox pmi_ram_dp_Z1 is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\pcie_top.v":205:5:205:10|Blackbox pcie is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\pcie_top.v":158:13:158:23|Blackbox pcs_pipe_top is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
-@W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Unable to assign name to clock: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
+@W: MT246 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\adc_clock.v":37:12:37:20|Blackbox EHXPLLF is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
 @W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Unable to assign name to clock: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
 @W: MT420 |Found inferred clock ddr_generic|sclk_inferred_clock with period 1000.00ns. Please declare a user-defined clock on object "n:sfif.wbs.ddr.sclk"
-@W: MT420 |Found inferred clock pcie_top|sys_clk_125_inferred_clock with period 1000.00ns. Please declare a user-defined clock on object "n:pcie.sys_clk_125"
-@W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Clock source n:clk_125 not found in netlist: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Clock source n:ddr_sclk not found in netlist: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
-@W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Unable to assign name to clock: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @W: MT479 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Unable to assign name to clock: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
-@W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":6:0:6:0|Clock source n:clk_125 not found in netlist: define_clock {n:clk_125} -freq {125} -clockgroup {default_clkgroup_3} 
 @W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Clock source n:ddr_sclk not found in netlist: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 

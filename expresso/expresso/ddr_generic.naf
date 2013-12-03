@@ -1,6 +1,8 @@
 clk  i
-pll_lock  o
-pll_reset  i
+clkdiv_reset  i
+gdll_lock  o
+gdll_resetn  i
+gdll_uddcntl  i
 sclk  o
 datain[7]  i
 datain[6]  i

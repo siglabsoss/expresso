@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiamondModule name="adc_clock" module="adc_clock" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2013 12 02 17:32:07.238" version="5.4" type="Module" synthesis="synplify" source_format="Verilog HDL">
+  <Package>
+		<File name="adc_clock.lpc" type="lpc" modified="2013 12 02 17:32:05.939"/>
+		<File name="adc_clock.v" type="top_level_verilog" modified="2013 12 02 17:32:05.990"/>
+		<File name="adc_clock_tmpl.v" type="template_verilog" modified="2013 12 02 17:32:05.991"/>
+  </Package>
+</DiamondModule>

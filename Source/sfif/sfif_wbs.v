@@ -164,16 +164,30 @@ assign read_head_address = read_head + (wb_adr_i - POP_START_ADDRESS) / 8;
 
 wire pll_lock;
 wire ddr_sclk;
+wire ddr_eclk;
 wire[15:0] ADC_Q;
+wire[31:0] ADC_Q_WIDE;
+wire ddr_eclk;
+wire gddl_lock;
+
+
+//always@(*) begin
+//	ADC_Q = ADC_Q_WIDE[15:0];
+//end
+	
 
 ddr_generic ddr(
 		.clk(clk_ADC0_DCO_P),
 		.datain(ADC0_BUS),
-		.pll_reset(reset),
+		.clkdiv_reset(reset),
+		.gdll_resetn(1'b1),
+		.gdll_uddcntl(1'b0),
 		// out
-		.pll_lock(pll_lock),
+		//.eclk(),
 		.sclk(ddr_sclk),
+		.gdll_lock(gddl_lock),
 		.q(ADC_Q)
+		//.q(ADC_Q)
 	);
 	
 
@@ -187,7 +201,7 @@ ddr_generic ddr(
 adc_ram pop_ram (
 .WrAddress( write_head ),
 .RdAddress( read_head_address_p ),
-.Data( ADC_Q ),
+.Data( ADC_Q),
 .WE( 1'b1 ),
 .RdClock( wb_clk_i ), 
 .RdClockEn( 1'b1 ),

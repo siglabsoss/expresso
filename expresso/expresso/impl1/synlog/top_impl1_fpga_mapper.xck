@@ -1,2 +1,2 @@
-CKID0001:@|S:sfif.wbs.ddr.Inst3_EHXPLLF@|E:sfif.wbs.pop_ram.adc_ram_0_1_0@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001
-CKID0002:@|S:pcie.u1_pcs_pipe@|E:core_rst_n@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002
+CKID0001:@|S:sfif.wbs.ddr.Inst5_CLKDIVB@|E:sfif.wbs.pop_ram.adc_ram_0_1_0@|F:@syn_sample_clock_path==CKID0001@|M:ClockId0001
+CKID0002:@|S:clk_125_keep@|E:core_rst_n@|F:@syn_sample_clock_path==CKID0002@|M:ClockId0002
