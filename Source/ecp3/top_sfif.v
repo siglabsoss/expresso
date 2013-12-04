@@ -129,6 +129,7 @@ wire gpio_we;
 wire gpio_stb;
 wire gpio_ack;
 
+/*
 wire [15:0] ebr_dat_i, ebr_dat_o;
 wire [31:0] ebr_adr;
 wire [1:0] ebr_sel;
@@ -137,6 +138,7 @@ wire ebr_cyc;
 wire ebr_we;
 wire ebr_stb;
 wire ebr_ack;
+*/
 
 wire [7:0] bus_num ; 
 wire [4:0] dev_num ; 
@@ -477,11 +479,12 @@ wbs_gpio gpio(.wb_clk_i(clk_125), .wb_rst_i(~core_rst_n),
 );
 assign led_out = ~led_out_int[13:0];// chnd frm org          
 
+/*
 wbs_32kebr ebr(.wb_clk_i(clk_125), .wb_rst_i(~core_rst_n),
           .wb_dat_i(ebr_dat_i), .wb_adr_i(ebr_adr), .wb_cyc_i(ebr_cyc), .wb_sel_i(ebr_sel), .wb_stb_i(ebr_stb), .wb_we_i(ebr_we), .wb_cti_i(ebr_cti),
           .wb_dat_o(ebr_dat_o), .wb_ack_o(ebr_ack), .wb_err_o(ebr_err), .wb_rty_o(ebr_rty)          
 );                          
-  
+*/
 
 
 // DEBUG OUPUT OPTIONS

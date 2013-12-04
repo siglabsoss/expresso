@@ -2,7 +2,7 @@
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Mon Dec 02 17:32:32 2013
+# Timing Report written on Tue Dec 03 19:29:09 2013
 #
 
 
@@ -27,7 +27,7 @@ Worst slack in design: -1.192
                                     Requested     Estimated     Requested     Estimated                 Clock        Clock              
 Starting Clock                      Frequency     Frequency     Period        Period        Slack       Type         Group              
 ----------------------------------------------------------------------------------------------------------------------------------------
-clk_125_c                           125.0 MHz     117.0 MHz     8.000         8.548         -0.548      declared     default_clkgroup_3 
+clk_125_c                           125.0 MHz     117.1 MHz     8.000         8.543         -0.543      declared     default_clkgroup_3 
 clk_ADC0_DCO_P                      100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
 ddr_generic|sclk_inferred_clock     1.0 MHz       NA            1000.000      NA            NA          inferred     Inferred_clkgroup_0
 refclkn                             100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 

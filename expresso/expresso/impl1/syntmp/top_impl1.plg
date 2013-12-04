@@ -1,9 +1,9 @@
-@P:  Worst Slack : -0.548
-@P:  clk_125_c - Estimated Frequency : 117.0 MHz
+@P:  Worst Slack : -0.543
+@P:  clk_125_c - Estimated Frequency : 117.1 MHz
 @P:  clk_125_c - Requested Frequency : 125.0 MHz
-@P:  clk_125_c - Estimated Period : 8.548
+@P:  clk_125_c - Estimated Period : 8.543
 @P:  clk_125_c - Requested Period : 8.000
-@P:  clk_125_c - Slack : -0.548
+@P:  clk_125_c - Slack : -0.543
 @P:  clk_ADC0_DCO_P - Estimated Frequency : NA
 @P:  clk_ADC0_DCO_P - Requested Frequency : 100.0 MHz
 @P:  clk_ADC0_DCO_P - Estimated Period : NA
@@ -30,11 +30,11 @@
 @P:  System - Requested Period : 1000.000
 @P:  System - Slack : 997.825
 @P:  Worst Slack(min analysis) : -1.192
-@P:  clk_125_c - Estimated Frequency(min analysis) : 117.0 MHz
+@P:  clk_125_c - Estimated Frequency(min analysis) : 117.1 MHz
 @P:  clk_125_c - Requested Frequency(min analysis) : 125.0 MHz
-@P:  clk_125_c - Estimated Period(min analysis) : 8.548
+@P:  clk_125_c - Estimated Period(min analysis) : 8.543
 @P:  clk_125_c - Requested Period(min analysis) : 8.000
-@P:  clk_125_c - Slack(min analysis) : -0.548
+@P:  clk_125_c - Slack(min analysis) : -0.543
 @P:  clk_ADC0_DCO_P - Estimated Frequency(min analysis) : NA
 @P:  clk_ADC0_DCO_P - Requested Frequency(min analysis) : 100.0 MHz
 @P:  clk_ADC0_DCO_P - Estimated Period(min analysis) : NA
@@ -60,7 +60,7 @@
 @P:  System - Estimated Period(min analysis) : 2.175
 @P:  System - Requested Period(min analysis) : 1000.000
 @P:  System - Slack(min analysis) : 997.825
-@P:  Total Area : 1455.0
+@P:  Total Area : 1483.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
@@ -91,5 +91,4 @@
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  CPU Time : 0h:00m:11s
+@P:  CPU Time : 0h:00m:13s

@@ -160,7 +160,7 @@ begin
   begin
     s0_sel <= ~rr[0] ? (m0_adr_i[31:12] >= S0_BASE[31:12]) : 1'b0; // M0 (PCIe) only talks to S0 and S1
     s1_sel <= ~rr[0] ? (m0_adr_i[31:12] >= S1_BASE[31:12]) : 1'b0;
-    s2_sel <= (m_adr[31:12] >= S2_BASE[31:12]);
+    s2_sel <= 1'b0; //(m_adr[31:12] >= S2_BASE[31:12]);
     s3_sel <= (m_adr[31:12] >= S3_BASE[31:12]);  
   end
 end

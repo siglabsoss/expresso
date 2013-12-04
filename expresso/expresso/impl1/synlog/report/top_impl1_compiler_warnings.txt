@@ -3,6 +3,7 @@
 @W: CS141 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":83:18:83:30|Unrecognized synthesis directive syn_black_box
 @W: CS140 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcs_pipe_bb.v":55:2:55:2|black_box attribute has been renamed to syn_black_box. Change black_box usage to synthesis syn_black_box for upward compatibility.
 @W: CG146 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcie_bb.v":14:7:14:10|Creating black box for empty module pcie
+@W: CL207 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":150:0:150:5|All reachable assignments to s2_sel assign 0, register removed by optimization.
 @W: CL168 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\source\adc_ram.v":24:8:24:21|Pruning instance scuba_vhi_inst -- not in use ...
 @W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":202:12:202:21|Port-width mismatch for port WrAddress. Formal has width 11, Actual 10
 @W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":203:12:203:30|Port-width mismatch for port RdAddress. Formal has width 11, Actual 10
@@ -67,24 +68,23 @@
 @W: CL190 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Optimizing register bit int_status[30] to a constant 0
 @W: CL190 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Optimizing register bit int_status[31] to a constant 0
 @W: CL279 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Pruning register bits 31 to 16 of int_status[31:0] 
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":74:12:74:26|No assignment to wire wb_dat_modified
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":92:0:92:5|Pruning register addr[14:0] 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":92:0:92:5|Pruning register wdata[15:0] 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":92:0:92:5|Pruning register byte_en[1:0] 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":92:0:92:5|Pruning register wr_en 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":92:0:92:5|Pruning register rd_en 
-@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":461:22:461:33|Port-width mismatch for port rx_cr_cpld. Formal has width 8, Actual 1
-@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":474:19:474:30|Port-width mismatch for port dma_req. Formal has width 5, Actual 1
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":154:12:154:27|No assignment to wire tx_dout_sfif_64b
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":155:12:155:22|No assignment to wire rx_data_64b
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":426:14:426:22|Port-width mismatch for port s2_dat_i. Formal has width 16, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":427:14:427:22|Port-width mismatch for port s2_dat_o. Formal has width 16, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":428:14:428:20|Port-width mismatch for port s2_adr_o. Formal has width 32, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":429:14:429:20|Port-width mismatch for port s2_sel_o. Formal has width 2, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":432:14:432:20|Port-width mismatch for port s2_cti_o. Formal has width 3, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":463:22:463:33|Port-width mismatch for port rx_cr_cpld. Formal has width 8, Actual 1
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":476:19:476:30|Port-width mismatch for port dma_req. Formal has width 5, Actual 1
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":156:12:156:27|No assignment to wire tx_dout_sfif_64b
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":157:12:157:22|No assignment to wire rx_data_64b
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":426:14:426:22|*Input un1_ebr_dat_o[15:0] to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":434:14:434:20|*Input ebr_ack to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":435:14:435:20|*Input ebr_err to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":436:14:436:20|*Input ebr_rty to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":47:7:47:14|*Output ADC0_CSB has undriven bits -- simulation mismatch possible.
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":48:7:48:15|*Output ADC0_SCLK has undriven bits -- simulation mismatch possible.
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":49:7:49:15|*Output ADC0_SDIO has undriven bits -- simulation mismatch possible.
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":46:6:46:14|Input ADC0_OR_P is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":60:14:60:21|Input wb_dat_i is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":61:14:61:21|Input wb_adr_i is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":64:14:64:21|Input wb_sel_i is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\32kebr\wbs_32kebr.v":66:14:66:20|Input wb_we_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":18:13:18:20|Input wb_cti_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":20:14:20:22|Input wb_lock_i is unused
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":41:22:41:28|*Output tx_nlfy has undriven bits -- simulation mismatch possible.
@@ -109,6 +109,10 @@
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:60:56:76|Input credit_wait_p_cnt is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:79:56:96|Input credit_wait_np_cnt is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:99:56:114|Input rx_tlp_timestamp is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":82:25:82:32|Input s2_dat_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":90:6:90:13|Input s2_ack_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":91:6:91:13|Input s2_err_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":92:6:92:13|Input s2_rty_i is unused
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc.v":46:14:46:18|*Output debug has undriven bits -- simulation mismatch possible.
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld_fifo.v":17:14:17:21|Input din_dwen is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":12:12:12:14|Input sel is unused

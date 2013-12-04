@@ -229,6 +229,7 @@
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":147:0:147:5|Removing sequential instance sfif.I_bridge_16b_to_64b.read_data[56] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":116:4:116:7|Removing sequential instance sfif.ctrl.sm_1[4] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":60:4:60:7|Removing sequential instance sfif.ctrl.sm_1[0] in hierarchy view:work.top(verilog) because there are no references to its outputs 
+@N: BN362 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_intf.v":71:0:71:5|Removing sequential instance wb_tlc.intf.wb_cti_o_1[0] in hierarchy view:work.top(verilog) because there are no references to its outputs 
 @N: FX164 |The option to pack flops in the IOB has not been specified 
 @N: FO126 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Generating RAM sfif.wbs.read_shift_a_CR15[15:0]
 @N: FO126 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":42:0:42:5|Generating RAM wb_tlc.cpld.din_p5_CR15[15:0]

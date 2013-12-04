@@ -46,8 +46,6 @@ set_option -resolve_multiple_driver 0
 #-- add_file options
 set_option -include_path {C:/Users/joel/Documents/popwi_expresso/expresso/expresso}
 add_file -verilog {C:/lscc/diamond/2.2_x64/cae_library/synthesis/verilog/ecp3.v}
-add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/32kebr/spram_16384_16.v}
-add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/32kebr/wbs_32kebr.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/gpio/wbs_gpio.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/bridge_64b_to_16b.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/pmi_ram_dp.v}
