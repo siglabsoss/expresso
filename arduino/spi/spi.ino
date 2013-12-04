@@ -51,7 +51,34 @@ void loop() {
    Serial.println("resending");
   
 //    sendTestPattern();
-    sendPowerDown();
+//    sendPowerDown();
+
+
+//  unsigned char testMode[] =
+//                        { 0, 0, 0, 0,    0, 0, 0, 0,
+//                          0, 0, 0, 0,    1, 1, 0, 1,
+//                          0, 0, 0, 0,    0, 0, 1, 0};
+//
+//  spiWriteArray(testMode, 24);
+
+  
+  unsigned char powerDown[] =
+                        { 0, 0, 0, 0,    0, 0, 0, 0,
+                          0, 0, 0, 0,    1, 0, 0, 0,
+                          0, 0, 0, 0,    0, 0, 0, 1};
+
+  spiWriteArray(powerDown, 24);
+  
+  delay(3);
+
+  unsigned char commitChanges[] =
+                        { 0, 0, 0, 0,    0, 0, 0, 0,
+                          1, 1, 1, 1,    1, 1, 1, 1,
+                          0, 0, 0, 0,    0, 0, 0, 1};
+
+  spiWriteArray(commitChanges, 24);
+
+
 //spiRead(0,0);
    
    delay(100);
@@ -106,6 +133,61 @@ void spiRead(int address, int value)
     
 }
 
+void spiWriteArray(unsigned char* dat, unsigned bits)
+{
+    
+  // master is output
+  pinMode(MOSI, OUTPUT);
+  pinMode(SCK, OUTPUT);
+  
+
+  delay(1);
+  digitalWrite(MOSI,LOW);
+  digitalWrite(SCK,LOW);
+  delay(1);
+        // take the SS pin low to select the chip:
+  digitalWrite(slaveSelectPin,LOW);
+
+  
+  int n;
+  delay(1);
+  for(n = 0; n < 8; n++)
+{
+    digitalWrite(MOSI,dat[n]);
+  delay(1);
+  digitalWrite(SCK,HIGH);
+  delay(1);
+  digitalWrite(SCK,LOW);
+}
+  digitalWrite(slaveSelectPin,HIGH);
+  delay(1);
+  digitalWrite(slaveSelectPin,LOW);
+  for(n = 8; n < 16; n++)
+{
+    digitalWrite(MOSI,dat[n]);
+  delay(1);
+  digitalWrite(SCK,HIGH);
+  delay(1);
+  digitalWrite(SCK,LOW);
+}
+  digitalWrite(slaveSelectPin,HIGH);
+  delay(1);
+  digitalWrite(slaveSelectPin,LOW);
+  for(n = 16; n < 24; n++)
+{
+    digitalWrite(MOSI,dat[n]);
+  delay(1);
+  digitalWrite(SCK,HIGH);
+  delay(1);
+  digitalWrite(SCK,LOW);
+}
+  
+  delay(1);
+  
+  // take the SS pin high to de-select the chip:
+  digitalWrite(slaveSelectPin,HIGH); 
+}
+
 // address is the register address, value is the value
 void spiWrite(int address, int value) {
   
@@ -121,18 +203,6 @@ void spiWrite(int address, int value) {
 
   //  send in the address and value via SPI:
   
-//  delay(1);
-  
-  /* first 8 bits
-   r/w
-   w1
-   w0
-   a12
-   a11
-   a10
-   a9
-   a8
-  */
   
   unsigned char dat[] = { 0, 0, 0, 0,    0, 0, 0, 0,
                           0, 0, 0, 0,    1, 0, 0, 0,
