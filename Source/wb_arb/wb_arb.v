@@ -161,7 +161,7 @@ begin
     s0_sel <= ~rr[0] ? (m0_adr_i[31:12] >= S0_BASE[31:12]) : 1'b0; // M0 (PCIe) only talks to S0 and S1
     s1_sel <= ~rr[0] ? (m0_adr_i[31:12] >= S1_BASE[31:12]) : 1'b0;
     s2_sel <= 1'b0; //(m_adr[31:12] >= S2_BASE[31:12]);
-    s3_sel <= (m_adr[31:12] >= S3_BASE[31:12]);  
+    s3_sel <= 1'b0; //(m_adr[31:12] >= S3_BASE[31:12]);  
   end
 end
 
@@ -194,7 +194,7 @@ assign s0_we_o  = m0_we_i;
 //always @(posedge clk or negedge rstn)
 always @(*)
 begin
-    casex ({s0_sel, s1_sel, s2_sel, s3_sel})
+    casex ({s0_sel, s1_sel, 2'b0})
     4'b0000: // no match
     begin
       s0_cyc_o <= 1'b0;
@@ -209,36 +209,6 @@ begin
       s_ack <= 1'b0;
       s_err <= 1'b0;
       s_rty <= 1'b0;        
-    end
-    4'bxxx1: // s3
-    begin
-      s0_cyc_o <= 1'b0;
-      s0_stb_o <= 1'b0;
-      s1_cyc_o <= 1'b0;
-      s1_stb_o <= 1'b0;
-      s2_cyc_o <= 1'b0;
-      s2_stb_o <= 1'b0;      
-      s3_cyc_o <= m_cyc;
-      s3_stb_o <= m_stb;        
-      s_dat <= s3_dat_i;
-      s_ack <= s3_ack_i;
-      s_err <= s3_err_i;
-      s_rty <= s3_rty_i;        
-    end
-    4'bxx10: // s2
-    begin
-      s0_cyc_o <= 1'b0;
-      s0_stb_o <= 1'b0;
-      s1_cyc_o <= 1'b0;
-      s1_stb_o <= 1'b0;
-      s2_cyc_o <= m_cyc;
-      s2_stb_o <= m_stb;    
-      s3_cyc_o <= 1'b0;
-      s3_stb_o <= 1'b0;      
-      s_dat <= s2_dat_i;
-      s_ack <= s2_ack_i;
-      s_err <= s2_err_i;
-      s_rty <= s2_rty_i;        
     end
     4'bx100: // s1
     begin

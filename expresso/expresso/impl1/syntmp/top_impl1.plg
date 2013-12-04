@@ -60,7 +60,7 @@
 @P:  System - Estimated Period(min analysis) : 1.165
 @P:  System - Requested Period(min analysis) : 1000.000
 @P:  System - Slack(min analysis) : 998.835
-@P:  Total Area : 939.0
+@P:  Total Area : 950.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
@@ -85,4 +85,4 @@
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
-@P:  CPU Time : 0h:00m:07s
+@P:  CPU Time : 0h:00m:09s

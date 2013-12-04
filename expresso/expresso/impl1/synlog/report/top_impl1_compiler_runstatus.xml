@@ -18,7 +18,7 @@ The file contains the job information from compiler to be displayed as part of t
   <report_link name="more"><data>C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\synlog\report\top_impl1_compiler_notes.txt</data></report_link>
   </info>
 			<info name="Warnings">
-  <data>137</data>
+  <data>143</data>
   <report_link name="more"><data>C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\synlog\report\top_impl1_compiler_warnings.txt</data></report_link>
   </info>
 			<info name="Errors">
@@ -35,7 +35,7 @@ The file contains the job information from compiler to be displayed as part of t
   <data>-</data>
   </info>
 			<info name="Date &amp;Time">
-  <data type="timestamp">1386136312</data>
+  <data type="timestamp">1386136930</data>
   </info>
 			</job_info>
 </job_run_status>

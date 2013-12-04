@@ -44,7 +44,7 @@
 @W: BN132 :|Removing instance wb_tlc.cpld.G_8,  because it is equivalent to instance wb_tlc.cpld.G_3
 @W: BN132 :|Removing instance wb_tlc.cpld.G_9,  because it is equivalent to instance wb_tlc.cpld.G_4
 @W: BN132 :|Removing instance wb_tlc.cpld.G_5,  because it is equivalent to instance wb_tlc.cpld.G_10
-@W: MO160 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":355:0:355:5|Register bit rr[0] is always 0, optimizing ...
+@W: MO160 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":325:0:325:5|Register bit rr[0] is always 0, optimizing ...
 @W: BN132 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\led_status.v":50:0:50:5|Removing instance led.dl_up_i,  because it is equivalent to instance gpio.dl_up_p
 @W: FX528 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\sync_logic.v":95:0:95:5|Found syn_preserve on register wb_tlc.cpld_fifo.I_async_pkt_fifo.I_wr2rd_sync.data_buf_sync[0] which prevents the register from being packed into DSP
 @W: FX528 :"c:\users\joel\documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\sync_logic.v":95:0:95:5|Found syn_preserve on register wb_tlc.req_fifo.I_async_pkt_fifo.I_wr2rd_sync.data_buf_sync[0] which prevents the register from being packed into DSP

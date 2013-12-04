@@ -3,7 +3,8 @@
 @W: CS141 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":83:18:83:30|Unrecognized synthesis directive syn_black_box
 @W: CS140 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcs_pipe_bb.v":55:2:55:2|black_box attribute has been renamed to syn_black_box. Change black_box usage to synthesis syn_black_box for upward compatibility.
 @W: CG146 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcie_bb.v":14:7:14:10|Creating black box for empty module pcie
-@W: CL207 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":150:0:150:5|All reachable assignments to s2_sel assign 0, register removed by optimization.
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":150:0:150:5|Pruning register s2_sel 
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":150:0:150:5|Pruning register s3_sel 
 @W: CL168 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\source\adc_ram.v":24:8:24:21|Pruning instance scuba_vhi_inst -- not in use ...
 @W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":199:12:199:21|Port-width mismatch for port WrAddress. Formal has width 11, Actual 10
 @W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":200:12:200:30|Port-width mismatch for port RdAddress. Formal has width 11, Actual 10
@@ -122,10 +123,15 @@
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:51:55:67|Input credit_wait_p_cnt is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:70:55:87|Input credit_wait_np_cnt is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:90:55:105|Input rx_tlp_timestamp is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":53:6:53:13|Input m1_stb_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":82:25:82:32|Input s2_dat_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":90:6:90:13|Input s2_ack_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":91:6:91:13|Input s2_err_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":92:6:92:13|Input s2_rty_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":94:25:94:32|Input s3_dat_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":102:6:102:13|Input s3_ack_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":103:6:103:13|Input s3_err_i is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":104:6:104:13|Input s3_rty_i is unused
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc.v":46:14:46:18|*Output debug has undriven bits -- simulation mismatch possible.
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld_fifo.v":17:14:17:21|Input din_dwen is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":12:12:12:14|Input sel is unused

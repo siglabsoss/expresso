@@ -70,7 +70,7 @@
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":147:0:147:5|Found seqShift read_valid, depth=3, width=1
 @N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":43:0:43:5|Trying to extract state machine for register sm
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Found seqShift read_shift_a, depth=3, width=16
-@N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":355:0:355:5|Trying to extract state machine for register rr
+@N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":325:0:325:5|Trying to extract state machine for register rr
 @N: CL201 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld_fifo.v":110:0:110:5|Trying to extract state machine for register state
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":42:0:42:5|Found seqShift valid_p5, depth=5, width=1
 @N: CL135 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc_cpld.v":42:0:42:5|Found seqShift din_p5, depth=5, width=16

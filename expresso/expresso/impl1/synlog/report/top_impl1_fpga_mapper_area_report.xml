@@ -8,7 +8,7 @@ The file contains the area information from mapper to be displayed as part of th
 <data>C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\synlog\report\top_impl1_fpga_mapper_resourceusage.rpt</data>
 </report_link>
 <parameter tooltip="Total Register bits used" name="Register bits">
-<data>996</data>
+<data>995</data>
 </parameter>
 <parameter tooltip="Total I/O cells used" name="I/O cells">
 <data>63</data>
@@ -20,6 +20,6 @@ The file contains the area information from mapper to be displayed as part of th
 <data>0</data>
 </parameter>
 <parameter tooltip="Total ORCA LUTs used" name="ORCA LUTs">
-<data>914</data>
+<data>925</data>
 </parameter>
 </report_table>
