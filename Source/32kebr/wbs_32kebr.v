@@ -84,7 +84,6 @@ assign wb_err_o = 1'b0;
 assign wb_rty_o = 1'b0;
 
 reg [2:0] wb_cyc_i_d;
-reg [14:0] addr;
 reg [1:0] byte_en;
 reg [15:0] wdata;
 reg wr_en;
@@ -92,7 +91,6 @@ reg rd_en;
 always @(posedge wb_clk_i or posedge wb_rst_i)
    if (wb_rst_i) begin
       wb_cyc_i_d <= 0;
-      addr <= 0;
       wdata <= 0;
       byte_en <= 0;
       wr_en <= 0;
@@ -110,7 +108,6 @@ always @(posedge wb_clk_i or posedge wb_rst_i)
          
          
       if (wb_we_i) begin
-         addr  <= wb_adr_i[14:0];
          byte_en <= wb_sel_i;
          wdata <= wb_dat_i;
          wr_en <= wb_cyc_i & wb_stb_i & wb_ack_o;
@@ -119,13 +116,10 @@ always @(posedge wb_clk_i or posedge wb_rst_i)
          byte_en <= 2'b11;
          wr_en   <= 0;
          if (wb_cyc_i && (~ wb_cyc_i_d[0])) begin
-            addr  <= wb_adr_i[14:0];
             rd_en <= 1'b1;
          end
          else if (~ wb_cyc_i)
             rd_en <= 1'b0;
-         else if (rd_en)
-            addr <= addr + 2;   
       end
    end
 
