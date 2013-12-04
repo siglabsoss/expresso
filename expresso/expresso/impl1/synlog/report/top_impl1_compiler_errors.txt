@@ -1,3 +1,2 @@
-@E: CS109 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":137:0:137:2|Expecting module level statement
-@E: CS187 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":380:0:380:8|Expecting endmodule
+@E: CG389 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\wb_tlc.v":148:39:148:47|Reference to undefined module wb_tlc_cpld_fifo
 

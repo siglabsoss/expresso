@@ -48,14 +48,11 @@ set_option -include_path {C:/Users/joel/Documents/popwi_expresso/expresso/expres
 add_file -verilog {C:/lscc/diamond/2.2_x64/cae_library/synthesis/verilog/ecp3.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/gpio/wbs_gpio.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/bridge_64b_to_16b.v}
-add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/pmi_ram_dp.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/bridge_16b_to_64b.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_cr.v}
-add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_rx_fifo.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_ctrl.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_tag.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_ca.v}
-add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_tx_fifo.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_wbs.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif.v}
 add_file -verilog {C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/wb_arb/wb_arb.v}

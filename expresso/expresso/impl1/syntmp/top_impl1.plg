@@ -24,11 +24,11 @@
 @P:  refclkp - Estimated Period : NA
 @P:  refclkp - Requested Period : 10.000
 @P:  refclkp - Slack : NA
-@P:  System - Estimated Frequency : 459.7 MHz
+@P:  System - Estimated Frequency : 858.1 MHz
 @P:  System - Requested Frequency : 1.0 MHz
-@P:  System - Estimated Period : 2.175
+@P:  System - Estimated Period : 1.165
 @P:  System - Requested Period : 1000.000
-@P:  System - Slack : 997.825
+@P:  System - Slack : 998.835
 @P:  Worst Slack(min analysis) : -1.192
 @P:  clk_125_c - Estimated Frequency(min analysis) : 117.1 MHz
 @P:  clk_125_c - Requested Frequency(min analysis) : 125.0 MHz
@@ -55,12 +55,12 @@
 @P:  refclkp - Estimated Period(min analysis) : NA
 @P:  refclkp - Requested Period(min analysis) : 10.000
 @P:  refclkp - Slack(min analysis) : NA
-@P:  System - Estimated Frequency(min analysis) : 459.7 MHz
+@P:  System - Estimated Frequency(min analysis) : 858.1 MHz
 @P:  System - Requested Frequency(min analysis) : 1.0 MHz
-@P:  System - Estimated Period(min analysis) : 2.175
+@P:  System - Estimated Period(min analysis) : 1.165
 @P:  System - Requested Period(min analysis) : 1000.000
-@P:  System - Slack(min analysis) : 997.825
-@P:  Total Area : 1483.0
+@P:  System - Slack(min analysis) : 998.835
+@P:  Total Area : 939.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
@@ -85,10 +85,4 @@
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
 @P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  Total Area : 0.0
-@P:  CPU Time : 0h:00m:13s
+@P:  CPU Time : 0h:00m:08s

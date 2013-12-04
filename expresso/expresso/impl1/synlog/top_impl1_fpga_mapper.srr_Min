@@ -2,7 +2,7 @@
 
 
 ##### START OF TIMING REPORT #####[
-# Timing Report written on Tue Dec 03 19:29:09 2013
+# Timing Report written on Tue Dec 03 21:26:35 2013
 #
 
 
@@ -32,7 +32,7 @@ clk_ADC0_DCO_P                      100.0 MHz     NA            10.000        NA
 ddr_generic|sclk_inferred_clock     1.0 MHz       NA            1000.000      NA            NA          inferred     Inferred_clkgroup_0
 refclkn                             100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_0 
 refclkp                             100.0 MHz     NA            10.000        NA            NA          declared     default_clkgroup_1 
-System                              1.0 MHz       459.7 MHz     1000.000      2.175         997.825     system       system_clkgroup    
+System                              1.0 MHz       858.1 MHz     1000.000      1.165         998.835     system       system_clkgroup    
 ========================================================================================================================================
 @W: MT511 :"c:/users/joel/documents/popwi_expresso/expresso/expresso/top.sdc":9:0:9:0|Clock source n:ddr_sclk not found in netlist: define_clock {n:ddr_sclk} -freq {100} -clockgroup {default_clkgroup_0} 
 

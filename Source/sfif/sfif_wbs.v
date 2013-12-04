@@ -6,7 +6,7 @@ module sfif_wbs(wb_clk_i, wb_rst_i,
             tx_cycles, lpbk, loop, run, reset, enable, rx_filter,
             c_npd, c_pd, c_nph, c_ph, tag, tag_cplds, mrd,
             tx_dwen, tx_nlfy, tx_end, tx_st, tx_ctrl,
-            ipg_cnt, tx_data, tx_dv, rx_data, elapsed_cnt, tx_tlp_cnt, rx_tlp_cnt, rx_empty, rx_data_read,
+            ipg_cnt, tx_dv, elapsed_cnt, tx_tlp_cnt, rx_tlp_cnt, rx_empty,
             credit_wait_p_cnt, credit_wait_np_cnt, rx_tlp_timestamp
             , clk_ADC0_DCO_P
 			, ADC0_BUS
@@ -52,10 +52,8 @@ output tx_st;
 output tx_dv;
 output tx_ctrl;
 output [15:0] ipg_cnt;        
-output [31:0] tx_data;
-input  [31:0] rx_data, elapsed_cnt, tx_tlp_cnt, rx_tlp_cnt, credit_wait_p_cnt, credit_wait_np_cnt, rx_tlp_timestamp;
+input  [31:0] elapsed_cnt, tx_tlp_cnt, rx_tlp_cnt, credit_wait_p_cnt, credit_wait_np_cnt, rx_tlp_timestamp;
 input rx_empty;
-output rx_data_read;
 
 
 reg [15:0] wb_dat_o;
@@ -80,10 +78,9 @@ reg tx_nlfy;
 reg tx_end;
 reg tx_st;
 reg [15:0] ipg_cnt;        
-reg [31:0] tx_data;
 reg tx_dv;
 reg tx_ctrl;
-reg rx_data_read, data_read;
+reg data_read;
 reg rx_filter;
 reg dummy;
 reg [15:0] temp_data;
@@ -235,7 +232,6 @@ begin
     wb_dat_o <= 0;
     wb_ack_o <= 1'b0;
     tx_dv <= 1'b0;    
-    rx_data_read <= 1'b0;
     data_read <= 1'b0;
     tx_cycles <= 16'd0;
     ipg_cnt <= 16'd0;
@@ -250,7 +246,6 @@ begin
     tx_nlfy <= 1'b0;
     tx_end <= 1'b0;    
     tx_st <= 1'b0; 
-    tx_data <= 32'd0;
     tx_ctrl <= 1'b0;
     enable <= 1'b0;
     reset <= 1'b0;
@@ -270,16 +265,6 @@ begin
 	
 	pop_ram_q = pop_ram_q_wire;
     
-    // issue a read to the rx_fifo once the rx data has been read
-    if (data_read && ~wb_cyc_i)
-    begin
-      rx_data_read <= 1'b1;
-      data_read <= 1'b0;
-    end
-    else
-      rx_data_read <= 1'b0;
-      
-  
     if (wb_cyc_i)
     begin
     

@@ -1,54 +1,55 @@
 @W: CS141 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":142:18:142:30|Unrecognized synthesis directive syn_black_box
-@W: CG921 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":170:5:170:12|ddr_eclk is already declared in this scope.
+@W: CG921 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":167:5:167:12|ddr_eclk is already declared in this scope.
 @W: CS141 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_tlc\async_pkt_fifo.v":83:18:83:30|Unrecognized synthesis directive syn_black_box
 @W: CS140 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcs_pipe_bb.v":55:2:55:2|black_box attribute has been renamed to syn_black_box. Change black_box usage to synthesis syn_black_box for upward compatibility.
 @W: CG146 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\Source\IPExpress\ecp3\pciex1\pcie_bb.v":14:7:14:10|Creating black box for empty module pcie
 @W: CL207 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":150:0:150:5|All reachable assignments to s2_sel assign 0, register removed by optimization.
 @W: CL168 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\source\adc_ram.v":24:8:24:21|Pruning instance scuba_vhi_inst -- not in use ...
-@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":202:12:202:21|Port-width mismatch for port WrAddress. Formal has width 11, Actual 10
-@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":203:12:203:30|Port-width mismatch for port RdAddress. Formal has width 11, Actual 10
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":165:5:165:12|No assignment to wire pll_lock
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":167:5:167:12|No assignment to wire ddr_eclk
-@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":169:11:169:20|No assignment to wire ADC_Q_WIDE
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register dummy 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register temp_data[15:0] 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register read_head[9:0] 
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register pop_ram_q[15:0] 
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_st.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_nlfy.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_end.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_dwen.
-@W: CL207 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tx_dv assign 0, register removed by optimization.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_data[31:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_cycles[15:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tx_ctrl.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tag_cplds[3:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal tag[4:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal rx_filter.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal run.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal reset.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal mrd.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal lpbk.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal loop.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal ipg_cnt[15:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal enable.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal c_ph.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal c_pd[3:0].
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal c_nph.
-@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Feedback mux created for signal c_npd[3:0].
-@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tag[4:0] assign 0, register removed by optimization
-@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tag_cplds[3:0] assign 0, register removed by optimization
-@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tx_cycles[15:0] assign 0, register removed by optimization
-@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tx_data[31:0] assign 0, register removed by optimization
-@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|All reachable assignments to tx_st assign 0, register removed by optimization
-@W: CL190 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Optimizing register bit data_read to a constant 0
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register data_read 
-@W: CL271 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":249:0:249:5|Pruning bits 79 to 76 of fifo_out[79:0] -- not in use ...
-@W: CL271 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":249:0:249:5|Pruning bits 39 to 36 of fifo_out[79:0] -- not in use ...
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":199:12:199:21|Port-width mismatch for port WrAddress. Formal has width 11, Actual 10
+@W: CS263 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":200:12:200:30|Port-width mismatch for port RdAddress. Formal has width 11, Actual 10
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":162:5:162:12|No assignment to wire pll_lock
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":164:5:164:12|No assignment to wire ddr_eclk
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":166:11:166:20|No assignment to wire ADC_Q_WIDE
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Pruning register data_read 
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Pruning register dummy 
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Pruning register temp_data[15:0] 
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Pruning register read_head[9:0] 
+@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Pruning register pop_ram_q[15:0] 
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_st.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_nlfy.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_end.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_dwen.
+@W: CL207 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|All reachable assignments to tx_dv assign 0, register removed by optimization.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_cycles[15:0].
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tx_ctrl.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tag_cplds[3:0].
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal tag[4:0].
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal rx_filter.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal run.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal reset.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal mrd.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal lpbk.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal loop.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal ipg_cnt[15:0].
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal enable.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal c_ph.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal c_pd[3:0].
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal c_nph.
+@W: CL113 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|Feedback mux created for signal c_npd[3:0].
+@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|All reachable assignments to tag[4:0] assign 0, register removed by optimization
+@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|All reachable assignments to tag_cplds[3:0] assign 0, register removed by optimization
+@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|All reachable assignments to tx_cycles[15:0] assign 0, register removed by optimization
+@W: CL250 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":228:0:228:5|All reachable assignments to tx_st assign 0, register removed by optimization
 @W: CG133 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tag.v":29:4:29:8|No assignment to debug
 @W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ctrl.v":43:0:43:5|Pruning register tx_end_p 
 @W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":47:0:47:5|Pruning register rx_malf_tlp_16b_d 
 @W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_64b_to_16b.v":28:0:28:5|Pruning register tx_st_64b_d 
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":66:12:66:20|No assignment to wire tx32_data
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":66:23:66:31|No assignment to wire rx32_data
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":67:12:67:20|No assignment to wire tx64_data
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":68:11:68:17|No assignment to wire tx64_pd
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":69:16:69:23|No assignment to wire tx64_tag
+@W: CG360 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":70:22:70:35|No assignment to wire tx64_tag_cplds
 @W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Pruning register dma_req_wr[4:0] 
 @W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Pruning register dma_req_p[4:0] 
 @W: CL190 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":72:0:72:5|Optimizing register bit int_status[16] to a constant 0
@@ -87,6 +88,22 @@
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\ecp3\top_sfif.v":46:6:46:14|Input ADC0_OR_P is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":18:13:18:20|Input wb_cti_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\gpio\wbs_gpio.v":20:14:20:22|Input wb_lock_i is unused
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":85:100:85:107|*Input rx_empty to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":112:19:112:25|*Input tx64_ph to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":68:11:68:17|*Input tx64_pd[3:0] to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":112:54:112:61|*Input tx64_nph to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":118:19:118:25|*Input tx64_st to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":69:16:69:23|*Input tx64_tag[4:0] to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":70:22:70:35|*Input tx64_tag_cplds[3:0] to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":127:26:127:33|*Input tx_empty to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":127:81:127:88|*Input tx64_end to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":67:12:67:20|*Input tx64_data[63:0] to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":118:19:118:25|*Input tx64_st to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":127:81:127:88|*Input tx64_end to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":182:19:182:27|*Input tx64_dwen to expression [instance] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":127:81:127:88|*Input tx64_end to expression [and] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":112:19:112:25|*Input tx64_ph to expression [and] has undriven bits that are tied to 0 -- simulation mismatch possible.
+@W: CL156 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":112:54:112:61|*Input tx64_nph to expression [and] has undriven bits that are tied to 0 -- simulation mismatch possible.
 @W: CL157 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif.v":41:22:41:28|*Output tx_nlfy has undriven bits -- simulation mismatch possible.
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_64b_to_16b.v":8:6:8:16|Input tx_dwen_64b is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\bridge_16b_to_64b.v":9:6:9:20|Input rx_malf_tlp_16b is unused
@@ -95,20 +112,16 @@
 @W: CL246 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tag.v":15:13:15:19|Input port bits 63 to 45 of rx_data[63:0] are unused
 @W: CL246 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tag.v":15:13:15:19|Input port bits 39 to 0 of rx_data[63:0] are unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_ca.v":14:20:14:25|Input ca_npd is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_tx_fifo.v":23:6:23:13|Input tx32_nph is unused
-@W: CL190 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Optimizing register bit rx_data_read to a constant 0
-@W: CL169 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":231:0:231:5|Pruning register rx_data_read 
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":22:14:22:21|Input wb_dat_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":25:14:25:22|Input wb_lock_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":26:14:26:21|Input wb_sel_i is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:14:56:20|Input rx_data is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:23:56:33|Input elapsed_cnt is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:36:56:45|Input tx_tlp_cnt is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:48:56:57|Input rx_tlp_cnt is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":57:6:57:13|Input rx_empty is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:60:56:76|Input credit_wait_p_cnt is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:79:56:96|Input credit_wait_np_cnt is unused
-@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:99:56:114|Input rx_tlp_timestamp is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:14:55:24|Input elapsed_cnt is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:27:55:36|Input tx_tlp_cnt is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:39:55:48|Input rx_tlp_cnt is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":56:6:56:13|Input rx_empty is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:51:55:67|Input credit_wait_p_cnt is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:70:55:87|Input credit_wait_np_cnt is unused
+@W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\sfif\sfif_wbs.v":55:90:55:105|Input rx_tlp_timestamp is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":82:25:82:32|Input s2_dat_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":90:6:90:13|Input s2_ack_i is unused
 @W: CL159 :"C:\Users\joel\Documents\popwi_expresso\expresso\expresso\..\..\source\wb_arb\wb_arb.v":91:6:91:13|Input s2_err_i is unused

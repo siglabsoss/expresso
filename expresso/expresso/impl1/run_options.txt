@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version G-2012.09L-SP1 
 #--  Project file C:\Users\joel\Documents\popwi_expresso\expresso\expresso\impl1\run_options.txt
-#--  Written on Tue Dec 03 19:28:51 2013
+#--  Written on Tue Dec 03 21:26:21 2013
 
 
 #project files
@@ -9,14 +9,11 @@ add_file -constraint "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/t
 add_file -verilog "C:/lscc/diamond/2.2_x64/cae_library/synthesis/verilog/ecp3.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/gpio/wbs_gpio.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/bridge_64b_to_16b.v"
-add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/pmi_ram_dp.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/bridge_16b_to_64b.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_cr.v"
-add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_rx_fifo.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_ctrl.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_tag.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_ca.v"
-add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_tx_fifo.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif_wbs.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/sfif/sfif.v"
 add_file -verilog "C:/Users/joel/Documents/popwi_expresso/expresso/expresso/../../source/wb_arb/wb_arb.v"

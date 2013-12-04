@@ -81,7 +81,7 @@ sfif_wbs wbs(.wb_clk_i(wb_clk_i), .wb_rst_i(wb_rst_i), .wb_dat_i(wb_dat_i), .wb_
              .c_npd(c_npd), .c_pd(c_pd), .c_nph(c_nph), .c_ph(c_ph), .tag(tag), .tag_cplds(tag_cplds), .mrd(mrd),
              .tx_dwen(tx32_dwen), .tx_nlfy(tx32_nlfy), .tx_end(tx32_end), .tx_st(tx32_st), 
              .tx_ctrl(tx32_ctrl),
-             .ipg_cnt(ipg_cnt), .tx_data(tx32_data), .tx_dv(tx32_dv), .rx_data(rx32_data), .rx_data_read(rx32_data_read),
+             .ipg_cnt(ipg_cnt), .tx_dv(tx32_dv),
              .elapsed_cnt(elapsed_cnt), .tx_tlp_cnt(tx_tlp_cnt), .rx_tlp_cnt(rx_tlp_cnt), .rx_empty(rx_empty),
              .credit_wait_p_cnt(credit_wait_p_cnt), .credit_wait_np_cnt(credit_wait_np_cnt), .rx_tlp_timestamp(rx_tlp_timestamp)
 			 
@@ -96,6 +96,7 @@ assign enabled = enable;
 
 assign sfif_rstn = rstn && ~reset;  // system rstn and sw ctrl reset
 
+/*
 sfif_tx_fifo tx (.wb_clk(wb_clk_i), .clk_125(clk_125), .rstn(sfif_rstn), .rprst(rprst), 
            .tx32_st(tx32_st), .tx32_end(tx32_end), .tx32_dwen(tx32_dwen), .tx32_nlfy(tx32_nlfy), .tx32_data(tx32_data), .tx32_dv(tx32_dv),
            .tx32_ctrl(tx32_ctrl), .tx32_nph(c_nph), .tx32_pd(c_pd), .tx32_ph(c_ph),
@@ -106,7 +107,7 @@ sfif_tx_fifo tx (.wb_clk(wb_clk_i), .clk_125(clk_125), .rstn(sfif_rstn), .rprst(
            .empty(tx_empty), .credit_read(tx_cr_read), .data_read(tx_d_read), .cr_avail(credit_available), .tag_avail(tag_avail),
            .tx64_req(tx64_req), .tx_rdy(tx64_rdy), .tx_val(tx_val)           
 );          
-
+*/
 sfif_ca ca (.clk_125(clk_125), .rstn(sfif_rstn),
             .cp_ph(tx64_ph), .cp_pd(tx64_pd), .cp_nph(tx64_nph), 
             .ca_ph(tx_ca_ph), .ca_pd(tx_ca_pd), .ca_nph(tx_ca_nph), .ca_npd(tx_ca_npd),
@@ -126,14 +127,14 @@ sfif_ctrl ctrl (.clk_125(clk_125), .rstn(sfif_rstn),
                 .tx_empty(tx_empty), .tx_rdy(tx64_rdy), .tx_val(tx_val), .tx_end(tx64_end), .credit_available(credit_available), 
                 .tx_cr_read(tx_cr_read), .tx_d_read(tx_d_read),
                 .done(done), .sm(sm));
-                
+/*                
 sfif_rx_fifo rx (.wb_clk(wb_clk_i), .clk_125(clk_125), .rstn(sfif_rstn), 
            .timestamp(elapsed_cnt_free),
            .rx32_data(rx32_data), .rden(rx32_data_read),           
            .rx64_st(rx64_st), .rx64_end(rx64_end), .rx64_dwen(rx64_dwen), .rx64_data(rx64_data), .rx64_filter(rx64_filter), 
            .empty(rx_empty) 
            );                       
-           
+*/           
 sfif_cr cr (.clk_125(clk_125), .rstn(sfif_rstn),
             .rx_st(rx64_st), .rx_data(rx64_data),
             .cplh_cr(rx_cr_cplh), .cpld_cr(rx_cr_cpld)            
@@ -165,7 +166,7 @@ bridge_16b_to_64b I_bridge_16b_to_64b(
 
 assign credit_available = cr_avail_calc;
 //assign tx64_rdy  = tx_rdy;
-assign tx_req    = tx64_req;
+assign tx_req    = 1'b0;
 //assign tx_st     = tx64_st;
 //assign tx_end    = tx64_end;
 //assign tx_dwen   = tx64_dwen; 
@@ -233,7 +234,7 @@ end
 assign req_gated = tx_req & ~done;
 
 //                 15                14      13      12   11    10        9           8          7     6
-assign debug = {credit_available, tag_avail, enable, run, loop, tx_empty, tx_cr_read, tx_d_read, done, req_gated, 6'd0};
+assign debug = 16'b0; //{credit_available, tag_avail, enable, run, loop, tx_empty, tx_cr_read, tx_d_read, done, req_gated, 6'd0};
 
  
 
